@@ -24,6 +24,9 @@ console.log ("TESTE");
     
     connection.connect();
     
+
+// TESTE
+/*
     var Request = require('tedious').Request  
     var TYPES = require('tedious').TYPES;  
   
@@ -52,3 +55,4 @@ console.log ("TESTE");
         });
         connection.execSql(request);  
     }
+*/
