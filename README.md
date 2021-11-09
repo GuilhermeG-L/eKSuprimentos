@@ -1,2 +1,2 @@
 # Projeto IES300 - eKSuprimentos.
-# ERP de Vendas, Produção e Clientes.
+# App de Vendas, Produção e Clientes.
