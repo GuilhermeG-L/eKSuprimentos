@@ -1,0 +1,12 @@
+#btnGerenciarOrdens{
+    background: #FAFAFA;
+    margin-top: 200px;
+    margin-bottom: 80px;
+}
+
+/* Hover dos botões */
+
+#btnGerenciarOrdens:hover{
+    background-color: #e4e4e4;
+    transition: 0.4s;
+}

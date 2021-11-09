@@ -1,0 +1,22 @@
+.btnFuncionalidadeAtiva{
+    background: #FAFAFA;
+}
+
+.btnFuncionalidadeDesativa{
+    background: transparent;
+}
+
+#btnGerenciarProdutos{
+    margin-top: 200px;
+}
+
+#btnCadastrarCliente, #btnGerenciarPedidos{
+    margin-top: 20px;
+}
+
+/* Hover dos botões */
+
+#btnCadastrarCliente:hover, #btnGerenciarPedidos:hover, #btnGerenciarProdutos:hover{
+    background-color: #e4e4e4;
+    transition: 0.4s;
+}

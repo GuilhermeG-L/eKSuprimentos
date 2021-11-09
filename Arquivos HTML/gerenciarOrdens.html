@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Gerenciar Ordens de Produção</title>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" href = "../Arquivos css/gerenciarOrdens.css"/>
+        <link rel = "stylesheet" href = "../Arquivos css/layout.css"/>
+        <link rel = "stylesheet" href = "../Arquivos css/btnsMenuLateralProd.css"/>
+        <link rel="stylesheet" href = "../Arquivos css/config.css"/>
+    </head>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="container__sidebar">
+            <img src = "../imgs/Logo sem fundo.png" width="200px"/>
+            <section class = "btns">
+                <a href = "#"><button class = "btnFuncionalidade" id = "btnGerenciarOrdens"><img src = "../imgs/icones/icons8-report-64 1.png">Gerenciar ordens</button></a>
+            </section>
+            <a href = "../index.html"><button class = "btnLogout"><img src = "../imgs/icones/icons8-desligar-50 1.png">Logout</button></a>
+        </aside>
+    
+        <!-- Main -->
+        <main class="container__main">
+            <header>
+                <h2 class = "tit">Ordens de produção</h2>
+                <hr/>
+            </header>
+            <div class = "pesquisaOrdens">
+                <h4 class = "divTit">Pesquisar Ordem</h4>
+                <section class = "pesquisa">
+                    <input type = "number" placeholder="Digite o número da ordem" class = "inputPesquisa">
+                    <button class = "btnBuscar">Buscar</button>
+                </section>
+            </div>
+
+            <div class="listaOrdens">
+                <h4 class="divTit">Lista de ordens de produção</h4>
+                <table border="0" rules="none">
+                    <tr>
+                        <th>N° Ordem</th>
+                        <th>Cliente</th>
+                        <th>Preço</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                    <tr class = "espaco"><td></td></tr>
+                    <tr class = "ordem">
+                        <td>12312412</td>
+                        <td>Lucas Ishida</td>
+                        <td>R$59,90</td>
+                        <td>Em produção</td>
+                        <td class = "tdAcoes">
+                            <a href ="#"><button class = "btnEdita"><img src = "/imgs/icones/icons8-edit-24 1.png" class = "edit"></button></a>
+                            <a href ="#"><button class = "btnExclui"><img src = "/imgs/icones/icons8-trash-24 1.png"></button></a>
+                        </td>
+                    </tr>
+                    <tr class = "espaco"><td></td></tr>
+                    <tr class = "ordem">
+                        <td>12312412</td>
+                        <td>Lucas Ishida</td>
+                        <td>R$59,90</td>
+                        <td>Em produção</td>
+                        <td class = "tdAcoes">
+                            <a href ="#"><button class = "btnEdita"><img src = "/imgs/icones/icons8-edit-24 1.png" class = "edit"></button></a>
+                            <a href ="#"><button class = "btnExclui"><img src = "/imgs/icones/icons8-trash-24 1.png"></button></a>
+                        </td>
+                    </tr>
+                    <tr class = "espaco"><td></td></tr>
+                    <tr class = "ordem">
+                        <td>12312412</td>
+                        <td>Lucas Ishida</td>
+                        <td>R$59,90</td>
+                        <td>Em produção</td>
+                        <td class = "tdAcoes">
+                            <a href ="#"><button class = "btnEdita"><img src = "/imgs/icones/icons8-edit-24 1.png" class = "edit"></button></a>
+                            <a href ="#"><button class = "btnExclui"><img src = "/imgs/icones/icons8-trash-24 1.png"></button></a>
+                        </td>
+                    </tr>
+                    <tr class = "espaco"><td></td></tr>
+                    <tr class = "ordem">
+                        <td>12312412</td>
+                        <td>Lucas Ishida</td>
+                        <td>R$59,90</td>
+                        <td>Em produção</td>
+                        <td class = "tdAcoes">
+                            <a href ="#"><button class = "btnEdita"><img src = "/imgs/icones/icons8-edit-24 1.png" class = "edit"></button></a>
+                            <a href ="#"><button class = "btnExclui"><img src = "/imgs/icones/icons8-trash-24 1.png"></button></a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </main>
+    </div>
+</html>

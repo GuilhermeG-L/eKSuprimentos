@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Gerenciar pedidos</title>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" href = "../Arquivos css/gerenciarPedidos.css"/>
+        <link rel = "stylesheet" href = "../Arquivos css/layout.css"/>
+        <link rel = "stylesheet" href = "../Arquivos css/btnsMenuLateralAdm.css"/>
+        <link rel="stylesheet" href = "../Arquivos css/config.css"/>
+    </head>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="container__sidebar">
+            <img src = "../imgs/Logo sem fundo.png" width="200px"/>
+            <section class = "btns">
+                <a href = "../Arquivos HTML/gerenciarProdutos.html"><button class = "btnFuncionalidade btnFuncionalidadeDesativa" id = "btnGerenciarProdutos"><img src = "../imgs/icones/iconesGerenciarProduto.png">Gerenciar produtos</button></a>
+                <a href = "../Arquivos HTML/gerenciarPedidos.html"><button class = "btnFuncionalidade btnFuncionalidadeAtiva" id = "btnGerenciarPedidos"><img src = "../imgs/icones/icons8-report-64 1.png">Gerenciar pedidos</button></a>
+                <a href = "#"><button class = "btnFuncionalidade btnFuncionalidadeDesativa" id = "btnCadastrarCliente"><img src = "../imgs/icones/icons8-adicionar-administrador-50 1.png">Cadastrar cliente</button></a>
+            </section>
+            <a href = "../index.html"><button class = "btnLogout"><img src = "../imgs/icones/icons8-desligar-50 1.png">Logout</button></a>
+        </aside>
+    
+        <!-- Main -->
+        <main class="container__main">
+            <header>
+                <h2 class = "tit">Gerenciar pedidos</h2>
+                <hr/>
+            </header>
+            <div class = "pesquisaPedidos">
+                <h4 class = "divTit">Pesquisar pedidos</h4>
+                <section class = "pesquisa">
+                    <input type = "number" placeholder="Digite o número do pedido" class = "inputPesquisa">
+                    <button class = "btnBuscar">Buscar</button>
+                    <button class = "btnAddPedido"><img src = "../imgs/icones/icons8-adicionar-30 2.png">Adicionar pedido</button>
+                </section>
+            </div>
+
+            <div class="listaPedidos">
+                <h4 class="divTit">Lista de pedidos</h4>
+                <table border="0" rules="none">
+                    <tr>
+                        <th>N° pedido</th>
+                        <th>Cliente</th>
+                        <th>Preço</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                    <tr class = "espaco"><td></td></tr>
+                    <tr class = "pedido">
+                        <td>2010928</td>
+                        <td>Lucas Hiratsuka Ishida</td>
+                        <td>R$20,00</td>
+                        <td>Em produção</td>
+                        <td class = "tdAcoes">
+                            <a href ="#"><button class = "btnEdita"><img src = "../imgs/icones/icons8-edit-24 1.png" class = "edit"></button></a>
+                            <a href ="#"><button class = "btnExclui"><img src = "../imgs/icones/icons8-trash-24 1.png"></button></a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </main>
+    </div>
+</html>
