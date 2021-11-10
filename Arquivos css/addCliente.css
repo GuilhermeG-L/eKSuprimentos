@@ -1,0 +1,165 @@
+/* ===== Infoormações básicas do pedido ====== */
+
+.infoCliente{
+    width: 100%;
+    min-height: 850px;
+    background-color: white;
+    margin-top: 38px;
+    border-radius: 10px;
+    padding: 21px 24px;
+}
+
+.nomeCod, .cpfTel{
+    margin-top: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.secCodCliente, .secNomeCliente, .secCPF, .secTel{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+label{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.inputAddCliente{
+    height: 45px;
+    width: 90%;
+}
+
+.inputAddCliente{
+    background: #FFFFFF;
+    border: 2px solid #D7D7D7;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.inputAddCliente::placeholder{
+    color: #D9D9D9;
+}
+
+/* Endereço do cliente */
+
+.enderecamentoCliente{
+    margin-top: 91px;
+}
+
+.logNumero{
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.secLogradouro{
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    width: 80%;
+}
+
+#logradCliente{
+    width: 97%;
+}
+
+.complemento{
+    margin-top: 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#compCliente{
+    width: 98%;
+}
+
+.bairroCidadeEstadoCep{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 22px;
+}
+
+.secBairro{
+    width: 35%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.secEstado{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 10%;
+    margin-left: 3%;
+}
+
+select{
+    width: 125px;
+    height: 45px;
+    font-size: 12px;
+    background: #FFFFFF;
+    border: 2px solid #D7D7D7;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.secCep{
+    margin-left:2%;
+}
+
+/* Botões Concluir e Voltar */
+
+.btnsVoltarCad{
+    display: flex;
+    align-items: center;
+    margin-top: 80px;
+}
+
+.btnVoltar, .btnCadastrar, .btnConfirmar{
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 29px;
+    display: flex;
+    align-items: center;
+    color: #6D6D6D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 125px;
+    height: 45px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.linkBtnVoltar{
+    margin-left: 79%;
+    margin-right: 3%;
+}
+
+.btnVoltar{
+    background: #E7A3A3;
+    border: 1px solid #FFFFFF;
+}
+
+.btnCadastrar, .btnConfirmar{
+    background: #A3E7B6;
+    border: 1px solid #93CEA3;
+}

@@ -1,0 +1,141 @@
+/* Pesquisa de Pedidos */
+
+.pesquisaPedidos{
+    margin-top: 38px;
+    background-color: white;
+    height: 172px;
+    width: 100%;
+    border-radius: 10px;
+    padding: 21px 24px;
+}
+
+.pesquisa{
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.inputPesquisa{
+    width: 486px;
+    height: 51px;    
+    background: #FBFBFB;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 28px;
+    margin-right: 20px;
+}
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    
+}
+input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+
+}
+
+.inputPesquisa::placeholder{
+    color: #D9D9D9;
+}
+
+.btnBuscar{
+    width: 139px;
+    height: 51px;
+    background: #FAFAFA;
+    border: 2px solid #AEAEAE;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btnAddPedido{
+    width: 241px;
+    height: 51px;
+    background: #A3E7B6;
+    border: 1px solid #93CEA3;
+    box-sizing: border-box;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 28px;
+    color: #6D6D6D;
+    margin-left: 50%;
+    cursor: pointer;
+}
+
+
+
+/* Tabela */
+
+.listaPedidos{
+    margin-top: 38px;
+    background-color: white;
+    width: 100%;
+    border-radius: 10px;
+    padding: 21px 24px;
+    overflow: auto;
+    min-height: 650px;
+    height: auto;
+}
+
+table{
+    width: 100%;
+    margin-top: 40px;
+    border-collapse:separate;
+    border-spacing:0 5px;    
+}
+
+th{
+    font-family: 'Merriweather sans', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+}
+
+.pedido{
+    background: #F4F4F4;
+    height: 66px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    margin-top: 20px;
+}
+
+td{
+    text-align: center;
+}
+
+.espaço{
+    height: 20px;
+}
+
+.btnEdita, .btnExclui{
+    border: none;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+}
+
+.btnEdita:hover, .btnExclui:hover{
+    border: 1px solid black;
+    transition: 1s;
+}
+
+.btnEdita{
+    margin-right: 10px;
+    background-color: #FAF69E;
+}
+
+.btnExclui{
+    background-color: #EE6F6F;
+}

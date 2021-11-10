@@ -1,0 +1,26 @@
+.btnFuncionalidadeAtiva{
+    background: #FAFAFA;
+}
+
+.btnFuncionalidadeDesativa{
+    background: transparent;
+}
+
+#btnCadastrarCliente, #btnGerenciarPedidos{
+    margin-top: 20px;
+}
+
+#btnGerenciarPedidos{
+    margin-top: 200px ;
+}
+
+.logOut{    
+    margin-top:490px;
+}
+
+/* Hover dos botões */
+
+#btnCadastrarCliente:hover, #btnGerenciarPedidos:hover{
+    background-color: #e4e4e4;
+    transition: 0.4s;
+}

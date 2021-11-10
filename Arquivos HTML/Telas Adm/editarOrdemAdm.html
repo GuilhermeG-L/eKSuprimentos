@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Editar ordem de produção</title>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" href = "../../Arquivos css/detalhesDaOrdem.css"/>
+        <link rel = "stylesheet" href = "../../Arquivos css/layout.css"/>
+        <link rel = "stylesheet" href = "../../Arquivos css/btnsMenuLateralAdm.css"/>
+        <link rel="stylesheet" href = "../../Arquivos css/config.css"/>
+    </head>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="container__sidebar">
+            <img src = "../../imgs/Logo sem fundo.png" width="200px"/>
+            <section class = "btns">
+                <a href = "../Telas Adm/gerenciarProdutosAdm.html"><button class = "btnFuncionalidade btnFuncionalidadeDesativa" id = "btnGerenciarProdutos"><img src = "../../imgs/icones/iconesGerenciarProduto.png">Gerenciar produtos</button></a>
+                <a href = "../Telas Adm/gerenciarPedidosAdm.html"><button class = "btnFuncionalidade btnFuncionalidadeDesativa" id = "btnGerenciarPedidos"><img src = "../../imgs/icones/icons8-report-64 1.png">Gerenciar pedidos</button></a>
+                <a href = "../Telas Adm/gerenciarClientesAdm.html"><button class = "btnFuncionalidade btnFuncionalidadeDesativa" id = "btnGerenciarCliente"><img src = "../../imgs/icones/icons8-adicionar-administrador-50 1.png">Gerenciar cliente</button></a>
+                <a href = "../Telas Adm/gerenciarOrdensAdm.html"><button class = "btnFuncionalidade btnFuncionalidadeAtiva" id = "btnGerenciarOrdens"><img src = "../../imgs/icones/icons8-report-64 1.png">Gerenciar ordens</button></a>
+            </section>
+            <a href = "../../index.html" class = "logOut"><button class = "btnLogout"><img src = "../../imgs/icones/icons8-desligar-50 1.png">Logout</button></a>
+        </aside>
+    
+        <!-- Main -->
+        <main class="container__main">
+            <header>
+                <h2 class = "tit">Detalhes do pedido</h2>
+                <hr/>
+            </header>
+            <div class = "infoBasica">
+                <h2 class = "divTit">Informações do pedido</h2>
+                <section class = "codigos">
+                    <section class = "secCod">
+                        <label>Código do pedido</label>
+                        <input type = "number" id = "codPedido" class = "inputAddPedido" placeholder="Digite o código do pedido" value = "1203128">
+                    </section>
+                    <section class = "secCod">
+                        <label>Código do cliente</label>
+                        <input type = "number" id = "codCliente" class = "inputAddPedido" placeholder="Digite o código do cliente" value = "1203128">
+                    </section>
+                </section>
+                <section class = "datasMeio">
+                    <section class = "secDataRealizacao secDataMeio ">
+                        <label>Data realização</label>
+                        <input type = "date" id = "dataRealizacao" class = "inputDataMeio">
+                    </section>
+                    <section class = "secDataEntrega secDataMeio">
+                        <label>Data entrega</label>
+                        <input type = "date" id = "dataEntrega" class = "inputDataMeio">
+                    </section>
+                    <section class = "secMeio secDataMeio" >
+                        <label>Meio</label>
+                        <input type = "text" class = "inputAddPedido inputDataMeio" placeholder="Digite o meio que o pedido foi realizado" value = "Mercado Livre">
+                    </section>
+                </section>
+            </div>
+            <div class = "prodPedido">
+                <h2 class = "divTit">Produtos do pedido</h2>
+                <section class = "produtos">
+                    <section class = "labels">
+                        <p class = "label lblCodProduto">Código do produto</p>
+                        <p class = "label lblMetragem">Concluído</p>
+                    </section>
+                    <section class = "produto">
+                        <input type = "number" class = "codProduto" placeholder="Digite o código" value = "12312"/>
+                        <input type = "checkbox" class = "checkProdutoOrdem"/>
+                    </section>
+                    <section class = "produto">
+                        <input type = "number" class = "codProduto" placeholder="Digite o código" value = "12312"/>
+                        <input type = "checkbox" class = "checkProdutoOrdem"/>
+                    </section>
+                    <section class = "produto">
+                        <input type = "number" class = "codProduto" placeholder="Digite o código" value = "12312"/>
+                        <input type = "checkbox" class = "checkProdutoOrdem"/>
+                    </section>
+                    <section class = "produto">
+                        <input type = "number" class = "codProduto" placeholder="Digite o código" value = "12312"/>
+                        <input type = "checkbox" class = "checkProdutoOrdem"/>
+                    </section>
+                <section class = "totalSec">
+                    <p>Total:</p>
+                    <span class = "precoTotal">R$1538,98</span>
+                    <a href = "../Telas Adm/gerenciarOrdensAdm.html"><button class = "btnVoltar" style="margin-left: 75%;">Voltar</button></a>
+                </section>
+            </div>
+        </main>
+    </div>
+</html>

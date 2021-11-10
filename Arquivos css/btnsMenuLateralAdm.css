@@ -1,0 +1,15 @@
+.btnFuncionalidadeAtiva{
+    background: #FAFAFA;
+}
+
+.btnFuncionalidadeDesativa{
+    background: transparent;
+}
+
+#btnGerenciarProdutos{
+    margin-top: 200px;
+}
+
+.logOut{
+    margin-top: 400px;
+}

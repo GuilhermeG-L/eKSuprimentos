@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Gerenciar clientes</title>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" href = "../../Arquivos css/gerenciarClientes.css"/>
+        <link rel = "stylesheet" href = "../../Arquivos css/layout.css"/>
+        <link rel = "stylesheet" href = "../../Arquivos css/btnsMenuLateralVend.css"/>
+        <link rel="stylesheet" href = "../../Arquivos css/config.css"/>
+    </head>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="container__sidebar">
+            <img src = "../../imgs/Logo sem fundo.png" width="200px"/>
+            <section class = "btns">
+                <a href = "../Telas Vendedor/gerenciarPedidos.html"><button class = "btnFuncionalidade btnFuncionalidadeDesativa" id = "btnGerenciarPedidos"><img src = "../../imgs/icones/icons8-report-64 1.png">Gerenciar pedidos</button></a>
+                <a href = "../Telas Vendedor/gerenciarClientes.html"><button class = "btnFuncionalidade btnFuncionalidadeAtiva" id = "btnCadastrarCliente"><img src = "../../imgs/icones/icons8-adicionar-administrador-50 1.png">Gerenciar cliente</button></a>
+            </section>
+            <a href = "../../index.html" class = "logOut"><button class = "btnLogout"><img src = "../../imgs/icones/icons8-desligar-50 1.png">Logout</button></a>
+        </aside>
+    
+        <!-- Main -->
+        <main class="container__main">
+            <header>
+                <h2 class = "tit">Gerenciar clientes</h2>
+                <hr/>
+            </header>
+            <div class = "pesquisaClientes">
+                <h4 class = "divTit">Pesquisar clientes</h4>
+                <section class = "pesquisa">
+                    <input type = "number" placeholder="Digite o código do cliente" class = "inputPesquisa">
+                    <button class = "btnBuscar">Buscar</button>
+                    <a href = "../Telas Vendedor/addCliente.html" style = "margin-left: 35%;"><button class = "btnAddCliente"><img src = "../../imgs/icones/icons8-adicionar-30 2.png">Adicionar cliente</button></a>
+                </section>
+            </div>
+
+            <div class="listaClientes">
+                <h4 class="divTit">Lista de clientes</h4>
+                <table border="0" rules="none">
+                    <tr>
+                        <th>N° Cliente</th>
+                        <th>Nome</th>
+                        <th>CEP</th>
+                        <th>Telefone</th>
+                        <th>Ações</th>
+                    </tr>
+                    <tr class = "espaco"><td></td></tr>
+                    <tr class = "cliente">
+                        <td>2010928</td>
+                        <td>Lucas Hiratsuka Ishida</td>
+                        <td>08123-122</td>
+                        <td>(11) 91234-4321</td>
+                        <td class = "tdAcoes">
+                            <a href ="../Telas Vendedor/editarCliente.html"><button class = "btnEdita"><img src = "../../imgs/icones/icons8-edit-24 1.png" class = "edit"></button></a>
+                            <a href ="../Telas Vendedor/editarCliente.html"><button class = "btnExclui"><img src = "../../imgs/icones/icons8-trash-24 1.png"></button></a>
+                        </td>
+                    </tr>
+                    <tr class = "espaco"><td></td></tr>
+                    <tr class = "cliente">
+                        <td>2010928</td>
+                        <td>Lucas Hiratsuka Ishida</td>
+                        <td>08123-122</td>
+                        <td>(11) 91234-4321</td>
+                        <td class = "tdAcoes">
+                            <a href ="../Telas Vendedor/editarCliente.html"><button class = "btnEdita"><img src = "../../imgs/icones/icons8-edit-24 1.png" class = "edit"></button></a>
+                            <a href ="../Telas Vendedor/editarCliente.html"><button class = "btnExclui"><img src = "../../imgs/icones/icons8-trash-24 1.png"></button></a>
+                        </td>
+                    </tr>
+                    <tr class = "espaco"><td></td></tr>
+                    <tr class = "cliente">
+                        <td>2010928</td>
+                        <td>Lucas Hiratsuka Ishida</td>
+                        <td>08123-122</td>
+                        <td>(11) 91234-4321</td>
+                        <td class = "tdAcoes">
+                            <a href ="../Telas Vendedor/editarCliente.html"><button class = "btnEdita"><img src = "../../imgs/icones/icons8-edit-24 1.png" class = "edit"></button></a>
+                            <a href ="../Telas Vendedor/editarCliente.html"><button class = "btnExclui"><img src = "../../imgs/icones/icons8-trash-24 1.png"></button></a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </main>
+    </div>
+</html>

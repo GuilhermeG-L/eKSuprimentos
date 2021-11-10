@@ -1,0 +1,1 @@
+Pra organizar as páginas eu criei as pastas para cada usuário

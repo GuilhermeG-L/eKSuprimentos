@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cadastrar cliente</title>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" href = "../../Arquivos css/addCliente.css"/>
+        <link rel = "stylesheet" href = "../../Arquivos css/layout.css"/>
+        <link rel = "stylesheet" href = "../../Arquivos css/btnsMenuLateralVend.css"/>
+        <link rel="stylesheet" href = "../../Arquivos css/config.css"/>
+    </head>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="container__sidebar">
+            <img src = "../../imgs/Logo sem fundo.png" width="200px"/>
+            <section class = "btns">
+                <a href = "../Telas Vendedor/gerenciarPedidos.html"><button class = "btnFuncionalidade btnFuncionalidadeDesativa" id = "btnGerenciarPedidos"><img src = "../../imgs/icones/icons8-report-64 1.png">Gerenciar pedidos</button></a>
+                <a href = "../Telas Vendedor/gerenciarClientes.html"><button class = "btnFuncionalidade btnFuncionalidadeAtiva" id = "btnCadastrarCliente"><img src = "../../imgs/icones/icons8-adicionar-administrador-50 1.png">Cadastrar cliente</button></a>
+            </section>
+            <a href = "../../index.html" class = "logOut"><button class = "btnLogout"><img src = "../../imgs/icones/icons8-desligar-50 1.png">Logout</button></a>
+        </aside>
+    
+        <!-- Main -->
+        <main class="container__main">
+            <header>
+                <h2 class = "tit">Cadastrar cliente</h2>
+                <hr/>
+            </header>
+            <div class = "infoCliente">
+                <!-- Infomações do cliente -->
+                <section class = "infoBasicaCliente">
+                    <h2 class = "divTit">Informações básicas</h2>
+                    <hr>
+
+                    <!-- Nome e Código do cliente -->
+                    <section class = "nomeCod">
+                        <section class = "secCodCliente">
+                            <label>Código do cliente</label>
+                            <input type="number" class = "inputAddCliente" id = "codCliente" placeholder="Digite o código do cliente"/>
+                        </section>
+                        <section class = "secNomeCliente">
+                            <label>Nome completo</label>
+                            <input type="text" class = "inputAddCliente" id = "nomeCliente" placeholder="Digite o nome do cliente"/>
+                        </section>
+                    </section>
+
+                    <!-- CPF e Telefone do cliente -->
+                    <section class = "cpfTel">
+                        <section class = "secCPF">
+                            <label>CPF</label>
+                            <input type = "number" class = "inputAddCliente" id = "cpfCliente" placeholder="Digite o CPF do cliente"/>
+                        </section>
+                        <section class = "secTel">
+                            <label>Telefone</label>
+                            <input type = "number" class = "inputAddCliente" id = "telCliente" placeholder="Digite o telefone"/>
+                        </section>
+                    </section>
+                </section>
+
+                <!-- Endereçamento do cliente -->
+                <section class = "enderecamentoCliente">
+                    <h2 class = "divTit">Endereçamento</h2>
+                    <hr>
+
+                    <!-- Logradouro e Número -->
+                    <section class = "logNumero">
+                        <section class = "secLogradouro">
+                            <label>Logradouro</label>
+                            <input type = "text" placeholder="Digite o logradouro do cliente" class = "inputAddCliente" id = "logradCliente"/>
+                        </section>
+                        <section class = "secNumero">
+                            <label>Número</label>
+                            <input type = "number" placeholder="N° Endereço" class = "inputAddCliente" id = "numeroEndereco"/>
+                        </section>
+                    </section>
+                    <section class = "complemento">
+                        <label>Complemento</label>
+                        <input type = "text" placeholder="Complemento do endereço" class = "inputAddCliente" id = "compCliente"/>
+                    </section>
+                    <section class="bairroCidadeEstadoCep">
+                        <section class = "secBairro">
+                            <label>Bairro</label>
+                            <input type = "text" placeholder="Bairro" class = "inputAddCliente" id = "bairroCliente"/>
+                        </section>
+                        <section class = "secCidade">
+                            <label>Cidade</label>
+                            <input type = "text" placeholder="Cidade" class = "inputAddCliente" id = "cidadeCliente"/>
+                        </section>
+                        <section class = "secEstado">
+                            <label>Estado</label>
+                            <select id="UF" name="UF" id = "estadoCliente">
+                                <option value="">Selecione</option>
+                                <option value="AC">AC</option>
+                                <option value="AL">AL</option>
+                                <option value="AP">AP</option>
+                                <option value="AM">AM</option>
+                                <option value="BA">BA</option>
+                                <option value="CE">CE</option>
+                                <option value="DF">DF</option>
+                                <option value="ES">ES</option>
+                                <option value="GO">GO</option>
+                                <option value="MA">MA</option>
+                                <option value="MS">MS</option>
+                                <option value="MT">MT</option>
+                                <option value="MG">MG</option>
+                                <option value="PA">PA</option>
+                                <option value="PB">PB</option>
+                                <option value="PR">PR</option>
+                                <option value="PE">PE</option>
+                                <option value="PI">PI</option>
+                                <option value="RJ">RJ</option>
+                                <option value="RN">RN</option>
+                                <option value="RS">RS</option>
+                                <option value="RO">RO</option>
+                                <option value="RR">RR</option>
+                                <option value="SC">SC</option>
+                                <option value="SP">SP</option>
+                                <option value="SE">SE</option>
+                                <option value="TO">TO</option>
+                             </select>
+                        </section>
+                        <section class = "secCep">
+                            <label>CEP</label>
+                            <input type = "number" placeholder="CEP" class = "inputAddCliente" id = "cepCliente"/>
+                        </section>
+                    </section>
+                </section>
+                <div class = "btnsVoltarCad">
+                    <a href = "gerenciarClientes.html" class = "linkBtnVoltar"><button class = "btnVoltar">Voltar</button></a>
+                    <a href = "gerenciarClientes.html" class = "linkBtnCadastrar"><button class = "btnCadastrar">Cadastrar</button></a>
+                </div>
+            </div>
+        </main>
+    </div>
+</html>
