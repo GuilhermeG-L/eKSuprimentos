@@ -15,6 +15,7 @@ function createWindow(){
             preload: path.join(__dirname, "preload.js")
         }
     });
+    win.maximize();
     win.loadURL(url.format({
         pathname: path.join(__dirname, 'index.html'),
         protocol: 'file',
