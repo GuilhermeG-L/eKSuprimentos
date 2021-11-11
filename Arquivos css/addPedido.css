@@ -1,4 +1,4 @@
-/* ===== Infoormações básicas do pedido ====== */
+/* ===== Informações básicas do pedido ====== */
 
 .infoBasica, .prodPedido{
     width: 100%;
@@ -148,12 +148,12 @@ label{
 }
 
 .lblCodProduto{
-    margin-left: 0.5%;
-    margin-right: 20.8%;
+    margin-left: 5px;
+    margin-right: 338px;
 }
 
 .lblMetragem{
-    margin-right: 5.4%;
+    margin-right: 80px;
 }
 
 .produto{
@@ -239,11 +239,14 @@ label{
     cursor: pointer;
 }
 
+.linkBtnVoltar{
+    margin-left: 47.5%;
+    margin-right: 3%;
+}
+
 .btnVoltar{
     background: #E7A3A3;
     border: 1px solid #FFFFFF;
-    margin-left: 65%;
-    margin-right: 2%;
 }
 
 .btnConcluir{

@@ -108,11 +108,18 @@ label{
     cursor: pointer;
 }
 
+.linkBtnVoltar{
+    margin-left: 70%;
+    margin-right: 3%;
+}
+
+.linkBtnConcluir{
+    margin-right: 5%;
+}
+
 .btnVoltar{
     background: #E7A3A3;
     border: 1px solid #FFFFFF;
-    margin-left: 60%;
-    margin-right: 7%;
 }
 
 .btnConcluir{

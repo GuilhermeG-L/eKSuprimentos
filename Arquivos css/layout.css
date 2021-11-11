@@ -21,8 +21,9 @@
 
 .container__main {
     margin-left: 38px;
+    height: 950px;
     flex: 1;
-    overflow: auto;
+    overflow: hidden;
 }
 
 /* Botões menu lateral */
