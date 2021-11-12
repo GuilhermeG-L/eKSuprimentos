@@ -19,21 +19,25 @@ function pegarUsuario(parameter) {
 var user = pegarUsuario("user");
 console.log(user)
 
+var login = document.getElementById('inputLoginCod').value;
+var senha = document.getElementById('inputLoginSenha').value;
+
 var btnAcessar = document.querySelector('#btnAcessar')
 btnAcessar.addEventListener('click', ()=>{
     switch(user){
         case 'produtor':
-            window.location = '../Telas Produtor/gerenciarOrdens.html';
+            window.api.loadscript('./sqlProdutor.js');
+            //window.location = '../Telas Produtor/gerenciarOrdens.html';
             break;
         case 'vendedor':
-            window.location = '../Telas Vendedor/gerenciarPedidos.html';
+            window.api.loadscript('./sqlVendedor.js');
+            //window.location = '../Telas Vendedor/gerenciarPedidos.html';
             break;
         case 'adm':
             window.location = '../Telas Adm/gerenciarPedidosAdm.html';
             break;
     }
 })
-
 
 
 // document.getElementById("btnAcessar").addEventListener('click', function () {
