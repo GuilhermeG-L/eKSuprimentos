@@ -2,14 +2,8 @@
 # App de Vendas, Produção e Clientes.
 
 
-#LOGIN VENDEDOR:
-#Login: Maria da Silva
-#Senha: 19970912
+#LOGIN VENDEDOR - Login: Maria da Silva - Senha: 19970912
 
-#LOGIN PRODUTOR:
-#Login: André Souza
-#Senha: 19950320
+#LOGIN PRODUTOR - Login: André Souza - Senha: 19950320
 
-#LOGIN ADM:
-#Login: admin
-#Senha: KSuprimentos
+#LOGIN ADM - Login: admin - Senha: KSuprimentos
