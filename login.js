@@ -19,31 +19,26 @@ function pegarUsuario(parameter) {
 var user = pegarUsuario("user");
 console.log(user)
 
-var login = document.getElementById('inputLoginCod').value;
-var senha = document.getElementById('inputLoginSenha').value;
 
 var btnAcessar = document.querySelector('#btnAcessar')
 btnAcessar.addEventListener('click', ()=>{
     switch(user){
         case 'produtor':
             window.api.loadscript('./sqlProdutor.js');
-            //window.location = '../Telas Produtor/gerenciarOrdens.html';
             break;
         case 'vendedor':
             window.api.loadscript('./sqlVendedor.js');
-            //window.location = '../Telas Vendedor/gerenciarPedidos.html';
             break;
         case 'adm':
-            window.location = '../Telas Adm/gerenciarPedidosAdm.html';
+            verifAdm();
             break;
     }
 })
 
-
-// document.getElementById("btnAcessar").addEventListener('click', function () {
-//     switch(true) {
-//         case(user = 'Vendedor'): aLogin.href="../Telas Vendedor/gerenciarPedidos.html"; break;
-//         case(user = 'Produtor'): aLogin.href="../Telas Produtor/gerenciarOrdens.html"; break;
-//         case(user = 'Administrador'): aLogin.href="../Telas Adm/gerenciarOrdens.html"; break;
-//     }
-// })
+// Função de Login Admin.
+function verifAdm() {
+    var log = document.getElementById('inputLoginCod').value;
+    var sen = document.getElementById('inputLoginSenha').value;
+    if (log == 'admin' && sen == 'KSuprimentos') {window.location = '../Telas Adm/gerenciarPedidosAdm.html'; console.log(sen); console.log(log);}
+    else {window.location = 'login.html?user='+user; console.log(sen); console.log(log);}
+}

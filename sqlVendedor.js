@@ -1,6 +1,7 @@
 const { Connection, Request } = require("tedious");
 
-// Create connection to database
+
+// Configuração de conexão DB.
 const config = {
   authentication: {
     options: {
@@ -17,24 +18,26 @@ const config = {
 };
 
 
-
-
 // Query Azure SQL: Login Vendedor.
+let user = 'vendedor';
 
 const connection = new Connection(config);
 
-// Attempt to connect and execute queries if connection goes through
+// Tentativa de conexão.
 connection.on("connect", err => {
   if (err) {
     console.error(err.message);
+    window.location = "login.html?user="+user
   } else {
     queryDatabase();
   }
 });
 
+// Conexão do DB.
 connection.connect();
 
-function queryDatabase() {
+// Função de criação de Query.
+window.queryDatabase = function queryDatabase() {
   console.log("Reading rows from the Table...");
 
   const request = new Request(
@@ -43,14 +46,21 @@ function queryDatabase() {
      FROM dbo.Vendedor
      Where Nome = \'${inputLoginCod.value}\' And Data_Nasc = \'${inputLoginSenha.value}\'`,
     (err, rowCount) => {
+      // Se Erro, recarrega página.
       if (err) {
         console.error(err.message);
-      } else {
+        window.location = "login.html?user="+user
+      }
+      // Se Certo e apenas 1 linha retornada, avança. Se Erro, 0, ou mais que 1 retorno, recarrega página.
+      else {
         console.log(`${rowCount} row(s) returned`);
+        if (rowCount != 1) {window.location = "login.html?user="+user}
+        else {window.location = '../Telas Vendedor/gerenciarPedidos.html';}
       }
     }
   );
 
+  // Console.log da query.
   request.on("row", columns => {
     columns.forEach(column => {
       console.log("%s\t%s", column.metadata.colName, column.value);
@@ -59,3 +69,6 @@ function queryDatabase() {
 
   connection.execSql(request);
 }
+
+
+
