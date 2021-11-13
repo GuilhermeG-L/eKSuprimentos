@@ -5,14 +5,14 @@ const { Connection, Request } = require("tedious");
 const config = {
   authentication: {
     options: {
-      userName: "sqlserver", // update me
-      password: "Proj@MSsql15" // update me
+      userName: "sqlserver",
+      password: "Proj@MSsql15"
     },
     type: "default"
   },
-  server: "eksuprimentos-server-1.database.windows.net", // update me
+  server: "eksuprimentos-server-1.database.windows.net",
   options: {
-    database: "eKSuprimentos", //update me
+    database: "eKSuprimentos",
     encrypt: true
   }
 };
@@ -38,7 +38,7 @@ connection.connect();
 
 // Função de criação de Query.
 function queryDatabase() {
-  console.log("Reading rows from the Table...");
+  console.log("Lendo dados da tabela...");
 
   const request = new Request(
     `SELECT DISTINCT Nome,
@@ -53,7 +53,7 @@ function queryDatabase() {
       }
       // Se Certo e apenas 1 linha retornada, avança. Se Erro, 0, ou mais que 1 retorno, recarrega página.
       else {
-        console.log(`${rowCount} row(s) returned`);
+        console.log(`${rowCount} linha(s) retornadas`);
         if (rowCount != 1) {window.location = "login.html?user="+user}
         else {window.location = '../Telas Produtor/gerenciarOrdens.html';}
       }

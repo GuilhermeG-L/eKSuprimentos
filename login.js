@@ -39,6 +39,6 @@ btnAcessar.addEventListener('click', ()=>{
 function verifAdm() {
     var log = document.getElementById('inputLoginCod').value;
     var sen = document.getElementById('inputLoginSenha').value;
-    if (log == 'admin' && sen == 'KSuprimentos') {window.location = '../Telas Adm/gerenciarPedidosAdm.html'; console.log(sen); console.log(log);}
+    if (log == 'admin' && sen == 'KSuprimentos') {window.location = '../Telas Adm/gerenciarProdutosAdm.html'; console.log(sen); console.log(log);}
     else {window.location = 'login.html?user='+user; console.log(sen); console.log(log);}
 }

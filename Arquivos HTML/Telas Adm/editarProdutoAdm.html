@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Editar produto</title>
+        <title>Adicionar produto</title>
         <meta charset="UTF-8"/>
         <link rel="stylesheet" href = "../../Arquivos css/addProduto.css"/>
         <link rel = "stylesheet" href = "../../Arquivos css/layout.css"/>
@@ -15,7 +15,7 @@
             <section class = "btns">
                 <a href = "../Telas Adm/gerenciarProdutosAdm.html"><button class = "btnFuncionalidade btnFuncionalidadeAtiva" id = "btnGerenciarProdutos"><img src = "../../imgs/icones/iconesGerenciarProduto.png">Gerenciar produtos</button></a>
                 <a href = "../Telas Adm/gerenciarPedidosAdm.html"><button class = "btnFuncionalidade btnFuncionalidadeDesativa" id = "btnGerenciarPedidos"><img src = "../../imgs/icones/icons8-report-64 1.png">Gerenciar pedidos</button></a>
-                <a href = "../Telas Adm/gerenciarClientesAdm.html"><button class = "btnFuncionalidade btnFuncionalidadeDesativa" id = "btnGerenciarCliente"><img src = "../../imgs/icones/icons8-adicionar-administrador-50 1.png">Gerenciar cliente</button></a>
+                <a href = "../Telas Adm/gerenciarClientesAdm.html"><button class = "btnFuncionalidade btnFuncionalidadeDesativa" id = "btnGerenciarCliente"><img src = "../../imgs/icones/icons8-adicionar-administrador-50 1.png">Gerenciar clientes</button></a>
                 <a href = "../Telas Adm/gerenciarOrdensAdm.html"><button class = "btnFuncionalidade btnFuncionalidadeDesativa" id = "btnGerenciarOrdens"><img src = "../../imgs/icones/icons8-report-64 1.png">Gerenciar ordens</button></a>
             </section>
             <a href = "../../index.html" class = "logOut"><button class = "btnLogout"><img src = "../../imgs/icones/icons8-desligar-50 1.png">Logout</button></a>
@@ -36,7 +36,7 @@
                 <section class = "codPreco">
                     <section class = "codProdutoSec">
                         <label>Código do produto</label>
-                        <input type = "number" placeholder="Digite o código do produto" id = "inputCodProd"/>
+                        <input type = "number" placeholder="Digite o código do produto" id = "inputCodProd" readonly/>
                     </section>
                     <section class = "precoProdutoSec">
                         <label>Preço</label>
@@ -44,8 +44,8 @@
                     </section>
                 </section>
                 <div class = "divBtns">
-                    <a href = "../Telas Adm/gerenciarProdutosAdm.html"><button class = "btnVoltar">Voltar</button></a>
-                    <a href = "../Telas Adm/gerenciarProdutosAdm.html"><button class = "btnConcluir">Concluir</button></a>
+                    <a href = "../Telas Adm/gerenciarProdutosAdm.html" class = "linkBtnVoltar"><button class = "btnVoltar">Voltar</button></a>
+                    <a href = "../Telas Adm/gerenciarProdutosAdm.html" class = "linkBtnConcluir"><button class = "btnConcluir">Concluir</button></a>
                 </div>
             </div>
         </main>

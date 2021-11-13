@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Editar pedido</title>
+        <title>Adicionar pedido</title>
         <meta charset="UTF-8"/>
         <link rel="stylesheet" href = "../../Arquivos css/addPedido.css"/>
         <link rel = "stylesheet" href = "../../Arquivos css/layout.css"/>
@@ -15,7 +15,7 @@
             <section class = "btns">
                 <a href = "../Telas Adm/gerenciarProdutosAdm.html"><button class = "btnFuncionalidade btnFuncionalidadeDesativa" id = "btnGerenciarProdutos"><img src = "../../imgs/icones/iconesGerenciarProduto.png">Gerenciar produtos</button></a>
                 <a href = "../Telas Adm/gerenciarPedidosAdm.html"><button class = "btnFuncionalidade btnFuncionalidadeAtiva" id = "btnGerenciarPedidos"><img src = "../../imgs/icones/icons8-report-64 1.png">Gerenciar pedidos</button></a>
-                <a href = "../Telas Adm/gerenciarClientesAdm.html"><button class = "btnFuncionalidade btnFuncionalidadeDesativa" id = "btnGerenciarCliente"><img src = "../../imgs/icones/icons8-adicionar-administrador-50 1.png">Gerenciar cliente</button></a>
+                <a href = "../Telas Adm/gerenciarClientesAdm.html"><button class = "btnFuncionalidade btnFuncionalidadeDesativa" id = "btnGerenciarCliente"><img src = "../../imgs/icones/icons8-adicionar-administrador-50 1.png">Gerenciar clientes</button></a>
                 <a href = "../Telas Adm/gerenciarOrdensAdm.html"><button class = "btnFuncionalidade btnFuncionalidadeDesativa" id = "btnGerenciarOrdens"><img src = "../../imgs/icones/icons8-report-64 1.png">Gerenciar ordens</button></a>
             </section>
             <a href = "../../index.html" class = "logOut"><button class = "btnLogout"><img src = "../../imgs/icones/icons8-desligar-50 1.png">Logout</button></a>
@@ -47,10 +47,6 @@
                     <section class = "secDataEntrega secDataMeio">
                         <label>Data entrega</label>
                         <input type = "date" id = "dataEntrega" class = "inputDataMeio">
-                    </section>
-                    <section class = "secMeio secDataMeio" >
-                        <label>Meio</label>
-                        <input type = "text" class = "inputAddPedido inputDataMeio" placeholder="Digite o meio que o pedido foi realizado">
                     </section>
                 </section>
             </div>
@@ -94,8 +90,8 @@
                 <section class = "total">
                     <p>Total:</p>
                     <span class = "precoTotal">R$1538,98</span>
-                    <a href = "../Telas Adm/gerenciarPedidosAdm.html"><button class = "btnVoltar">Voltar</button></a>
-                    <a href = "../Telas Adm/gerenciarPedidosAdm.html"><button class = "btnConcluir">Concluir</button></a>
+                    <a href = "../Telas Adm/gerenciarPedidosAdm.html" class = "linkBtnVoltar"><button class = "btnVoltar">Voltar</button></a>
+                    <a href = "../Telas Adm/gerenciarPedidosAdm.html" class = "linkBtnConcluir"><button class = "btnConcluir">Concluir</button></a>
                 </section>
             </div>
         </main>

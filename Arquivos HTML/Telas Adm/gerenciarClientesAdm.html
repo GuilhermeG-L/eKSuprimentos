@@ -15,7 +15,7 @@
             <section class = "btns">
                 <a href = "../Telas Adm/gerenciarProdutosAdm.html"><button class = "btnFuncionalidade btnFuncionalidadeDesativa" id = "btnGerenciarProdutos"><img src = "../../imgs/icones/iconesGerenciarProduto.png">Gerenciar produtos</button></a>
                 <a href = "../Telas Adm/gerenciarPedidosAdm.html"><button class = "btnFuncionalidade btnFuncionalidadeDesativa" id = "btnGerenciarPedidos"><img src = "../../imgs/icones/icons8-report-64 1.png">Gerenciar pedidos</button></a>
-                <a href = "../Telas Adm/gerenciarClientesAdm.html"><button class = "btnFuncionalidade btnFuncionalidadeAtiva" id = "btnGerenciarCliente"><img src = "../../imgs/icones/icons8-adicionar-administrador-50 1.png">Gerenciar cliente</button></a>
+                <a href = "../Telas Adm/gerenciarClientesAdm.html"><button class = "btnFuncionalidade btnFuncionalidadeAtiva" id = "btnGerenciarCliente"><img src = "../../imgs/icones/icons8-adicionar-administrador-50 1.png">Gerenciar clientes</button></a>
                 <a href = "../Telas Adm/gerenciarOrdensAdm.html"><button class = "btnFuncionalidade btnFuncionalidadeDesativa" id = "btnGerenciarOrdens"><img src = "../../imgs/icones/icons8-report-64 1.png">Gerenciar ordens</button></a>
             </section>
             <a href = "../../index.html" class = "logOut"><button class = "btnLogout"><img src = "../../imgs/icones/icons8-desligar-50 1.png">Logout</button></a>
@@ -32,7 +32,7 @@
                 <section class = "pesquisa">
                     <input type = "number" placeholder="Digite o código do cliente" class = "inputPesquisa">
                     <button class = "btnBuscar">Buscar</button>
-                    <a href = "../Telas Adm/addClienteAdm.html" ><button class = "btnAddCliente"><img src = "../../imgs/icones/icons8-adicionar-30 2.png">Adicionar cliente</button></a>
+                    <a href = "../Telas Adm/editarClienteAdm.html" ><button class = "btnAddCliente"><img src = "../../imgs/icones/icons8-adicionar-30 2.png">Adicionar cliente</button></a>
                 </section>
             </div>
 
@@ -79,8 +79,31 @@
                             <a href ="../Telas Adm/editarClienteAdm.html"><button class = "btnExclui"><img src = "../../imgs/icones/icons8-trash-24 1.png"></button></a>
                         </td>
                     </tr>
+                    <tr class = "espaco"><td></td></tr>
+                    <tr class = "cliente">
+                        <td>2010928</td>
+                        <td>Lucas Hiratsuka Ishida</td>
+                        <td>08123-122</td>
+                        <td>(11) 91234-4321</td>
+                        <td class = "tdAcoes">
+                            <a href ="../Telas Adm/editarClienteAdm.html"><button class = "btnEdita"><img src = "../../imgs/icones/icons8-edit-24 1.png" class = "edit"></button></a>
+                            <a href ="../Telas Adm/editarClienteAdm.html"><button class = "btnExclui"><img src = "../../imgs/icones/icons8-trash-24 1.png"></button></a>
+                        </td>
+                    </tr>
+                    <tr class = "espaco"><td></td></tr>
+                    <tr class = "cliente">
+                        <td>2010928</td>
+                        <td>Lucas Hiratsuka Ishida</td>
+                        <td>08123-122</td>
+                        <td>(11) 91234-4321</td>
+                        <td class = "tdAcoes">
+                            <a href ="../Telas Adm/editarClienteAdm.html"><button class = "btnEdita"><img src = "../../imgs/icones/icons8-edit-24 1.png" class = "edit"></button></a>
+                            <a href ="../Telas Adm/editarClienteAdm.html"><button class = "btnExclui"><img src = "../../imgs/icones/icons8-trash-24 1.png"></button></a>
+                        </td>
+                    </tr>
                 </table>
             </div>
         </main>
     </div>
+    <script>window.api.loadscript('./buscaClienteAdm.js');</script>
 </html>
