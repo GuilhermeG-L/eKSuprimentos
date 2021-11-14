@@ -13,7 +13,7 @@ btnBuscar.addEventListener('click', ()=>{
       },
       type: "default"
     },
-    server: "eksuprimentos-server-1.database.windows.net",
+    server: "34.151.252.122",
     options: {
       database: "eKSuprimentos",
       encrypt: true

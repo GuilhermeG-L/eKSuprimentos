@@ -1,9 +1,5 @@
 const { Connection, Request } = require("tedious");
 
-var btnBuscar = document.querySelector('.btnBuscar');
-btnBuscar.addEventListener('click', ()=>{
-  let cod = parseInt(document.querySelector('.inputPesquisa').value);
-
   // Configuração de conexão DB.
   const config = {
     authentication: {
@@ -38,19 +34,15 @@ btnBuscar.addEventListener('click', ()=>{
     console.log("Lendo dados da tabela...");
 
     const request = new Request(
-      `SELECT DISTINCT CodPedido, CodCliente, CEP, CodVendedor, Data_realização, Data_entrega, PreçoTotal, Quantidade
-      FROM dbo.Pedido
-      Where CodPedido = \'${cod}\'`,
+      `SELECT DISTINCT TOP 5 CodProduto, Nome, Preço
+      FROM dbo.Produto
+      Order By CodProduto`,
       (err, rowCount) => {
-        // Se Erro, recarrega página.
         if (err) {
           console.error(err.message);
         }
-        // Se Certo e apenas 1 linha retornada, avança. Se Erro, 0, ou mais que 1 retorno, recarrega página.
         else {
           console.log(`${rowCount} linha(s) retornadas`);
-          if (rowCount != 1) {}
-          else {window.location = '../Telas Adm/editarPedidoAdm.html?cod='+cod;}
         }
       }
     );
@@ -58,10 +50,10 @@ btnBuscar.addEventListener('click', ()=>{
     // Console.log da query.
     request.on("row", columns => {
       columns.forEach(column => {
-        console.log("%s\t%s", column.metadata.colName, column.value);
+        teste = ("%s\t%s", /*column.metadata.colName,*/ column.value);
+        console.log(teste);
       });
     });
 
     connection.execSql(request);
   }
-});
