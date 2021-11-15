@@ -50,7 +50,7 @@ label{
     color: #232323;
 }
 
-#inputCodProd::placeholder, #inputPrecoProd::placeholder, #inputNomeProd::placeholder{
+#input2::placeholder, #input3::placeholder, #input1::placeholder{
     color: #D9D9D9;
 }
 
@@ -61,7 +61,7 @@ label{
     margin-top: 32px;
 }
 
-#inputNomeProd{
+#input1{
     height: 43px;
     margin-top: 10px;
     background: #FFFFFF;
