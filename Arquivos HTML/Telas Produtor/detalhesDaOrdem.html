@@ -25,16 +25,26 @@
                 <hr/>
             </header>
             <div class = "infoBasica">
-                <h2 class = "divTit">Informações do pedido</h2>
+                <h2 class = "divTit">Informações da ordem</h2>
                 <section class = "codigos">
+                    <!-- Código da Ordem -->
+                    <section class = "secCod">
+                        <label>Código da ordem</label>
+                        <input type = "number" id = "codOrdem" class = "inputEditOrdem" value = "2103102" disabled>
+                    </section>
+
+                    <!-- Código do Pedido -->
                     <section class = "secCod">
                         <label>Código do pedido</label>
-                        <input type = "number" id = "codPedido" class = "inputAddPedido" placeholder="Digite o código do pedido" value = "1203128" disabled>
+                        <input type = "number" id = "codPedido" class = "inputEditOrdem" placeholder="Digite o código do pedido" value = "1203128" disabled>
                     </section>
+                    
+                    <!-- Código do Cliente -->
                     <section class = "secCod">
                         <label>Código do cliente</label>
-                        <input type = "number" id = "codCliente" class = "inputAddPedido" placeholder="Digite o código do cliente" value = "1203128" disabled>
+                        <input type = "number" id = "codCliente" class = "inputEditOrdem" placeholder="Digite o código do cliente" value = "1203128" disabled>
                     </section>
+
                 </section>
                 <section class = "datasMeio">
                     <section class = "secDataRealizacao secDataMeio ">
@@ -48,7 +58,7 @@
                 </section>
             </div>
             <div class = "prodPedido">
-                <h2 class = "divTit">Produtos do pedido</h2>
+                <h2 class = "divTit">Produtos da ordem</h2>
                 <section class = "produtos">
                     <section class = "labels">
                         <p class = "label lblCodProduto">Código do produto</p>
@@ -65,11 +75,7 @@
                     <section class = "produto">
                         <input type = "number" class = "codProduto" placeholder="Digite o código" value = "12312" disabled/>
                     </section>
-                <section class = "totalSec">
-                    <p>Total:</p>
-                    <span class = "precoTotal">R$1538,98</span>
                     <a href = "../Telas Produtor/gerenciarOrdens.html"><button class = "btnVoltar" style="margin-left: 75%;">Voltar</button></a>
-                </section>
             </div>
         </main>
     </div>
