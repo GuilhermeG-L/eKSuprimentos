@@ -34,9 +34,8 @@ const { Connection, Request } = require("tedious");
     console.log("Lendo dados da tabela...");
 
     const request = new Request(
-      `SELECT TOP 5 c.CodCliente, c.Nome, cep.CEP, c.Telefone
+      `SELECT TOP 5 c.CodCliente, c.Nome, c.CEP, c.Telefone
       FROM dbo.Cliente c
-      Inner Join dbo.Endereço cep ON c.CEP = cep.CEP
       Order By Nome`,
       (err, rowCount) => {
         if (err) {
