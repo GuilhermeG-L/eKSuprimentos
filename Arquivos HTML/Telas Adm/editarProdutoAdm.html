@@ -31,23 +31,25 @@
                 <h2 class = "divTit">Informações do produto</h2>
                 <section class = "nomeProdutoSec">
                     <label>Nome do produto</label>
-                    <input type = "text" placeholder="Digite o nome do produto" id = "inputNomeProd"/>
+                    <input type = "text" placeholder="Digite o nome do produto" id = "input1"/>
                 </section>
                 <section class = "codPreco">
                     <section class = "codProdutoSec">
                         <label>Código do produto</label>
-                        <input type = "number" placeholder="Digite o código do produto" id = "inputCodProd" readonly/>
+                        <input type = "number" placeholder="Digite o código do produto" id = "input2" readonly/>
                     </section>
                     <section class = "precoProdutoSec">
                         <label>Preço</label>
-                        <input type="number" placeholder="Preço" id = "inputPrecoProd"/>
+                        <input type="number" placeholder="Preço" id = "input3"/>
                     </section>
                 </section>
                 <div class = "divBtns">
                     <a href = "../Telas Adm/gerenciarProdutosAdm.html" class = "linkBtnVoltar"><button class = "btnVoltar">Voltar</button></a>
-                    <a href = "../Telas Adm/gerenciarProdutosAdm.html" class = "linkBtnConcluir"><button class = "btnConcluir">Concluir</button></a>
+                    <a href = "#" class = "linkBtnConcluir"><button class = "btnConcluir">Concluir</button></a>
                 </div>
             </div>
         </main>
     </div>
+    <script>window.api.loadscript('./infoProduto.js');</script>
+    <script>window.api.loadscript('./salvaProdutoAdm.js');</script>
 </html>
