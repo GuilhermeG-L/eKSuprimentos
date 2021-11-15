@@ -36,7 +36,7 @@ const { Connection, Request } = require("tedious");
     const request = new Request(
       `SELECT DISTINCT TOP 5 CodProduto, Nome, Preço
       FROM dbo.Produto
-      Order By Nome`,
+      Order By CodProduto`,
       (err, rowCount) => {
         if (err) {
           console.error(err.message);
