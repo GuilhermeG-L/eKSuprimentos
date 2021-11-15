@@ -1,5 +1,9 @@
 const { Connection, Request } = require("tedious");
 
+var btnBuscar = document.querySelector('.btnBuscar');
+btnBuscar.addEventListener('click', ()=>{
+  let cod = parseInt(document.querySelector('.inputPesquisa').value);
+
   // Configuração de conexão DB.
   const config = {
     authentication: {
@@ -34,32 +38,30 @@ const { Connection, Request } = require("tedious");
     console.log("Lendo dados da tabela...");
 
     const request = new Request(
-      `SELECT TOP 5 p.CodPedido, c.Nome, p.PreçoTotal, o.Situação
-      FROM dbo.Pedido p
-      Inner Join dbo.Cliente c ON p.CodCliente = c.CodCliente
-      Inner Join dbo.Ordem_de_Produção o ON p.CodPedido = o.CodPedido
-      Order By p.Data_entrega`,
+      `SELECT DISTINCT CodOrdem, CodProdutor, CodPedido, CodCliente, CEP, CodVendedor, Situação
+      FROM dbo.Ordem_de_Produção
+      Where CodOrdem = \'${cod}\'`,
       (err, rowCount) => {
+        // Se Erro, recarrega página.
         if (err) {
           console.error(err.message);
         }
+        // Se Certo e apenas 1 linha retornada, avança. Se Erro, 0, ou mais que 1 retorno, recarrega página.
         else {
           console.log(`${rowCount} linha(s) retornadas`);
+          if (rowCount != 1) {}
+          else {window.location = '../Telas Produtor/detalhesDaOrdem.html?cod='+cod;}
         }
       }
     );
-    
-    var i = 1;
 
     // Console.log da query.
     request.on("row", columns => {
       columns.forEach(column => {
-        teste = ("%s\t%s", /*column.metadata.colName,*/ column.value);
-        console.log(teste);
-        document.getElementById(`td${i}`).textContent = teste;
-        i++;
+        console.log("%s\t%s", column.metadata.colName, column.value);
       });
     });
 
     connection.execSql(request);
   }
+});

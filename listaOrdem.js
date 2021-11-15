@@ -34,11 +34,11 @@ const { Connection, Request } = require("tedious");
     console.log("Lendo dados da tabela...");
 
     const request = new Request(
-      `SELECT TOP 5 p.CodPedido, c.Nome, p.PreçoTotal, o.Situação
-      FROM dbo.Pedido p
-      Inner Join dbo.Cliente c ON p.CodCliente = c.CodCliente
-      Inner Join dbo.Ordem_de_Produção o ON p.CodPedido = o.CodPedido
-      Order By p.Data_entrega`,
+      `SELECT TOP 5 o.CodOrdem, c.Nome, p.PreçoTotal, o.Situação
+      FROM dbo.Ordem_de_Produção o
+      Inner Join dbo.Cliente c ON o.CodCliente = c.CodCliente
+      Inner Join dbo.Pedido p ON o.CodPedido = p.CodPedido
+      Order By o.Situação`,
       (err, rowCount) => {
         if (err) {
           console.error(err.message);
