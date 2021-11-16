@@ -99,7 +99,7 @@ else {
     let codvendedor = parseInt(document.querySelector('#input3').value);
     let dataentrega = Date.parse(document.querySelector('#input5').value);
     let datarealizacao = Date.parse(document.querySelector('#input4').value);
-  
+
   
     // Configuração de conexão DB.
     const config = {
@@ -157,3 +157,7 @@ else {
   
       connection.execSql(request);
     }})}
+
+      
+    console.log('Data Entrega: ' + dataentrega)
+    console.log('Data Realização: ' + datarealizacao)
