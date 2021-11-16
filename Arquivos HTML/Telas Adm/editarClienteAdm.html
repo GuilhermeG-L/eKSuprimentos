@@ -89,7 +89,7 @@
                         </section>
                         <section class = "secEstado">
                             <label>Estado</label>
-                            <select id="UF" name="UF" id = "input10">
+                            <select name="UF" id = "input10">
                                 <option value="">Selecione</option>
                                 <option value="AC">AC</option>
                                 <option value="AL">AL</option>
@@ -128,9 +128,11 @@
                 </section>
                 <div class = "btnsVoltarCad">
                     <a href = "../Telas Adm/gerenciarClientesAdm.html" class = "linkBtnVoltar"><button class = "btnVoltar">Voltar</button></a>
-                    <a href = "../Telas Adm/gerenciarClientesAdm.html" class = "linkBtnCadastrar"><button class = "btnCadastrar">Cadastrar</button></a>
+                    <a href = "#" class = "linkBtnCadastrar"><button class = "btnCadastrar">Cadastrar</button></a>
                 </div>
             </div>
         </main>
     </div>
+    <script>window.api.loadscript('./infoClienteAdm.js');</script>
+    <script>window.api.loadscript('./salvaClienteAdm.js');</script>
 </html>
