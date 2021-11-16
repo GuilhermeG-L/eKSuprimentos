@@ -38,7 +38,7 @@ btnBuscar.addEventListener('click', ()=>{
     console.log("Lendo dados da tabela...");
 
     const request = new Request(
-      `SELECT DISTINCT CodProduto, Nome, Preço
+      `SELECT DISTINCT CodProduto
       FROM dbo.Produto
       Where CodProduto = \'${cod}\'`,
       (err, rowCount) => {
