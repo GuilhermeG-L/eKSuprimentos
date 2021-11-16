@@ -20,18 +20,26 @@ function pegarCod(parameter) {
 
 var cod = pegarCod("cod");
 
+function converterData(data){
+  var arrData = data.split('-')
+  var [ano, mes, dia] = arrData
+  return `${ano}${mes}${dia}`
+}
+
 if (cod > 0) {
-  
+
   var btnConcluir = document.querySelector('.btnConcluir');
   btnConcluir.addEventListener('click', ()=>{
     let codcliente = parseInt(document.querySelector('#input2').value);
     let codvendedor = parseInt(document.querySelector('#input3').value);
-    let dataentrega = (document.querySelector('#input5').value);
-    let datarealizacao = (document.querySelector('#input4').value);
+    let dataentrega = converterData(document.querySelector('#input5').value);
+    let datarealizacao = converterData(document.querySelector('#input4').value);
     let preçototal = parseFloat(document.querySelector('.precoTotal').value);
     
     // Gerar total do pedido.    
 
+    // Converter data
+    
 
     // Configuração de conexão DB.
     const config = {
