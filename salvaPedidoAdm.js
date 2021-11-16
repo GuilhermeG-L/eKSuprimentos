@@ -36,6 +36,12 @@ if (cod > 0) {
     let datarealizacao = converterData(document.querySelector('#input4').value);
     let preçototal = parseFloat(document.querySelector('.precoTotal').value);
     
+
+    console.log(codcliente);
+    console.log(codvendedor);
+    console.log(dataentrega);
+    console.log(datarealizacao);
+    console.log(preçototal);
     // Gerar total do pedido.    
 
     // Converter data
@@ -84,7 +90,6 @@ if (cod > 0) {
           }
           else {
             console.log(`${rowCount} linha(s) retornadas`);
-            window.location = '../Telas Adm/gerenciarPedidosAdm.html';
           }
         }
       );
@@ -110,6 +115,14 @@ else {
     let datarealizacao = (document.querySelector('#input4').value);
     let preçototal = parseFloat(document.querySelector('.precoTotal').value);
   
+
+    console.log(codcliente);
+    console.log(codvendedor);
+    console.log(dataentrega);
+    console.log(datarealizacao);
+    console.log(preçototal);
+
+
     // Configuração de conexão DB.
     const config = {
       authentication: {
@@ -151,7 +164,6 @@ else {
           }
           else {
             console.log(`${rowCount} linha(s) retornadas`);
-            window.location = '../Telas Adm/gerenciarProdutosAdm.html';
           }
         }
       );
