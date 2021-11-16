@@ -56,7 +56,7 @@ if (cod > 0) {
     console.log("Lendo dados da tabela...");
 
     const request = new Request(
-      `SELECT DISTINCT CodProduto, Metragem, Quantidade
+      `SELECT DISTINCT CodProduto, Metragem, Quantidade, Preço_do_item
       FROM dbo.ItemPedido
       Where CodPedido = \'${cod}\'`,
       (err, rowCount) => {
@@ -85,7 +85,6 @@ if (cod > 0) {
 
     connection.execSql(request);
   }}
-
 
 // PRA CASO CLIQUE EM ADICIONAR PRODUTO (Não tem cod):
 
