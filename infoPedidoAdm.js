@@ -119,47 +119,46 @@ if (cod > 0) {
 
         var diaNum = parseInt(diaString)
 
-        // Adicionando um dia
-        // ano = parseInt(anoString)
-        // var bissexto =  ((ano % 4 == 0) && ((ano % 100 != 0) || (ano % 400 == 0)))
-        // if(mes == '02' && bissexto){
-        //   if(diaNum == 29){
-        //     diaNum = 1
-        //     mes = '03'
-        //   }else{
-        //     diaNum += 1
-        //   }
-        // }else{
-        //   if(mes == '02'){
-        //     if(diaNum == 28){
-        //       diaNum = 1
-        //       mes = '03'
-        //     }else{
-        //       diaNum+=1
-        //     }
-        //   }else if(mes == '01' || mes == '03' || mes == '05' || mes == '07' || mes == '08' || mes == '10' || mes == '12'){ 
-        //       if(diaNum == 31){
-        //         if(mes == '12'){
-        //           anoString = (parseInt(anoString) + 1).toString()
-        //           mes = '01'
-        //           diaNum = 1
-        //         }else{
-        //           mes = (parseInt(mes) + 1).toString()
-        //           diaNum = 1
-        //         }
-        //       }else{
-        //         diaNum += 1
-        //       }
-        //     diaNum += 1
-        //   }else{
-        //     if(diaNum == 30){
-        //       mes = (parseInt(mes) + 1).toString()
-        //       diaNum = 1
-        //     }else{
-        //       diaNum += 1
-        //     }
-        //   }
-        // }
+        //Adicionando um dia
+        ano = parseInt(anoString)
+        var bissexto =  ((ano % 4 == 0) && ((ano % 100 != 0) || (ano % 400 == 0)))
+        if(mes == '02' && bissexto){
+          if(diaNum == 29){
+            diaNum = 1
+            mes = '03'
+          }else{
+            diaNum += 1
+          }
+        }else{
+          if(mes == '02'){
+            if(diaNum == 28){
+              diaNum = 1
+              mes = '03'
+            }else{
+              diaNum+=1
+            }
+          }else if(mes == '01' || mes == '03' || mes == '05' || mes == '07' || mes == '08' || mes == '10' || mes == '12'){ 
+              if(diaNum == 31){
+                if(mes == '12'){
+                  anoString = (parseInt(anoString) + 1).toString()
+                  mes = '01'
+                  diaNum = 1
+                }else{
+                  mes = (parseInt(mes) + 1).toString()
+                  diaNum = 1
+                }
+              }else{
+                diaNum += 1
+              }
+          }else{
+            if(diaNum == 30){
+              mes = (parseInt(mes) + 1).toString()
+              diaNum = 1
+            }else{
+              diaNum += 1
+            }
+          }
+        }
 
         // Definição e Ajuste do dia
         if(diaNum < 10){

@@ -1,4 +1,6 @@
 const { Connection, Request } = require("tedious");
+const { dialog } = require('electron')
+console.log(dialog.showOpenDialog({ properties: ['openFile', 'multiSelections'] }))
 
 var btnBuscar = document.querySelector('.btnBuscar');
 btnBuscar.addEventListener('click', ()=>{
@@ -26,7 +28,7 @@ btnBuscar.addEventListener('click', ()=>{
   // Tentativa de conexão.
   connection.on("connect", err => {
     if (err) {
-      console.error(err.message);
+      console.error('Erro Busca Cliente Adm:', err.message);
     } else {queryDatabase();}
   });
 

@@ -26,7 +26,7 @@ btnBuscar.addEventListener('click', ()=>{
   // Tentativa de conexão.
   connection.on("connect", err => {
     if (err) {
-      console.error(err.message);
+      console.error('Erro Busca Cliente:', err.message);
     } else {queryDatabase();}
   });
 
