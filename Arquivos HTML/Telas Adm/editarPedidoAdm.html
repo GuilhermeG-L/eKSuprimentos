@@ -34,30 +34,30 @@
                     <!-- Código do Pedido -->
                     <section class = "secCod">
                         <label>Código do pedido</label>
-                        <input type = "number" id = "input1" class = "inputAddPedido" placeholder="Digite o código do pedido" readonly>
+                        <input type = "number" id = "input1" class = "inputAddPedido " placeholder="Digite o código do pedido" readonly>
                     </section>
 
                     <!-- Código do Cliente -->
                     <section class = "secCod">
                         <label>Código do cliente</label>
-                        <input type = "number" id = "input2" class = "inputAddPedido" placeholder="Digite o código do cliente">
+                        <input type = "number" id = "input2" class = "inputAddPedido inputCodCli" placeholder="Digite o código do cliente">
                     </section>
 
                     <!-- Código do vendedor -->
                     <section class = "secCod">
                         <label>Código do vendedor</label>
-                        <input type = "number" id = "input3" class = "inputAddPedido" placeholder="Digite o código do vendedor">
+                        <input type = "number" id = "input3" class = "inputAddPedido inputCodVend" placeholder="Digite o código do vendedor">
                     </section>
                 </section>
                 </section>
                 <section class = "datasMeio">
                     <section class = "secDataRealizacao secDataMeio ">
                         <label>Data realização</label>
-                        <input type = "date" id = "input4" class = "inputDataMeio">
+                        <input type = "date" id = "input4" class = "inputDataMeio" min="01-01-1000" max="31-12-9999">
                     </section>
                     <section class = "secDataEntrega secDataMeio">
                         <label>Data entrega</label>
-                        <input type = "date" id = "input5" class = "inputDataMeio">
+                        <input type = "date" id = "input5" class = "inputDataMeio" min="01-01-1000" max="31-12-9999">
                     </section>
                 </section>
             </div>
@@ -120,4 +120,5 @@
     <script>window.api.loadscript('./calcPreçoTotal.js');</script>
     <script>window.api.loadscript('./salvaPedidoAdm.js');</script>
     <script>window.api.loadscript('./salvaItemPedidoAdm.js');</script>
+    <script>window.api.loadscript('./restricoesValoresPedido.js')</script>
 </html>
