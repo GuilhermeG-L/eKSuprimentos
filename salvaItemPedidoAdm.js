@@ -26,9 +26,10 @@ if (cod > 0) {
   btnConcluir.addEventListener('click', ()=>{
     let codcliente = parseInt(document.querySelector('#input2').value);
     let codvendedor = parseInt(document.querySelector('#input3').value);
-    let dataentrega = (document.querySelector('#input5').value);
-    let datarealizacao = (document.querySelector('#input4').value);
-    let preçototal = parseFloat(document.querySelector('.precoTotal').value);
+    let codproduto = parseInt(document.querySelector('#inputB1').value);
+    let metragem = parseFloat(document.querySelector('#inputB2').value);
+    let quantidade = parseInt(document.querySelector('#inputB3').value);
+    let preçoitem = parseFloat(document.querySelector('#inputB4').value);
     
     // Gerar total do pedido.    
 
@@ -68,7 +69,7 @@ if (cod > 0) {
 
       const request = new Request(
         `UPDATE dbo.Pedido
-        SET CodPedido = \'${cod}\', CodCliente = \'${codcliente}\', CodVendedor = \'${codvendedor}\', Data_entrega = \'${dataentrega}\', Data_realização = \'${datarealizacao}\', PreçoTotal = \'${preçototal}\'
+        SET CodPedido = \'${cod}\', CodCliente = \'${codcliente}\', CodVendedor = \'${codvendedor}\', CodProduto \'${codproduto}\', Quantidade \'${quantidade}\', Metragem \'${metragem}\', Preço_do_item \'${preçoitem}\'
         Where CodPedido = \'${cod}\'`,
         (err, rowCount) => {
           if (err) {
@@ -95,12 +96,12 @@ else {
 
   var btnConcluir = document.querySelector('.btnConcluir');
   btnConcluir.addEventListener('click', ()=>{
-    let codNew = parseInt(document.querySelector('#input1').value);
     let codcliente = parseInt(document.querySelector('#input2').value);
     let codvendedor = parseInt(document.querySelector('#input3').value);
-    let dataentrega = (document.querySelector('#input5').value);
-    let datarealizacao = (document.querySelector('#input4').value);
-    let preçototal = parseFloat(document.querySelector('.precoTotal').value);
+    let codproduto = parseInt(document.querySelector('#inputB1').value);
+    let metragem = parseFloat(document.querySelector('#inputB2').value);
+    let quantidade = parseInt(document.querySelector('#inputB3').value);
+    let preçoitem = parseFloat(document.querySelector('#inputB4').value);
   
     // Configuração de conexão DB.
     const config = {
@@ -136,7 +137,7 @@ else {
       console.log("Lendo dados da tabela...");
   
       const request = new Request(
-        `Insert Into dbo.Pedido values (\'${codNew}\', \'${codcliente}\', \'${codvendedor}\', \'${datarealizacao}\', \'${dataentrega}\', \'${preçototal}\');`,
+        `Insert Into dbo.Pedido values (\'${cod}\', \'${codcliente}\', \'${codvendedor}\', \'${codproduto}\', \'${quantidade}\', \'${metragem}\', \'${preçoitem}\');`,
         (err, rowCount) => {
           if (err) {
             console.error(err.message);

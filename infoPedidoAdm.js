@@ -168,7 +168,7 @@ if (cod > 0) {
         }
 
         // Montagem e retorno do Resultado
-        stringResultado = `${dia}/${mes}/${anoString}`
+        stringResultado = `${anoString}-${mes}-${dia}`
         return stringResultado
       }
 
