@@ -68,8 +68,8 @@ if (cod > 0) {
       console.log("Lendo dados da tabela...");
 
       const request = new Request(
-        `UPDATE dbo.Pedido
-        SET CodPedido = \'${cod}\', CodCliente = \'${codcliente}\', CodVendedor = \'${codvendedor}\', CodProduto \'${codproduto}\', Quantidade \'${quantidade}\', Metragem \'${metragem}\', Preço_do_item \'${preçoitem}\'
+        `UPDATE dbo.ItemPedido
+        SET CodPedido = \'${cod}\', CodCliente = \'${codcliente}\', CodVendedor = \'${codvendedor}\', CodProduto = \'${codproduto}\', Quantidade = \'${quantidade}\', Metragem = \'${metragem}\', Preço_do_item = \'${preçoitem}\'
         Where CodPedido = \'${cod}\'`,
         (err, rowCount) => {
           if (err) {
@@ -96,6 +96,7 @@ else {
 
   var btnConcluir = document.querySelector('.btnConcluir');
   btnConcluir.addEventListener('click', ()=>{
+    let codNew = parseInt(document.querySelector('#input1').value);
     let codcliente = parseInt(document.querySelector('#input2').value);
     let codvendedor = parseInt(document.querySelector('#input3').value);
     let codproduto = parseInt(document.querySelector('#inputB1').value);
@@ -137,7 +138,7 @@ else {
       console.log("Lendo dados da tabela...");
   
       const request = new Request(
-        `Insert Into dbo.Pedido values (\'${cod}\', \'${codcliente}\', \'${codvendedor}\', \'${codproduto}\', \'${quantidade}\', \'${metragem}\', \'${preçoitem}\');`,
+        `Insert Into dbo.ItemPedido values (\'${codNew}\', \'${codcliente}\', \'${codvendedor}\', \'${codproduto}\', \'${quantidade}\', \'${metragem}\', \'${preçoitem}\');`,
         (err, rowCount) => {
           if (err) {
             console.error(err.message);
