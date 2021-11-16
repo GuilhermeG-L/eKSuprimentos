@@ -156,6 +156,10 @@ label{
     margin-right: 80px;
 }
 
+.lblQtd{
+    margin-right: 65px;
+}
+
 .produto{
     margin-top: 10px;
 }
@@ -183,7 +187,7 @@ label{
     margin-right: 1.3%;
 }
 
-.metrProduto, .qtdProduto{
+.metrProduto, .qtdProduto, .preçoProduto{
     width: 100px;
 }
 
