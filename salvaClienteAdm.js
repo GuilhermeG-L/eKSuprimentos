@@ -22,8 +22,8 @@ var cod = pegarCod("cod");
 
 if (cod > 0) {
   
-  var btnConcluir = document.querySelector('.btnConcluir');
-  btnConcluir.addEventListener('click', ()=>{
+  var btnCadastrar = document.querySelector('.btnCadastrar');
+  btnCadastrar.addEventListener('click', ()=>{
     let nome = (document.querySelector('#input2').value);
     let cpf = (document.querySelector('#input3').value);
     let telefone = (document.querySelector('#input4').value);
@@ -35,7 +35,7 @@ if (cod > 0) {
     let estado = (document.querySelector('#input10').value);
     let cep = (document.querySelector('#input11').value);
 
-
+    console.log(cod);
     // Configuração de conexão DB.
     const config = {
       authentication: {
@@ -71,7 +71,7 @@ if (cod > 0) {
 
       const request = new Request(
         `UPDATE dbo.Cliente
-        SET CodCliente = \'${cod}\', Nome = \'${nome}\', CPF = \'${cpf}\, 'Telefone = \'${telefone}\', Logradouro = \'${logradouro}\', Numero = \'${numero}\', Complemento = \'${complemento}\', Bairro = \'${bairro}\', Cidade = \'${cidade}\', Estado = \'${estado}\', CEP = \'${cep}\'
+        SET CodCliente = \'${cod}\', Nome = \'${nome}\', CPF = \'${cpf}\', Telefone = \'${telefone}\', Logradouro = \'${logradouro}\', Numero = \'${numero}\', Complemento = \'${complemento}\', Bairro = \'${bairro}\', Cidade = \'${cidade}\', Estado = \'${estado}\', CEP = \'${cep}\'
         Where CodCliente = \'${cod}\'`,
         (err, rowCount) => {
           if (err) {
@@ -96,8 +96,8 @@ if (cod > 0) {
     }})}
 else {
 
-  var btnConcluir = document.querySelector('.btnConcluir');
-  btnConcluir.addEventListener('click', ()=>{
+  var btnCadastrar = document.querySelector('.btnCadastrar');
+  btnCadastrar.addEventListener('click', ()=>{
     let codNew = parseInt(document.querySelector('#input1').value);
     let nome = (document.querySelector('#input2').value);
     let cpf = (document.querySelector('#input3').value);
@@ -145,7 +145,7 @@ else {
       console.log("Lendo dados da tabela...");
   
       const request = new Request(
-        `Insert Into dbo.Clientes values (\'${codNew}\', \'${nome}\', \'${preço}\', \'${cpf}\, \'${telefone}\', \'${logradouro}\', \'${numero}\', \'${complemento}\', \'${bairro}\', \'${cidade}\', \'${estado}\', \'${cep}\');`
+        `Insert Into dbo.Clientes values (\'${codNew}\', \'${nome}\', \'${preço}\', \'${cpf}\, \'${telefone}\', \'${logradouro}\', \'${numero}\', \'${complemento}\', \'${bairro}\', \'${cidade}\', \'${estado}\', \'${cep}\');`,
         (err, rowCount) => {
           if (err) {
             console.error(err.message);
