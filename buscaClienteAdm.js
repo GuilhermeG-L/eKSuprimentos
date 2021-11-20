@@ -1,6 +1,5 @@
 const { Connection, Request } = require("tedious");
-const { dialog } = require('electron')
-console.log(dialog.showOpenDialog({ properties: ['openFile', 'multiSelections'] }))
+const ipc = require('electron').ipcRenderer
 
 var btnBuscar = document.querySelector('.btnBuscar');
 btnBuscar.addEventListener('click', ()=>{
@@ -28,7 +27,7 @@ btnBuscar.addEventListener('click', ()=>{
   // Tentativa de conexão.
   connection.on("connect", err => {
     if (err) {
-      console.error('Erro Busca Cliente Adm:', err.message);
+      ipc.send('erroconexao');
     } else {queryDatabase();}
   });
 
@@ -44,14 +43,14 @@ btnBuscar.addEventListener('click', ()=>{
       FROM dbo.Cliente
       Where CodCliente = \'${cod}\'`,
       (err, rowCount) => {
-        // Se Erro, recarrega página.
+
         if (err) {
-          console.error(err.message);
+          ipc.send('erroselect');
         }
         // Se Certo e apenas 1 linha retornada, avança. Se Erro, 0, ou mais que 1 retorno, recarrega página.
         else {
           console.log(`${rowCount} linha(s) retornadas`);
-          if (rowCount != 1) {}
+          if (rowCount != 1) {ipc.send('erroselect');}
           else {window.location = '../Telas Adm/editarClienteAdm.html?cod='+cod;}
         }
       }

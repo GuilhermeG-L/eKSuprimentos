@@ -1,4 +1,5 @@
 const { Connection, Request } = require("tedious");
+const ipc = require('electron').ipcRenderer
 
   // Configuração de conexão DB.
   const config = {
@@ -22,7 +23,7 @@ const { Connection, Request } = require("tedious");
   // Tentativa de conexão.
   connection.on("connect", err => {
     if (err) {
-      console.error(err.message);
+      ipc.send('erroconexao');
     } else {queryDatabase();}
   });
 

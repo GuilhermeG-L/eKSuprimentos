@@ -1,4 +1,5 @@
 const { Connection, Request } = require("tedious");
+const ipc = require('electron').ipcRenderer
 
 var inputB2 = document.querySelector('#inputB2');
 inputB2.addEventListener('change', ()=>{
@@ -28,7 +29,7 @@ inputB2.addEventListener('change', ()=>{
   // Tentativa de conexão.
   connection.on("connect", err => {
     if (err) {
-      console.error(err.message);
+      ipc.send('erroconexao');
     } else {queryDatabase();}
   });
 
@@ -99,7 +100,7 @@ inputB2.addEventListener('change', ()=>{
     // Tentativa de conexão.
     connection.on("connect", err => {
       if (err) {
-        console.error(err.message);
+        ipc.send('erroconexao');
       } else {queryDatabase();}
     });
 
@@ -171,7 +172,7 @@ inputB2.addEventListener('change', ()=>{
       // Tentativa de conexão.
       connection.on("connect", err => {
         if (err) {
-          console.error(err.message);
+          ipc.send('erroconexao');
         } else {queryDatabase();}
       });
   
@@ -243,7 +244,7 @@ inputB2.addEventListener('change', ()=>{
         // Tentativa de conexão.
         connection.on("connect", err => {
           if (err) {
-            console.error(err.message);
+            ipc.send('erroconexao');
           } else {queryDatabase();}
         });
     
@@ -315,7 +316,7 @@ inputB2.addEventListener('change', ()=>{
           // Tentativa de conexão.
           connection.on("connect", err => {
             if (err) {
-              console.error(err.message);
+              ipc.send('erroconexao');
             } else {queryDatabase();}
           });
       
@@ -388,7 +389,7 @@ inputB2.addEventListener('change', ()=>{
             // Tentativa de conexão.
             connection.on("connect", err => {
               if (err) {
-                console.error(err.message);
+                ipc.send('erroconexao');
               } else {queryDatabase();}
             });
         
@@ -460,7 +461,7 @@ inputB2.addEventListener('change', ()=>{
               // Tentativa de conexão.
               connection.on("connect", err => {
                 if (err) {
-                  console.error(err.message);
+                  ipc.send('erroconexao');
                 } else {queryDatabase();}
               });
           
@@ -532,7 +533,7 @@ inputB2.addEventListener('change', ()=>{
                 // Tentativa de conexão.
                 connection.on("connect", err => {
                   if (err) {
-                    console.error(err.message);
+                    ipc.send('erroconexao');
                   } else {queryDatabase();}
                 });
             
@@ -604,7 +605,7 @@ inputB2.addEventListener('change', ()=>{
                   // Tentativa de conexão.
                   connection.on("connect", err => {
                     if (err) {
-                      console.error(err.message);
+                      ipc.send('erroconexao');
                     } else {queryDatabase();}
                   });
               
@@ -675,7 +676,7 @@ inputB2.addEventListener('change', ()=>{
                     // Tentativa de conexão.
                     connection.on("connect", err => {
                       if (err) {
-                        console.error(err.message);
+                        ipc.send('erroconexao');
                       } else {queryDatabase();}
                     });
                 
@@ -746,7 +747,7 @@ inputB2.addEventListener('change', ()=>{
                       // Tentativa de conexão.
                       connection.on("connect", err => {
                         if (err) {
-                          console.error(err.message);
+                          ipc.send('erroconexao');
                         } else {queryDatabase();}
                       });
                   
@@ -817,7 +818,7 @@ inputB2.addEventListener('change', ()=>{
                         // Tentativa de conexão.
                         connection.on("connect", err => {
                           if (err) {
-                            console.error(err.message);
+                            ipc.send('erroconexao');
                           } else {queryDatabase();}
                         });
                     
@@ -888,7 +889,7 @@ inputB2.addEventListener('change', ()=>{
                           // Tentativa de conexão.
                           connection.on("connect", err => {
                             if (err) {
-                              console.error(err.message);
+                              ipc.send('erroconexao');
                             } else {queryDatabase();}
                           });
                       
@@ -959,7 +960,7 @@ inputB2.addEventListener('change', ()=>{
                             // Tentativa de conexão.
                             connection.on("connect", err => {
                               if (err) {
-                                console.error(err.message);
+                                ipc.send('erroconexao');
                               } else {queryDatabase();}
                             });
                         
@@ -1030,7 +1031,7 @@ inputB2.addEventListener('change', ()=>{
                               // Tentativa de conexão.
                               connection.on("connect", err => {
                                 if (err) {
-                                  console.error(err.message);
+                                  ipc.send('erroconexao');
                                 } else {queryDatabase();}
                               });
                           

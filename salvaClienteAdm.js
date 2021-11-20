@@ -1,4 +1,5 @@
 const { Connection, Request } = require("tedious");
+const ipc = require('electron').ipcRenderer
 
 function pegarCod(parameter) {  
   var loc = location.search.substring(1, location.search.length);   
@@ -58,7 +59,7 @@ if (cod > 0) {
     // Tentativa de conexão.
     connection.on("connect", err => {
       if (err) {
-        console.error(err.message);
+        ipc.send('erroconexao');
       } else {queryDatabase();}
     });
 
@@ -75,11 +76,12 @@ if (cod > 0) {
         Where CodCliente = \'${cod}\'`,
         (err, rowCount) => {
           if (err) {
-            console.error(err.message);
+            ipc.send('erroupdate');
           }
           else {
             console.log(`${rowCount} linha(s) retornadas`);
-            window.location = '../Telas Adm/gerenciarClientesAdm.html';
+            if (rowCount != 1) {ipc.send('erroupdate');}
+            else {window.location = '../Telas Adm/gerenciarClientesAdm.html'}
           }
         }
       );
@@ -110,7 +112,17 @@ else {
     let estado = (document.querySelector('#input10').value);
     let cep = (document.querySelector('#input11').value);
   
-  
+    console.log(codNew);
+    console.log(nome);
+    console.log(cpf);
+    console.log(telefone);
+    console.log(logradouro);
+    console.log(numero);
+    console.log(complemento);
+    console.log(bairro);
+    console.log(cidade);
+    console.log(estado);
+    console.log(cep);
     // Configuração de conexão DB.
     const config = {
       authentication: {
@@ -133,7 +145,7 @@ else {
     // Tentativa de conexão.
     connection.on("connect", err => {
       if (err) {
-        console.error(err.message);
+        ipc.send('erroconexao');
       } else {queryDatabase();}
     });
   
@@ -145,14 +157,15 @@ else {
       console.log("Lendo dados da tabela...");
   
       const request = new Request(
-        `Insert Into dbo.Clientes values (\'${codNew}\', \'${nome}\', \'${preço}\', \'${cpf}\, \'${telefone}\', \'${logradouro}\', \'${numero}\', \'${complemento}\', \'${bairro}\', \'${cidade}\', \'${estado}\', \'${cep}\');`,
+        `Insert Into dbo.Cliente values (\'${codNew}\', \'${cep}\', \'${estado}\', \'${cidade}\', \'${bairro}\', \'${logradouro}\', \'${numero}\', \'${complemento}\', \'${cpf}\', \'${telefone}\', \'${nome}\');`,
         (err, rowCount) => {
           if (err) {
-            console.error(err.message);
+            ipc.send('erroinsert');
           }
           else {
             console.log(`${rowCount} linha(s) retornadas`);
-            window.location = '../Telas Adm/gerenciarClientesAdm.html';
+            if (rowCount != 1) {ipc.send('erroinsert');}
+            else {window.location = '../Telas Adm/gerenciarClientesAdm.html'}
           }
         }
       );

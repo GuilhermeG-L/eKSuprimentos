@@ -106,7 +106,7 @@ if (cod > 0) {
             console.log(`${rowCount} linha(s) retornadas`);
             if (rowCount != 1) {ipc.send('erroupdate');}
             else {}
-            //window.location = '../Telas Adm/gerenciarPedidosAdm.html';
+            //window.location = '../Telas Vendedor/gerenciarPedidos.html';
           }
         }
       );
@@ -175,7 +175,7 @@ if (cod > 0) {
               console.log(`${rowCount} linha(s) retornadas`);
               if (rowCount != 1) {ipc.send('erroupdate');}
               else {}
-              //window.location = '../Telas Adm/gerenciarPedidosAdm.html';
+              //window.location = '../Telas Vendedor/gerenciarPedidos.html';
             }
           }
         );
@@ -245,7 +245,7 @@ if (cod > 0) {
                 console.log(`${rowCount} linha(s) retornadas`);
                 if (rowCount != 1) {ipc.send('erroupdate');}
                 else {}
-                //window.location = '../Telas Adm/gerenciarPedidosAdm.html';
+                //window.location = '../Telas Vendedor/gerenciarPedidos.html';
               }
             }
           );
@@ -314,7 +314,7 @@ if (cod > 0) {
                   console.log(`${rowCount} linha(s) retornadas`);
                   if (rowCount != 1) {ipc.send('erroupdate');}
                   else {}
-                  //window.location = '../Telas Adm/gerenciarPedidosAdm.html';
+                  //window.location = '../Telas Vendedor/gerenciarPedidos.html';
                 }
               }
             );
@@ -383,7 +383,7 @@ if (cod > 0) {
                     console.log(`${rowCount} linha(s) retornadas`);
                     if (rowCount != 1) {ipc.send('erroupdate');}
                     else {}
-                    //window.location = '../Telas Adm/gerenciarPedidosAdm.html';
+                    //window.location = '../Telas Vendedor/gerenciarPedidos.html';
                   }
                 }
               );
@@ -477,7 +477,7 @@ else {
             console.log(`${rowCount} linha(s) retornadas`);
             if (rowCount != 1) {ipc.send('erroinsert');}
             else {}
-            //window.location = '../Telas Adm/gerenciarPedidosAdm.html';
+            //window.location = '../Telas Vendedor/gerenciarPedidos.html';
           }
         }
       );
@@ -547,7 +547,7 @@ else {
               console.log(`${rowCount} linha(s) retornadas`);
               if (rowCount != 1) {ipc.send('erroinsert');}
               else {}
-              //window.location = '../Telas Adm/gerenciarPedidosAdm.html';
+              //window.location = '../Telas Vendedor/gerenciarPedidos.html';
             }
           }
         );
@@ -618,7 +618,7 @@ else {
                 console.log(`${rowCount} linha(s) retornadas`);
                 if (rowCount != 1) {ipc.send('erroinsert');}
                 else {}
-                //window.location = '../Telas Adm/gerenciarPedidosAdm.html';
+                //window.location = '../Telas Vendedor/gerenciarPedidos.html';
               }
             }
           );
@@ -688,7 +688,7 @@ else {
                   console.log(`${rowCount} linha(s) retornadas`);
                   if (rowCount != 1) {ipc.send('erroinsert');}
                   else {}
-                  //window.location = '../Telas Adm/gerenciarPedidosAdm.html';
+                  //window.location = '../Telas Vendedor/gerenciarPedidos.html';
                 }
               }
             );
@@ -758,7 +758,7 @@ else {
                     console.log(`${rowCount} linha(s) retornadas`);
                     if (rowCount != 1) {ipc.send('erroinsert');}
                     else {}
-                    //window.location = '../Telas Adm/gerenciarPedidosAdm.html';
+                    //window.location = '../Telas Vendedor/gerenciarPedidos.html';
                   }
                 }
               );

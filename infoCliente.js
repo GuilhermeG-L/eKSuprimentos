@@ -39,7 +39,7 @@ if (cod > 0) {
     }
   };
 
-  // Query Azure SQL: Busca Produto.
+  // Query Azure SQL: Busca Cliente.
   const connection = new Connection(config);
 
   // Tentativa de conexão.
@@ -57,9 +57,9 @@ if (cod > 0) {
     console.log("Lendo dados da tabela...");
 
     const request = new Request(
-      `SELECT DISTINCT PreçoTotal
-      FROM dbo.Pedido
-      Where CodPedido = \'${cod}\'`,
+      `SELECT DISTINCT CodCliente, Nome, CPF, Telefone, Logradouro, Numero, Complemento, Bairro, Cidade, Estado, CEP
+      FROM dbo.Cliente
+      Where CodCliente = \'${cod}\'`,
       (err, rowCount) => {
         if (err) {
           console.error(err.message);
@@ -69,7 +69,7 @@ if (cod > 0) {
         }
       }
     );
-
+    
     // Variável do primeiro input.
     var i = 1;
 
@@ -77,7 +77,8 @@ if (cod > 0) {
     request.on("row", columns => {
       columns.forEach(column => {
         valInput = ("%s\t%s", /*column.metadata.colName,*/ column.value);
-        document.querySelector('.precoTotal').textContent = valInput;
+        console.log(valInput);
+        document.getElementById(`input${i}`).value = valInput;
         i++;
       });
     });
@@ -86,7 +87,69 @@ if (cod > 0) {
   }}
 
 
-// PRA CASO CLIQUE EM ADICIONAR PRODUTO (Não tem cod):
+// PRA CASO CLIQUE EM ADICIONAR CLIENTE (Não tem cod):
 
 
-else {}
+else {
+
+  // Configuração de conexão DB.
+  const config = {
+    authentication: {
+      options: {
+        userName: "sqlserver",
+        password: "Proj@MSsql15"
+      },
+      type: "default"
+    },
+    server: "34.151.252.122",
+    options: {
+      database: "eKSuprimentos",
+      encrypt: true
+    }
+  };
+
+  // Query Azure SQL: Busca Cliente.
+  const connection = new Connection(config);
+
+  // Tentativa de conexão.
+  connection.on("connect", err => {
+    if (err) {
+      ipc.send('erroconexao');
+    } else {queryDatabase();}
+  });
+
+  // Conexão do DB.
+  connection.connect();
+
+  // Função de criação de Query.
+  function queryDatabase() {
+    console.log("Lendo dados da tabela...");
+    // Adiciona +1 no código mais alto criado.
+    const request = new Request(
+      `SELECT DISTINCT max(CodCliente+1)
+      FROM dbo.Cliente`,
+      (err, rowCount) => {
+        if (err) {
+          console.error(err.message);
+        }
+        else {
+          console.log(`${rowCount} linha(s) retornadas`);
+        }
+      }
+    );
+    
+    // Variável do input de Código (trocar)
+    var i = 1;
+
+    // Adiciona valores nos inputs.
+    request.on("row", columns => {
+      columns.forEach(column => {
+        valInput = ("%s\t%s", /*column.metadata.colName,*/ column.value);
+        console.log(valInput);
+        document.getElementById(`input${i}`).value = valInput;
+        i++;
+      });
+    });
+
+    connection.execSql(request);
+  }}

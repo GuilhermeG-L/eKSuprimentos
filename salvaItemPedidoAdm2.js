@@ -1,5 +1,4 @@
 const { Connection, Request } = require("tedious");
-const ipc = require('electron').ipcRenderer
 
 function pegarCod(parameter) {  
   var loc = location.search.substring(1, location.search.length);   
@@ -20,33 +19,21 @@ function pegarCod(parameter) {
 }
 
 var cod = pegarCod("cod");
-
-function converterData(data){
-  var arrData = data.split('-')
-  var [ano, mes, dia] = arrData
-  return `${ano}${mes}${dia}`
-}
+var c = 1;
 
 if (cod > 0) {
-
+  
   var btnConcluir = document.querySelector('.btnConcluir');
   btnConcluir.addEventListener('click', ()=>{
     let codcliente = parseInt(document.querySelector('#input2').value);
     let codvendedor = parseInt(document.querySelector('#input3').value);
-    let dataentrega = converterData(document.querySelector('#input5').value);
-    let datarealizacao = converterData(document.querySelector('#input4').value);
-    let preçototal = parseFloat(document.querySelector('.precoTotal').value);
+    let codproduto = parseInt(document.querySelector('#inputB5').value);
+    let metragem = parseFloat(document.querySelector('#inputB6').value);
+    let quantidade = parseInt(document.querySelector('#inputB7').value);
+    let preçoitem = parseFloat(document.querySelector('#inputB8').value);
     
-
-    console.log(codcliente);
-    console.log(codvendedor);
-    console.log(dataentrega);
-    console.log(datarealizacao);
-    console.log(preçototal);
     // Gerar total do pedido.    
 
-    // Converter data
-    
 
     // Configuração de conexão DB.
     const config = {
@@ -70,7 +57,7 @@ if (cod > 0) {
     // Tentativa de conexão.
     connection.on("connect", err => {
       if (err) {
-        ipc.send('erroconexao');
+        console.error(err.message);
       } else {queryDatabase();}
     });
 
@@ -82,17 +69,16 @@ if (cod > 0) {
       console.log("Lendo dados da tabela...");
 
       const request = new Request(
-        `UPDATE dbo.Pedido
-        SET CodPedido = \'${cod}\', CodCliente = \'${codcliente}\', CodVendedor = \'${codvendedor}\', Data_entrega = \'${dataentrega}\', Data_realização = \'${datarealizacao}\', PreçoTotal = \'${preçototal}\'
+        `UPDATE dbo.ItemPedido
+        SET Quantidade = \'${quantidade}\', Metragem = \'${metragem}\', Preço_do_item = \'${preçoitem}\'
         Where CodPedido = \'${cod}\'`,
         (err, rowCount) => {
           if (err) {
-            ipc.send('erroupdate');
+            console.error(err.message);
           }
           else {
             console.log(`${rowCount} linha(s) retornadas`);
-            if (rowCount != 1) {ipc.send('erroupdate');}
-            else {}
+            window.location = '../Telas Adm/gerenciarPedidosAdm.html';
           }
         }
       );
@@ -107,6 +93,7 @@ if (cod > 0) {
 
       connection.execSql(request);
     }})}
+    
 else {
 
   var btnConcluir = document.querySelector('.btnConcluir');
@@ -114,18 +101,11 @@ else {
     let codNew = parseInt(document.querySelector('#input1').value);
     let codcliente = parseInt(document.querySelector('#input2').value);
     let codvendedor = parseInt(document.querySelector('#input3').value);
-    let dataentrega = (document.querySelector('#input5').value);
-    let datarealizacao = (document.querySelector('#input4').value);
-    let preçototal = parseFloat(document.querySelector('.precoTotal').value);
+    let codproduto = parseInt(document.querySelector('#inputB5').value);
+    let metragem = parseFloat(document.querySelector('#inputB6').value);
+    let quantidade = parseInt(document.querySelector('#inputB7').value);
+    let preçoitem = parseFloat(document.querySelector('#inputB8').value);
   
-
-    console.log(codcliente);
-    console.log(codvendedor);
-    console.log(dataentrega);
-    console.log(datarealizacao);
-    console.log(preçototal);
-
-
     // Configuração de conexão DB.
     const config = {
       authentication: {
@@ -148,7 +128,7 @@ else {
     // Tentativa de conexão.
     connection.on("connect", err => {
       if (err) {
-        ipc.send('erroconexao');
+        console.error(err.message);
       } else {queryDatabase();}
     });
   
@@ -160,15 +140,14 @@ else {
       console.log("Lendo dados da tabela...");
   
       const request = new Request(
-        `Insert Into dbo.Pedido values (\'${codNew}\', \'${codcliente}\', \'${codvendedor}\', \'${datarealizacao}\', \'${dataentrega}\', \'${preçototal}\');`,
+        `Insert Into dbo.ItemPedido values (\'${codNew}\', \'${codcliente}\', \'${codvendedor}\', \'${codproduto}\', \'${quantidade}\', \'${metragem}\', \'${preçoitem}\');`,
         (err, rowCount) => {
           if (err) {
-            ipc.send('erroinsert');
+            console.error(err.message);
           }
           else {
             console.log(`${rowCount} linha(s) retornadas`);
-            if (rowCount != 1) {ipc.send('erroinsert');}
-            else {}
+            window.location = '../Telas Adm/gerenciarProdutosAdm.html';
           }
         }
       );
@@ -183,7 +162,3 @@ else {
   
       connection.execSql(request);
     }})}
-
-      
-    console.log('Data Entrega: ' + dataentrega)
-    console.log('Data Realização: ' + datarealizacao)

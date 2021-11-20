@@ -1,5 +1,5 @@
 const { Connection, Request } = require("tedious");
-
+const ipc = require('electron').ipcRenderer
 
 // Status Primeiro da Lista
 
@@ -30,7 +30,7 @@ btnFila1.addEventListener('click', ()=>{
   // Tentativa de conexão.
   connection.on("connect", err => {
     if (err) {
-      console.error(err.message);
+      ipc.send('erroconexao');
     } else {queryDatabase();}
   });
 
@@ -47,12 +47,13 @@ btnFila1.addEventListener('click', ()=>{
       (err, rowCount) => {
 
         if (err) {
-          console.error(err.message);
+          ipc.send('erroupdate');
         }
 
         else {
           console.log(`${rowCount} linha(s) retornadas`);
-          window.location.reload();
+          if (rowCount != 1) {ipc.send('erroupdate');}
+          else {window.location.reload();}
         }
       }
     );
@@ -96,7 +97,7 @@ btnFila2.addEventListener('click', ()=>{
   // Tentativa de conexão.
   connection.on("connect", err => {
     if (err) {
-      console.error(err.message);
+      ipc.send('erroconexao');
     } else {queryDatabase();}
   });
 
@@ -113,12 +114,13 @@ btnFila2.addEventListener('click', ()=>{
       (err, rowCount) => {
 
         if (err) {
-          console.error(err.message);
+          ipc.send('erroupdate');
         }
 
         else {
           console.log(`${rowCount} linha(s) retornadas`);
-          window.location.reload();
+          if (rowCount != 1) {ipc.send('erroupdate');}
+          else {window.location.reload();}
         }
       }
     );
@@ -162,7 +164,7 @@ btnFila3.addEventListener('click', ()=>{
   // Tentativa de conexão.
   connection.on("connect", err => {
     if (err) {
-      console.error(err.message);
+      ipc.send('erroconexao');
     } else {queryDatabase();}
   });
 
@@ -179,12 +181,13 @@ btnFila3.addEventListener('click', ()=>{
       (err, rowCount) => {
 
         if (err) {
-          console.error(err.message);
+          ipc.send('erroupdate');
         }
 
         else {
           console.log(`${rowCount} linha(s) retornadas`);
-          window.location.reload();
+          if (rowCount != 1) {ipc.send('erroupdate');}
+          else {window.location.reload();}
         }
       }
     );
@@ -228,7 +231,7 @@ btnFila4.addEventListener('click', ()=>{
   // Tentativa de conexão.
   connection.on("connect", err => {
     if (err) {
-      console.error(err.message);
+      ipc.send('erroconexao');
     } else {queryDatabase();}
   });
 
@@ -245,12 +248,13 @@ btnFila4.addEventListener('click', ()=>{
       (err, rowCount) => {
 
         if (err) {
-          console.error(err.message);
+          ipc.send('erroupdate');
         }
 
         else {
           console.log(`${rowCount} linha(s) retornadas`);
-          window.location.reload();
+          if (rowCount != 1) {ipc.send('erroupdate');}
+          else {window.location.reload();}
         }
       }
     );
@@ -294,7 +298,7 @@ btnFila5.addEventListener('click', ()=>{
   // Tentativa de conexão.
   connection.on("connect", err => {
     if (err) {
-      console.error(err.message);
+      ipc.send('erroconexao');
     } else {queryDatabase();}
   });
 
@@ -311,12 +315,13 @@ btnFila5.addEventListener('click', ()=>{
       (err, rowCount) => {
 
         if (err) {
-          console.error(err.message);
+          ipc.send('erroupdate');
         }
 
         else {
           console.log(`${rowCount} linha(s) retornadas`);
-          window.location.reload();
+          if (rowCount != 1) {ipc.send('erroupdate');}
+          else {window.location.reload();}
         }
       }
     );
@@ -360,7 +365,7 @@ btnProduçao1.addEventListener('click', ()=>{
   // Tentativa de conexão.
   connection.on("connect", err => {
     if (err) {
-      console.error(err.message);
+      ipc.send('erroconexao');
     } else {queryDatabase();}
   });
 
@@ -377,12 +382,13 @@ btnProduçao1.addEventListener('click', ()=>{
       (err, rowCount) => {
 
         if (err) {
-          console.error(err.message);
+          ipc.send('erroupdate');
         }
 
         else {
           console.log(`${rowCount} linha(s) retornadas`);
-          window.location.reload();
+          if (rowCount != 1) {ipc.send('erroupdate');}
+          else {window.location.reload();}
         }
       }
     );
@@ -426,7 +432,7 @@ btnProduçao2.addEventListener('click', ()=>{
   // Tentativa de conexão.
   connection.on("connect", err => {
     if (err) {
-      console.error(err.message);
+      ipc.send('erroconexao');
     } else {queryDatabase();}
   });
 
@@ -443,12 +449,13 @@ btnProduçao2.addEventListener('click', ()=>{
       (err, rowCount) => {
 
         if (err) {
-          console.error(err.message);
+          ipc.send('erroupdate');
         }
 
         else {
           console.log(`${rowCount} linha(s) retornadas`);
-          window.location.reload();
+          if (rowCount != 1) {ipc.send('erroupdate');}
+          else {window.location.reload();}
         }
       }
     );
@@ -492,7 +499,7 @@ btnProduçao3.addEventListener('click', ()=>{
   // Tentativa de conexão.
   connection.on("connect", err => {
     if (err) {
-      console.error(err.message);
+      ipc.send('erroconexao');
     } else {queryDatabase();}
   });
 
@@ -509,12 +516,13 @@ btnProduçao3.addEventListener('click', ()=>{
       (err, rowCount) => {
 
         if (err) {
-          console.error(err.message);
+          ipc.send('erroupdate');
         }
 
         else {
           console.log(`${rowCount} linha(s) retornadas`);
-          window.location.reload();
+          if (rowCount != 1) {ipc.send('erroupdate');}
+          else {window.location.reload();}
         }
       }
     );
@@ -558,7 +566,7 @@ btnProduçao4.addEventListener('click', ()=>{
   // Tentativa de conexão.
   connection.on("connect", err => {
     if (err) {
-      console.error(err.message);
+      ipc.send('erroconexao');
     } else {queryDatabase();}
   });
 
@@ -575,12 +583,13 @@ btnProduçao4.addEventListener('click', ()=>{
       (err, rowCount) => {
 
         if (err) {
-          console.error(err.message);
+          ipc.send('erroupdate');
         }
 
         else {
           console.log(`${rowCount} linha(s) retornadas`);
-          window.location.reload();
+          if (rowCount != 1) {ipc.send('erroupdate');}
+          else {window.location.reload();}
         }
       }
     );
@@ -624,7 +633,7 @@ btnProduçao5.addEventListener('click', ()=>{
   // Tentativa de conexão.
   connection.on("connect", err => {
     if (err) {
-      console.error(err.message);
+      ipc.send('erroconexao');
     } else {queryDatabase();}
   });
 
@@ -641,12 +650,13 @@ btnProduçao5.addEventListener('click', ()=>{
       (err, rowCount) => {
 
         if (err) {
-          console.error(err.message);
+          ipc.send('erroupdate');
         }
 
         else {
           console.log(`${rowCount} linha(s) retornadas`);
-          window.location.reload();
+          if (rowCount != 1) {ipc.send('erroupdate');}
+          else {window.location.reload();}
         }
       }
     );
@@ -690,7 +700,7 @@ btnConcluido1.addEventListener('click', ()=>{
   // Tentativa de conexão.
   connection.on("connect", err => {
     if (err) {
-      console.error(err.message);
+      ipc.send('erroconexao');
     } else {queryDatabase();}
   });
 
@@ -707,12 +717,13 @@ btnConcluido1.addEventListener('click', ()=>{
       (err, rowCount) => {
 
         if (err) {
-          console.error(err.message);
+          ipc.send('erroupdate');
         }
 
         else {
           console.log(`${rowCount} linha(s) retornadas`);
-          window.location.reload();
+          if (rowCount != 1) {ipc.send('erroupdate');}
+          else {window.location.reload();}
         }
       }
     );
@@ -756,7 +767,7 @@ btnConcluido2.addEventListener('click', ()=>{
   // Tentativa de conexão.
   connection.on("connect", err => {
     if (err) {
-      console.error(err.message);
+      ipc.send('erroconexao');
     } else {queryDatabase();}
   });
 
@@ -773,12 +784,13 @@ btnConcluido2.addEventListener('click', ()=>{
       (err, rowCount) => {
 
         if (err) {
-          console.error(err.message);
+          ipc.send('erroupdate');
         }
 
         else {
           console.log(`${rowCount} linha(s) retornadas`);
-          window.location.reload();
+          if (rowCount != 1) {ipc.send('erroupdate');}
+          else {window.location.reload();}
         }
       }
     );
@@ -822,7 +834,7 @@ btnConcluido3.addEventListener('click', ()=>{
   // Tentativa de conexão.
   connection.on("connect", err => {
     if (err) {
-      console.error(err.message);
+      ipc.send('erroconexao');
     } else {queryDatabase();}
   });
 
@@ -839,12 +851,13 @@ btnConcluido3.addEventListener('click', ()=>{
       (err, rowCount) => {
 
         if (err) {
-          console.error(err.message);
+          ipc.send('erroupdate');
         }
 
         else {
           console.log(`${rowCount} linha(s) retornadas`);
-          window.location.reload();
+          if (rowCount != 1) {ipc.send('erroupdate');}
+          else {window.location.reload();}
         }
       }
     );
@@ -888,7 +901,7 @@ btnConcluido4.addEventListener('click', ()=>{
   // Tentativa de conexão.
   connection.on("connect", err => {
     if (err) {
-      console.error(err.message);
+      ipc.send('erroconexao');
     } else {queryDatabase();}
   });
 
@@ -905,12 +918,13 @@ btnConcluido4.addEventListener('click', ()=>{
       (err, rowCount) => {
 
         if (err) {
-          console.error(err.message);
+          ipc.send('erroupdate');
         }
 
         else {
           console.log(`${rowCount} linha(s) retornadas`);
-          window.location.reload();
+          if (rowCount != 1) {ipc.send('erroupdate');}
+          else {window.location.reload();}
         }
       }
     );
@@ -954,7 +968,7 @@ btnConcluido5.addEventListener('click', ()=>{
   // Tentativa de conexão.
   connection.on("connect", err => {
     if (err) {
-      console.error(err.message);
+      ipc.send('erroconexao');
     } else {queryDatabase();}
   });
 
@@ -971,12 +985,13 @@ btnConcluido5.addEventListener('click', ()=>{
       (err, rowCount) => {
 
         if (err) {
-          console.error(err.message);
+          ipc.send('erroupdate');
         }
 
         else {
           console.log(`${rowCount} linha(s) retornadas`);
-          window.location.reload();
+          if (rowCount != 1) {ipc.send('erroupdate');}
+          else {window.location.reload();}
         }
       }
     );
@@ -1020,7 +1035,7 @@ btnErro1.addEventListener('click', ()=>{
   // Tentativa de conexão.
   connection.on("connect", err => {
     if (err) {
-      console.error(err.message);
+      ipc.send('erroconexao');
     } else {queryDatabase();}
   });
 
@@ -1037,12 +1052,13 @@ btnErro1.addEventListener('click', ()=>{
       (err, rowCount) => {
 
         if (err) {
-          console.error(err.message);
+          ipc.send('erroupdate');
         }
 
         else {
           console.log(`${rowCount} linha(s) retornadas`);
-          window.location.reload();
+          if (rowCount != 1) {ipc.send('erroupdate');}
+          else {window.location.reload();}
         }
       }
     );
@@ -1086,7 +1102,7 @@ btnErro2.addEventListener('click', ()=>{
   // Tentativa de conexão.
   connection.on("connect", err => {
     if (err) {
-      console.error(err.message);
+      ipc.send('erroconexao');
     } else {queryDatabase();}
   });
 
@@ -1103,12 +1119,13 @@ btnErro2.addEventListener('click', ()=>{
       (err, rowCount) => {
 
         if (err) {
-          console.error(err.message);
+          ipc.send('erroupdate');
         }
 
         else {
           console.log(`${rowCount} linha(s) retornadas`);
-          window.location.reload();
+          if (rowCount != 1) {ipc.send('erroupdate');}
+          else {window.location.reload();}
         }
       }
     );
@@ -1152,7 +1169,7 @@ btnErro3.addEventListener('click', ()=>{
   // Tentativa de conexão.
   connection.on("connect", err => {
     if (err) {
-      console.error(err.message);
+      ipc.send('erroconexao');
     } else {queryDatabase();}
   });
 
@@ -1169,12 +1186,13 @@ btnErro3.addEventListener('click', ()=>{
       (err, rowCount) => {
 
         if (err) {
-          console.error(err.message);
+          ipc.send('erroupdate');
         }
 
         else {
           console.log(`${rowCount} linha(s) retornadas`);
-          window.location.reload();
+          if (rowCount != 1) {ipc.send('erroupdate');}
+          else {window.location.reload();}
         }
       }
     );
@@ -1218,7 +1236,7 @@ btnErro4.addEventListener('click', ()=>{
   // Tentativa de conexão.
   connection.on("connect", err => {
     if (err) {
-      console.error(err.message);
+      ipc.send('erroconexao');
     } else {queryDatabase();}
   });
 
@@ -1235,12 +1253,13 @@ btnErro4.addEventListener('click', ()=>{
       (err, rowCount) => {
 
         if (err) {
-          console.error(err.message);
+          ipc.send('erroupdate');
         }
 
         else {
           console.log(`${rowCount} linha(s) retornadas`);
-          window.location.reload();
+          if (rowCount != 1) {ipc.send('erroupdate');}
+          else {window.location.reload();}
         }
       }
     );
@@ -1284,7 +1303,7 @@ btnErro5.addEventListener('click', ()=>{
   // Tentativa de conexão.
   connection.on("connect", err => {
     if (err) {
-      console.error(err.message);
+      ipc.send('erroconexao');
     } else {queryDatabase();}
   });
 
@@ -1301,12 +1320,13 @@ btnErro5.addEventListener('click', ()=>{
       (err, rowCount) => {
 
         if (err) {
-          console.error(err.message);
+          ipc.send('erroupdate');
         }
 
         else {
           console.log(`${rowCount} linha(s) retornadas`);
-          window.location.reload();
+          if (rowCount != 1) {ipc.send('erroupdate');}
+          else {window.location.reload();}
         }
       }
     );

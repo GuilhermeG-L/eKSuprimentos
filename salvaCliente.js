@@ -21,33 +21,22 @@ function pegarCod(parameter) {
 
 var cod = pegarCod("cod");
 
-function converterData(data){
-  var arrData = data.split('-')
-  var [ano, mes, dia] = arrData
-  return `${ano}${mes}${dia}`
-}
-
 if (cod > 0) {
+  
+  var btnCadastrar = document.querySelector('.btnCadastrar');
+  btnCadastrar.addEventListener('click', ()=>{
+    let nome = (document.querySelector('#input2').value);
+    let cpf = (document.querySelector('#input3').value);
+    let telefone = (document.querySelector('#input4').value);
+    let logradouro = (document.querySelector('#input5').value);
+    let numero = parseInt(document.querySelector('#input6').value);
+    let complemento = (document.querySelector('#input7').value);
+    let bairro = (document.querySelector('#input8').value);
+    let cidade = (document.querySelector('#input9').value);
+    let estado = (document.querySelector('#input10').value);
+    let cep = (document.querySelector('#input11').value);
 
-  var btnConcluir = document.querySelector('.btnConcluir');
-  btnConcluir.addEventListener('click', ()=>{
-    let codcliente = parseInt(document.querySelector('#input2').value);
-    let codvendedor = parseInt(document.querySelector('#input3').value);
-    let dataentrega = converterData(document.querySelector('#input5').value);
-    let datarealizacao = converterData(document.querySelector('#input4').value);
-    let preçototal = parseFloat(document.querySelector('.precoTotal').value);
-    
-
-    console.log(codcliente);
-    console.log(codvendedor);
-    console.log(dataentrega);
-    console.log(datarealizacao);
-    console.log(preçototal);
-    // Gerar total do pedido.    
-
-    // Converter data
-    
-
+    console.log(cod);
     // Configuração de conexão DB.
     const config = {
       authentication: {
@@ -82,9 +71,9 @@ if (cod > 0) {
       console.log("Lendo dados da tabela...");
 
       const request = new Request(
-        `UPDATE dbo.Pedido
-        SET CodPedido = \'${cod}\', CodCliente = \'${codcliente}\', CodVendedor = \'${codvendedor}\', Data_entrega = \'${dataentrega}\', Data_realização = \'${datarealizacao}\', PreçoTotal = \'${preçototal}\'
-        Where CodPedido = \'${cod}\'`,
+        `UPDATE dbo.Cliente
+        SET CodCliente = \'${cod}\', Nome = \'${nome}\', CPF = \'${cpf}\', Telefone = \'${telefone}\', Logradouro = \'${logradouro}\', Numero = \'${numero}\', Complemento = \'${complemento}\', Bairro = \'${bairro}\', Cidade = \'${cidade}\', Estado = \'${estado}\', CEP = \'${cep}\'
+        Where CodCliente = \'${cod}\'`,
         (err, rowCount) => {
           if (err) {
             ipc.send('erroupdate');
@@ -92,7 +81,7 @@ if (cod > 0) {
           else {
             console.log(`${rowCount} linha(s) retornadas`);
             if (rowCount != 1) {ipc.send('erroupdate');}
-            else {}
+            else {window.location = '../Telas Vendedor/gerenciarClientes.html'}
           }
         }
       );
@@ -109,23 +98,31 @@ if (cod > 0) {
     }})}
 else {
 
-  var btnConcluir = document.querySelector('.btnConcluir');
-  btnConcluir.addEventListener('click', ()=>{
+  var btnCadastrar = document.querySelector('.btnCadastrar');
+  btnCadastrar.addEventListener('click', ()=>{
     let codNew = parseInt(document.querySelector('#input1').value);
-    let codcliente = parseInt(document.querySelector('#input2').value);
-    let codvendedor = parseInt(document.querySelector('#input3').value);
-    let dataentrega = (document.querySelector('#input5').value);
-    let datarealizacao = (document.querySelector('#input4').value);
-    let preçototal = parseFloat(document.querySelector('.precoTotal').value);
+    let nome = (document.querySelector('#input2').value);
+    let cpf = (document.querySelector('#input3').value);
+    let telefone = (document.querySelector('#input4').value);
+    let logradouro = (document.querySelector('#input5').value);
+    let numero = parseInt(document.querySelector('#input6').value);
+    let complemento = (document.querySelector('#input7').value);
+    let bairro = (document.querySelector('#input8').value);
+    let cidade = (document.querySelector('#input9').value);
+    let estado = (document.querySelector('#input10').value);
+    let cep = (document.querySelector('#input11').value);
   
-
-    console.log(codcliente);
-    console.log(codvendedor);
-    console.log(dataentrega);
-    console.log(datarealizacao);
-    console.log(preçototal);
-
-
+    console.log(codNew);
+    console.log(nome);
+    console.log(cpf);
+    console.log(telefone);
+    console.log(logradouro);
+    console.log(numero);
+    console.log(complemento);
+    console.log(bairro);
+    console.log(cidade);
+    console.log(estado);
+    console.log(cep);
     // Configuração de conexão DB.
     const config = {
       authentication: {
@@ -160,7 +157,7 @@ else {
       console.log("Lendo dados da tabela...");
   
       const request = new Request(
-        `Insert Into dbo.Pedido values (\'${codNew}\', \'${codcliente}\', \'${codvendedor}\', \'${datarealizacao}\', \'${dataentrega}\', \'${preçototal}\');`,
+        `Insert Into dbo.Cliente values (\'${codNew}\', \'${cep}\', \'${estado}\', \'${cidade}\', \'${bairro}\', \'${logradouro}\', \'${numero}\', \'${complemento}\', \'${cpf}\', \'${telefone}\', \'${nome}\');`,
         (err, rowCount) => {
           if (err) {
             ipc.send('erroinsert');
@@ -168,7 +165,7 @@ else {
           else {
             console.log(`${rowCount} linha(s) retornadas`);
             if (rowCount != 1) {ipc.send('erroinsert');}
-            else {}
+            else {window.location = '../Telas Vendedor/gerenciarClientes.html'}
           }
         }
       );
@@ -183,7 +180,3 @@ else {
   
       connection.execSql(request);
     }})}
-
-      
-    console.log('Data Entrega: ' + dataentrega)
-    console.log('Data Realização: ' + datarealizacao)

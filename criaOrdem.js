@@ -36,7 +36,7 @@ if (cod > 0) {
     let dataentrega = converterData(document.querySelector('#input5').value);
     let datarealizacao = converterData(document.querySelector('#input4').value);
     let preçototal = parseFloat(document.querySelector('.precoTotal').value);
-    
+    let codprodutor = Math.floor((Math.random() * 2) + 1);
 
     console.log(codcliente);
     console.log(codvendedor);
@@ -82,9 +82,9 @@ if (cod > 0) {
       console.log("Lendo dados da tabela...");
 
       const request = new Request(
-        `UPDATE dbo.Pedido
-        SET CodPedido = \'${cod}\', CodCliente = \'${codcliente}\', CodVendedor = \'${codvendedor}\', Data_entrega = \'${dataentrega}\', Data_realização = \'${datarealizacao}\', PreçoTotal = \'${preçototal}\'
-        Where CodPedido = \'${cod}\'`,
+        `UPDATE dbo.Ordem_de_Produção
+        SET CodOrdem = \'${cod}\', CodProdutor = \'${codprodutor}\', CodPedido = \'${cod}\', CodCliente = \'${codcliente}\', CodVendedor = \'${codvendedor}\',
+        Where CodOrdem = \'${cod}\'`,
         (err, rowCount) => {
           if (err) {
             ipc.send('erroupdate');
@@ -117,13 +117,15 @@ else {
     let dataentrega = (document.querySelector('#input5').value);
     let datarealizacao = (document.querySelector('#input4').value);
     let preçototal = parseFloat(document.querySelector('.precoTotal').value);
-  
+    let codprodutor = Math.floor((Math.random() * 2) + 1);
+    let status = 'Em fila';
 
     console.log(codcliente);
     console.log(codvendedor);
     console.log(dataentrega);
     console.log(datarealizacao);
     console.log(preçototal);
+    console.log(codprodutor);
 
 
     // Configuração de conexão DB.
@@ -160,10 +162,10 @@ else {
       console.log("Lendo dados da tabela...");
   
       const request = new Request(
-        `Insert Into dbo.Pedido values (\'${codNew}\', \'${codcliente}\', \'${codvendedor}\', \'${datarealizacao}\', \'${dataentrega}\', \'${preçototal}\');`,
+        `Insert Into dbo.Ordem_de_Produção values (\'${codNew}\', \'${codprodutor}\', \'${codNew}\', \'${codcliente}\', \'${codvendedor}\', \'${status}\');`,
         (err, rowCount) => {
           if (err) {
-            ipc.send('erroinsert');
+            ipc.send('erroupdate');
           }
           else {
             console.log(`${rowCount} linha(s) retornadas`);

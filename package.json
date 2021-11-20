@@ -9,7 +9,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^15.3.0"
+    "electron": "^15.3.0",
+    "electron-packager": "^15.4.0"
   },
   "dependencies": {
     "tedious": "^14.0.0"

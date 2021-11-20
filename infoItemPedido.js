@@ -1,4 +1,5 @@
 const { Connection, Request } = require("tedious");
+const ipc = require('electron').ipcRenderer
 
 function pegarCod(parameter) {  
   var loc = location.search.substring(1, location.search.length);   
@@ -44,7 +45,7 @@ if (cod > 0) {
   // Tentativa de conexão.
   connection.on("connect", err => {
     if (err) {
-      console.error(err.message);
+      ipc.send('erroconexao');
     } else {queryDatabase();}
   });
 

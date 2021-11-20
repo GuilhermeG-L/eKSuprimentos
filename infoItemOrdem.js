@@ -1,9 +1,27 @@
 const { Connection, Request } = require("tedious");
 const ipc = require('electron').ipcRenderer
 
-var btnBuscar = document.querySelector('.btnBuscar');
-btnBuscar.addEventListener('click', ()=>{
-  let cod = parseInt(document.querySelector('.inputPesquisa').value);
+function pegarCod(parameter) {  
+  var loc = location.search.substring(1, location.search.length);   
+  var param_value = false;   
+  var params = loc.split("&");   
+  for (i=0; i<params.length;i++) {   
+      param_name = params[i].substring(0,params[i].indexOf('='));   
+      if (param_name == parameter) {                                          
+          param_value = params[i].substring(params[i].indexOf('=')+1)   
+      }   
+  }   
+  if (param_value) {   
+      return param_value;   
+  }   
+  else {   
+      return undefined;   
+  }   
+}
+
+var cod = pegarCod("cod");
+console.log(cod)
+if (cod > 0) {
 
   // Configuração de conexão DB.
   const config = {
@@ -39,30 +57,37 @@ btnBuscar.addEventListener('click', ()=>{
     console.log("Lendo dados da tabela...");
 
     const request = new Request(
-      `SELECT DISTINCT CodCliente
-      FROM dbo.Cliente
-      Where CodCliente = \'${cod}\'`,
+      `SELECT DISTINCT CodProduto, Metragem, Quantidade
+      FROM dbo.ItemPedido
+      Where CodPedido = \'${cod}\'`,
       (err, rowCount) => {
-
         if (err) {
-          ipc.send('erroselect');
+          console.error(err.message);
         }
-        // Se Certo e apenas 1 linha retornada, avança. Se Erro, 0, ou mais que 1 retorno, recarrega página.
         else {
           console.log(`${rowCount} linha(s) retornadas`);
-          if (rowCount != 1) {ipc.send('erroselect');}
-          else {window.location = '../Telas Vendedor/editarCliente.html?cod='+cod;}
         }
       }
     );
+    
 
-    // Console.log da query.
+
+    // Variável do primeiro input.
+    var i = 1;
+
+    // Adiciona valores nos inputs.
     request.on("row", columns => {
       columns.forEach(column => {
-        console.log("%s\t%s", column.metadata.colName, column.value);
+        valInput = ("%s\t%s", /*column.metadata.colName,*/ column.value);
+        document.getElementById(`inputB${i}`).value = valInput;
+        i++;
       });
     });
 
     connection.execSql(request);
-  }
-});
+  }}
+
+// PRA CASO CLIQUE EM ADICIONAR PRODUTO (Não tem cod):
+
+
+else {}

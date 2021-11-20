@@ -1,4 +1,5 @@
 const { Connection, Request } = require("tedious");
+const ipc = require('electron').ipcRenderer
 
 function pegarCod(parameter) {  
   var loc = location.search.substring(1, location.search.length);   
@@ -50,7 +51,7 @@ if (cod > 0) {
     // Tentativa de conexão.
     connection.on("connect", err => {
       if (err) {
-        console.error(err.message);
+        ipc.send('erroconexao');
       } else {queryDatabase();}
     });
 
@@ -67,11 +68,12 @@ if (cod > 0) {
         Where CodProduto = \'${cod}\'`,
         (err, rowCount) => {
           if (err) {
-            console.error(err.message);
+            ipc.send('erroupdate');
           }
           else {
             console.log(`${rowCount} linha(s) retornadas`);
-            window.location = '../Telas Adm/gerenciarProdutosAdm.html';
+            if (rowCount != 1) {ipc.send('erroupdate');}
+            else {window.location = '../Telas Adm/gerenciarProdutosAdm.html'}
           }
         }
       );
@@ -117,7 +119,7 @@ else {
     // Tentativa de conexão.
     connection.on("connect", err => {
       if (err) {
-        console.error(err.message);
+        ipc.send('erroconexao');
       } else {queryDatabase();}
     });
   
@@ -132,11 +134,12 @@ else {
         `Insert Into dbo.Produto values (\'${codNew}\', \'${nome}\', \'${preço}\');`,
         (err, rowCount) => {
           if (err) {
-            console.error(err.message);
+            ipc.send('erroinsert');
           }
           else {
             console.log(`${rowCount} linha(s) retornadas`);
-            window.location = '../Telas Adm/gerenciarProdutosAdm.html';
+            if (rowCount != 1) {ipc.send('erroinsert');}
+            else {window.location = '../Telas Adm/gerenciarProdutosAdm.html'}
           }
         }
       );

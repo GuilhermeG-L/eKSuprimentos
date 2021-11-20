@@ -1,5 +1,5 @@
 const { Connection, Request } = require("tedious");
-
+const ipc = require('electron').ipcRenderer
 
 // Exclui Primeiro da Lista
 
@@ -30,7 +30,7 @@ btnExclui1.addEventListener('click', ()=>{
   // Tentativa de conexão.
   connection.on("connect", err => {
     if (err) {
-      console.error(err.message);
+      ipc.send('erroconexao');
     } else {queryDatabase();}
   });
 
@@ -44,14 +44,15 @@ btnExclui1.addEventListener('click', ()=>{
       `Delete From dbo.Cliente
       Where CodCliente = \'${cod}\'`,
       (err, rowCount) => {
-        // Se Erro, recarrega página.
+
         if (err) {
-          console.error(err.message);
+          ipc.send('errodelete');
         }
-        // Se Certo e apenas 1 linha retornada, avança. Se Erro, 0, ou mais que 1 retorno, recarrega página.
+
         else {
           console.log(`${rowCount} linha(s) retornadas`);
-          window.location.reload();
+          if (rowCount != 1) {ipc.send('errodelete');}
+          else {window.location.reload();}
         }
       }
     );
@@ -97,7 +98,7 @@ btnExclui2.addEventListener('click', ()=>{
   // Tentativa de conexão.
   connection.on("connect", err => {
     if (err) {
-      console.error(err.message);
+      ipc.send('erroconexao');
     } else {queryDatabase();}
   });
 
@@ -113,12 +114,13 @@ btnExclui2.addEventListener('click', ()=>{
       (err, rowCount) => {
         // Se Erro, recarrega página.
         if (err) {
-          console.error(err.message);
+          ipc.send('errodelete');
         }
         // Se Certo e apenas 1 linha retornada, avança. Se Erro, 0, ou mais que 1 retorno, recarrega página.
         else {
           console.log(`${rowCount} linha(s) retornadas`);
-          window.location.reload();
+          if (rowCount != 1) {ipc.send('errodelete');}
+          else {window.location.reload();}
         }
       }
     );
@@ -164,7 +166,7 @@ btnExclui3.addEventListener('click', ()=>{
   // Tentativa de conexão.
   connection.on("connect", err => {
     if (err) {
-      console.error(err.message);
+      ipc.send('erroconexao');
     } else {queryDatabase();}
   });
 
@@ -180,12 +182,13 @@ btnExclui3.addEventListener('click', ()=>{
       (err, rowCount) => {
         // Se Erro, recarrega página.
         if (err) {
-          console.error(err.message);
+          ipc.send('errodelete');
         }
         // Se Certo e apenas 1 linha retornada, avança. Se Erro, 0, ou mais que 1 retorno, recarrega página.
         else {
           console.log(`${rowCount} linha(s) retornadas`);
-          window.location.reload();
+          if (rowCount != 1) {ipc.send('errodelete');}
+          else {window.location.reload();}
         }
       }
     );
@@ -231,7 +234,7 @@ btnExclui4.addEventListener('click', ()=>{
   // Tentativa de conexão.
   connection.on("connect", err => {
     if (err) {
-      console.error(err.message);
+      ipc.send('erroconexao');
     } else {queryDatabase();}
   });
 
@@ -247,12 +250,13 @@ btnExclui4.addEventListener('click', ()=>{
       (err, rowCount) => {
         // Se Erro, recarrega página.
         if (err) {
-          console.error(err.message);
+          ipc.send('errodelete');
         }
         // Se Certo e apenas 1 linha retornada, avança. Se Erro, 0, ou mais que 1 retorno, recarrega página.
         else {
           console.log(`${rowCount} linha(s) retornadas`);
-          window.location.reload();
+          if (rowCount != 1) {ipc.send('errodelete');}
+          else {window.location.reload();}
         }
       }
     );
@@ -298,7 +302,7 @@ btnExclui5.addEventListener('click', ()=>{
   // Tentativa de conexão.
   connection.on("connect", err => {
     if (err) {
-      console.error(err.message);
+      ipc.send('erroconexao');
     } else {queryDatabase();}
   });
 
@@ -314,12 +318,13 @@ btnExclui5.addEventListener('click', ()=>{
       (err, rowCount) => {
         // Se Erro, recarrega página.
         if (err) {
-          console.error(err.message);
+          ipc.send('errodelete');
         }
         // Se Certo e apenas 1 linha retornada, avança. Se Erro, 0, ou mais que 1 retorno, recarrega página.
         else {
           console.log(`${rowCount} linha(s) retornadas`);
-          window.location.reload();
+          if (rowCount != 1) {ipc.send('errodelete');}
+          else {window.location.reload();}
         }
       }
     );
