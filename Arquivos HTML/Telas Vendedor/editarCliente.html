@@ -87,7 +87,7 @@
                         </section>
                         <section class = "secEstado">
                             <label>Estado</label>
-                            <select id="UF" name="UF" id = "input10">
+                            <select name="UF" id = "input10">
                                 <option value="">Selecione</option>
                                 <option value="AC">AC</option>
                                 <option value="AL">AL</option>
@@ -125,10 +125,13 @@
                     </section>
                 </section>
                 <div class = "btnsVoltarCad">
-                    <a href = "gerenciarClientes.html" class = "linkBtnVoltar"><button class = "btnVoltar">Voltar</button></a>
-                    <a href = "gerenciarClientes.html" class = "linkBtnCadastrar"><button class = "btnCadastrar">Cadastrar</button></a>
+                    <a href = "../Telas Vendedor/gerenciarClientes.html" class = "linkBtnVoltar"><button class = "btnVoltar">Voltar</button></a>
+                    <a href = "#" class = "linkBtnCadastrar"><button class = "btnCadastrar">Cadastrar</button></a>
                 </div>
             </div>
         </main>
     </div>
+    <script>window.api.loadscript('./infoCliente.js');</script>
+    <script>window.api.loadscript('./salvaCliente.js');</script>
+    <script>window.api.loadscript('./restricoesValoresCliente.js')</script>
 </html>
