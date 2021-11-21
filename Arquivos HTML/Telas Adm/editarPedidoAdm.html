@@ -63,50 +63,62 @@
             </div>
             <div class = "prodPedido">
                 <section class = "introButton">
-                    <h2 class = "divTit">Produto do pedido</h2>
+                    <h2 class = "divTit">Itens do pedido</h2>
 
                 </section>  
                 <section class = "produtos">
                     <section class = "labels">
-                        <p class = "label lblCodProduto">Código do produto</p>
-                        <p class = "label lblMetragem">Metr</p>
+                        <p class = "label lblCodProduto">Código</p>
+                        <p class = "label lblNomeProduto">Nome</p>
+                        <p class = "label lblPreçoProduto">Preço/Unid.</p>
+                        <p class = "label lblMetragem">Metr.</p>
                         <p class = "label lblQtd">Qtd</p>
                         <p class = "label lblPreço">Preço</p>
                     </section>
                     <section class = "produto">
                         <input type = "number" id = "inputB1" class = "inputProduto codProduto" placeholder="Digite o código"/>
-                        <input type = "number" id = "inputB2" class = "inputProduto metrProduto">
-                        <input type = "number" id = "inputB3" class = "inputProduto qtdProduto">
-                        <input type = "number" id = "inputB4" class = "inputProduto preçoProduto" readonly> 
+                        <input type = "text" id = "inputB2" class = "inputProduto nomeProduto" readonly> 
+                        <input type = "number" id = "inputB3" class = "inputProduto preçoProduto" readonly> 
+                        <input type = "number" id = "inputB4" class = "inputProduto metrProduto">
+                        <input type = "number" id = "inputB5" class = "inputProduto qtdProduto">
+                        <input type = "number" id = "inputB6" class = "inputProduto preçoProduto" readonly> 
                     </section>
                     <section class = "produto">
-                        <input type = "number" id = "inputB5" class = "inputProduto codProduto" placeholder="Digite o código"/>
-                        <input type = "number" id = "inputB6" class = "inputProduto metrProduto">
-                        <input type = "number" id = "inputB7" class = "inputProduto qtdProduto">
-                        <input type = "number" id = "inputB8" class = "inputProduto preçoProduto" readonly> 
-                    </section>
-                    <section class = "produto">
-                        <input type = "number" id = "inputB9" class = "inputProduto codProduto" placeholder="Digite o código"/>
+                        <input type = "number" id = "inputB7" class = "inputProduto codProduto" placeholder="Digite o código"/>
+                        <input type = "text" id = "inputB8" class = "inputProduto nomeProduto" readonly> 
+                        <input type = "number" id = "inputB9" class = "inputProduto preçoProduto" readonly> 
                         <input type = "number" id = "inputB10" class = "inputProduto metrProduto">
-                        <input type = "number" id = "inputB11" class = "inputProduto qtdProduto"> 
+                        <input type = "number" id = "inputB11" class = "inputProduto qtdProduto">
                         <input type = "number" id = "inputB12" class = "inputProduto preçoProduto" readonly> 
                     </section>
                     <section class = "produto">
                         <input type = "number" id = "inputB13" class = "inputProduto codProduto" placeholder="Digite o código"/>
-                        <input type = "number" id = "inputB14" class = "inputProduto metrProduto">
-                        <input type = "number" id = "inputB15" class = "inputProduto qtdProduto"> 
-                        <input type = "number" id = "inputB16" class = "inputProduto preçoProduto" readonly> 
+                        <input type = "text" id = "inputB14" class = "inputProduto nomeProduto" readonly> 
+                        <input type = "number" id = "inputB15" class = "inputProduto preçoProduto" readonly> 
+                        <input type = "number" id = "inputB16" class = "inputProduto metrProduto">
+                        <input type = "number" id = "inputB17" class = "inputProduto qtdProduto"> 
+                        <input type = "number" id = "inputB18" class = "inputProduto preçoProduto" readonly> 
                     </section>
                     <section class = "produto">
-                        <input type = "number" id = "inputB17" class = "inputProduto codProduto" placeholder="Digite o código"/>
-                        <input type = "number" id = "inputB18" class = "inputProduto metrProduto">
-                        <input type = "number" id = "inputB19" class = "inputProduto qtdProduto">
-                        <input type = "number" id = "inputB20" class = "inputProduto preçoProduto" readonly> 
+                        <input type = "number" id = "inputB19" class = "inputProduto codProduto" placeholder="Digite o código"/>
+                        <input type = "text" id = "inputB20" class = "inputProduto nomeProduto" readonly> 
+                        <input type = "number" id = "inputB21" class = "inputProduto preçoProduto" readonly> 
+                        <input type = "number" id = "inputB22" class = "inputProduto metrProduto">
+                        <input type = "number" id = "inputB23" class = "inputProduto qtdProduto"> 
+                        <input type = "number" id = "inputB24" class = "inputProduto preçoProduto" readonly> 
+                    </section>
+                    <section class = "produto">
+                        <input type = "number" id = "inputB25" class = "inputProduto codProduto" placeholder="Digite o código"/>
+                        <input type = "text" id = "inputB26" class = "inputProduto nomeProduto" readonly> 
+                        <input type = "number" id = "inputB27" class = "inputProduto preçoProduto" readonly> 
+                        <input type = "number" id = "inputB28" class = "inputProduto metrProduto">
+                        <input type = "number" id = "inputB29" class = "inputProduto qtdProduto">
+                        <input type = "number" id = "inputB30" class = "inputProduto preçoProduto" readonly> 
                     </section>
                 </section>
                 <section class = "total">
                     <p>Total:</p>
-                    <input type = "number" class = "precoTotal"/>
+                    <input type = "number" class = "precoTotal" readonly/>
                     <a href = "../Telas Adm/gerenciarPedidosAdm.html" class = "linkBtnVoltar"><button class = "btnVoltar">Voltar</button></a>
                     <a href = "#" class = "linkBtnConcluir"><button class = "btnConcluir">Concluir</button></a>
                 </section>
@@ -115,6 +127,7 @@
     </div>
     <script>window.api.loadscript('./infoPedido.js');</script>
     <script>window.api.loadscript('./infoItemPedido.js');</script>
+    <script>window.api.loadscript('./extraItemPedido.js');</script>
     <script>window.api.loadscript('./preçoItemPedido.js');</script>
     <script>window.api.loadscript('./preçoTotal.js');</script>
     <script>window.api.loadscript('./calcPreçoTotal.js');</script>

@@ -149,15 +149,25 @@ label{
 
 .lblCodProduto{
     margin-left: 5px;
-    margin-right: 338px;
-}
-
-.lblMetragem{
     margin-right: 80px;
 }
 
+.lblNomeProduto{
+    margin-left: 5px;
+    margin-right: 75px;
+}
+
+.lblPreçoProduto{
+    margin-left: 5px;
+    margin-right: 45px;
+}
+
+.lblMetragem{
+    margin-right: 62.5px;
+}
+
 .lblQtd{
-    margin-right: 65px;
+    margin-right: 62.5px;
 }
 
 .produto{
@@ -180,15 +190,19 @@ label{
 }
 
 .codProduto{
-    width: 460px;
+    width: 80px;
 }
 
-.codProduto, .metrProduto{
+.preçoProduto{
     margin-right: 1.3%;
 }
 
 .metrProduto, .qtdProduto, .preçoProduto{
     width: 100px;
+}
+
+.nomeProduto {
+    width: 200px;
 }
 
 /* Preço total */
