@@ -97,10 +97,10 @@ if (cod > 0) {
       const request = new Request(
         `UPDATE dbo.ItemPedido
         SET CodProduto = \'${codproduto}\', Quantidade = \'${quantidade}\', Metragem = \'${metragem}\', Preço_do_item = \'${preçoitem}\'
-        Where CodProduto = \'${codprodutoantigo1}\'`,
+        Where CodProduto = \'${codprodutoantigo1}\' AND CodPedido = \'${cod}\'`,
         (err, rowCount) => {
           if (err) {
-            ipc.send('erroupdate');
+            console.error(err.message);
           }
           else {
             console.log(`${rowCount} linha(s) retornadas`);
@@ -166,10 +166,10 @@ if (cod > 0) {
         const request = new Request(
           `UPDATE dbo.ItemPedido
           SET CodProduto = \'${codproduto}\', Quantidade = \'${quantidade}\', Metragem = \'${metragem}\', Preço_do_item = \'${preçoitem}\'
-          Where CodProduto = \'${codprodutoantigo2}\'`,
+          Where CodProduto = \'${codprodutoantigo2}\' AND CodPedido = \'${cod}\'`,
           (err, rowCount) => {
             if (err) {
-              ipc.send('erroupdate');
+              console.error(err.message);
             }
             else {
               console.log(`${rowCount} linha(s) retornadas`);
@@ -236,10 +236,10 @@ if (cod > 0) {
           const request = new Request(
             `UPDATE dbo.ItemPedido
             SET CodProduto = \'${codproduto}\', Quantidade = \'${quantidade}\', Metragem = \'${metragem}\', Preço_do_item = \'${preçoitem}\'
-            Where CodProduto = \'${codprodutoantigo3}\'`,
+            Where CodProduto = \'${codprodutoantigo3}\' AND CodPedido = \'${cod}\'`,
             (err, rowCount) => {
               if (err) {
-                ipc.send('erroupdate');
+                console.error(err.message);
               }
               else {
                 console.log(`${rowCount} linha(s) retornadas`);
@@ -305,10 +305,10 @@ if (cod > 0) {
             const request = new Request(
               `UPDATE dbo.ItemPedido
               SET CodProduto = \'${codproduto}\', Quantidade = \'${quantidade}\', Metragem = \'${metragem}\', Preço_do_item = \'${preçoitem}\'
-              Where CodProduto = \'${codprodutoantigo4}\'`,
+              Where CodProduto = \'${codprodutoantigo4}\' AND CodPedido = \'${cod}\'`,
               (err, rowCount) => {
                 if (err) {
-                  ipc.send('erroupdate');
+                  console.error(err.message);
                 }
                 else {
                   console.log(`${rowCount} linha(s) retornadas`);
@@ -374,10 +374,10 @@ if (cod > 0) {
               const request = new Request(
                 `UPDATE dbo.ItemPedido
                 SET CodProduto = \'${codproduto}\', Quantidade = \'${quantidade}\', Metragem = \'${metragem}\', Preço_do_item = \'${preçoitem}\'
-                Where CodProduto = \'${codprodutoantigo5}\'`,
+                Where CodProduto = \'${codprodutoantigo5}\' AND CodPedido = \'${cod}\'`,
                 (err, rowCount) => {
                   if (err) {
-                    ipc.send('erroupdate');
+                    console.error(err.message);
                   }
                   else {
                     console.log(`${rowCount} linha(s) retornadas`);
@@ -426,6 +426,8 @@ if (cod > 0) {
 else {
   var btnConcluir = document.querySelector('.btnConcluir');
   btnConcluir.addEventListener('click', ()=>{
+    setTimeout(f1, 100);
+    function f1() {
     let codNew = parseInt(document.querySelector('#input1').value);
     let codcliente = parseInt(document.querySelector('#input2').value);
     let codvendedor = parseInt(document.querySelector('#input3').value);
@@ -472,6 +474,7 @@ else {
         (err, rowCount) => {
           if (err) {
             ipc.send('erroinsert');
+            console.error(err.message);
           }
           else {
             console.log(`${rowCount} linha(s) retornadas`);
@@ -491,11 +494,13 @@ else {
       });
   
       connection.execSql(request);
-    }})
+    }}})
   
   
     var btnConcluir = document.querySelector('.btnConcluir');
     btnConcluir.addEventListener('click', ()=>{
+      setTimeout(f2, 100);
+      function f2() {
       let codNew = parseInt(document.querySelector('#input1').value);
       let codcliente = parseInt(document.querySelector('#input2').value);
       let codvendedor = parseInt(document.querySelector('#input3').value);
@@ -542,6 +547,7 @@ else {
           (err, rowCount) => {
             if (err) {
               ipc.send('erroinsert');
+              console.error(err.message);
             }
             else {
               console.log(`${rowCount} linha(s) retornadas`);
@@ -561,12 +567,14 @@ else {
         });
     
         connection.execSql(request);
-      }})
+      }}})
 
 
 
       var btnConcluir = document.querySelector('.btnConcluir');
       btnConcluir.addEventListener('click', ()=>{
+        setTimeout(f3, 100);
+        function f3() {
         let codNew = parseInt(document.querySelector('#input1').value);
         let codcliente = parseInt(document.querySelector('#input2').value);
         let codvendedor = parseInt(document.querySelector('#input3').value);
@@ -613,6 +621,7 @@ else {
             (err, rowCount) => {
               if (err) {
                 ipc.send('erroinsert');
+                console.error(err.message);
               }
               else {
                 console.log(`${rowCount} linha(s) retornadas`);
@@ -632,11 +641,13 @@ else {
           });
       
           connection.execSql(request);
-        }})
+        }}})
 
 
         var btnConcluir = document.querySelector('.btnConcluir');
         btnConcluir.addEventListener('click', ()=>{
+          setTimeout(f4, 100);
+          function f4() {
           let codNew = parseInt(document.querySelector('#input1').value);
           let codcliente = parseInt(document.querySelector('#input2').value);
           let codvendedor = parseInt(document.querySelector('#input3').value);
@@ -683,6 +694,7 @@ else {
               (err, rowCount) => {
                 if (err) {
                   ipc.send('erroinsert');
+                  console.error(err.message);
                 }
                 else {
                   console.log(`${rowCount} linha(s) retornadas`);
@@ -702,11 +714,13 @@ else {
             });
         
             connection.execSql(request);
-          }})
+          }}})
 
 
           var btnConcluir = document.querySelector('.btnConcluir');
           btnConcluir.addEventListener('click', ()=>{
+            setTimeout(f5, 100);
+            function f5() {
             let codNew = parseInt(document.querySelector('#input1').value);
             let codcliente = parseInt(document.querySelector('#input2').value);
             let codvendedor = parseInt(document.querySelector('#input3').value);
@@ -753,6 +767,7 @@ else {
                 (err, rowCount) => {
                   if (err) {
                     ipc.send('erroinsert');
+                    console.error(err.message);
                   }
                   else {
                     console.log(`${rowCount} linha(s) retornadas`);
@@ -772,6 +787,6 @@ else {
               });
           
               connection.execSql(request);
-            }})
+            }}})
 
 }

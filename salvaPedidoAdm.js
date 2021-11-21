@@ -88,6 +88,7 @@ if (cod > 0) {
         (err, rowCount) => {
           if (err) {
             ipc.send('erroupdate');
+            console.error(err.message);
           }
           else {
             console.log(`${rowCount} linha(s) retornadas`);

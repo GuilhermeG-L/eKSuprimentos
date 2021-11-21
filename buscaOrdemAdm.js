@@ -51,7 +51,7 @@ btnBuscar.addEventListener('click', ()=>{
         else {
           console.log(`${rowCount} linha(s) retornadas`);
           if (rowCount != 1) {ipc.send('erroselect');}
-          else {window.location = '../Telas Adm/editarOrdemAdm.html?cod='+cod;}
+          else {window.location = '../Telas Adm/detalhesDaOrdemAdm.html?cod='+cod;}
         }
       }
     );
