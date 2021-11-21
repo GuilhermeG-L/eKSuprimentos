@@ -1,11 +1,11 @@
 const { Connection, Request } = require("tedious");
 const ipc = require('electron').ipcRenderer
 
-var inputB2 = document.querySelector('#inputB2');
-inputB2.addEventListener('change', ()=>{
+var inputB4 = document.querySelector('#inputB4');
+inputB4.addEventListener('change', ()=>{
   let codProd = parseInt(document.querySelector('#inputB1').value);
-  let metr = parseInt(document.querySelector('#inputB2').value);
-  let qtd = parseInt(document.querySelector('#inputB3').value);
+  let metr = parseFloat(document.querySelector('#inputB4').value);
+  let qtd = parseInt(document.querySelector('#inputB5').value);
 
   // Configuração de conexão DB.
   const config = {
@@ -62,7 +62,7 @@ inputB2.addEventListener('change', ()=>{
       columns.forEach(column => {
         let valProd = ("%s\t%s", /*column.metadata.colName,*/ parseFloat(column.value));
         let valItem = ((valProd * metr) * qtd);
-        document.querySelector('#inputB4').value = valItem;
+        document.querySelector('#inputB6').value = valItem;
         i++;
       });
     });
@@ -75,8 +75,8 @@ inputB2.addEventListener('change', ()=>{
   var inputB1 = document.querySelector('#inputB1');
   inputB1.addEventListener('change', ()=>{
     let codProd = parseInt(document.querySelector('#inputB1').value);
-    let metr = parseInt(document.querySelector('#inputB2').value);
-    let qtd = parseInt(document.querySelector('#inputB3').value);
+    let metr = parseFloat(document.querySelector('#inputB4').value);
+    let qtd = parseInt(document.querySelector('#inputB5').value);
 
     // Configuração de conexão DB.
     const config = {
@@ -133,7 +133,7 @@ inputB2.addEventListener('change', ()=>{
         columns.forEach(column => {
           let valProd = ("%s\t%s", /*column.metadata.colName,*/ parseFloat(column.value));
           let valItem = ((valProd * metr) * qtd);
-          document.querySelector('#inputB4').value = valItem;
+          document.querySelector('#inputB6').value = valItem;
           i++;
         });
       });
@@ -144,11 +144,11 @@ inputB2.addEventListener('change', ()=>{
 
 
 
-    var inputB3 = document.querySelector('#inputB3');
-    inputB3.addEventListener('change', ()=>{
+    var inputB5 = document.querySelector('#inputB5');
+    inputB5.addEventListener('change', ()=>{
       let codProd = parseInt(document.querySelector('#inputB1').value);
-      let metr = parseInt(document.querySelector('#inputB2').value);
-      let qtd = parseInt(document.querySelector('#inputB3').value);
+      let metr = parseFloat(document.querySelector('#inputB4').value);
+      let qtd = parseInt(document.querySelector('#inputB5').value);
   
       // Configuração de conexão DB.
       const config = {
@@ -205,7 +205,7 @@ inputB2.addEventListener('change', ()=>{
           columns.forEach(column => {
             let valProd = ("%s\t%s", /*column.metadata.colName,*/ parseFloat(column.value));
             let valItem = ((valProd * metr) * qtd);
-            document.querySelector('#inputB4').value = valItem;
+            document.querySelector('#inputB6').value = valItem;
             i++;
           });
         });
@@ -216,11 +216,11 @@ inputB2.addEventListener('change', ()=>{
 
 
 
-      var inputB5 = document.querySelector('#inputB5');
-      inputB5.addEventListener('change', ()=>{
-        let codProd = parseInt(document.querySelector('#inputB5').value);
-        let metr = parseInt(document.querySelector('#inputB6').value);
-        let qtd = parseInt(document.querySelector('#inputB7').value);
+      var inputB7 = document.querySelector('#inputB7');
+      inputB7.addEventListener('change', ()=>{
+        let codProd = parseInt(document.querySelector('#inputB7').value);
+        let metr = parseFloat(document.querySelector('#inputB10').value);
+        let qtd = parseInt(document.querySelector('#inputB11').value);
     
         // Configuração de conexão DB.
         const config = {
@@ -277,7 +277,7 @@ inputB2.addEventListener('change', ()=>{
             columns.forEach(column => {
               let valProd = ("%s\t%s", /*column.metadata.colName,*/ parseFloat(column.value));
               let valItem = ((valProd * metr) * qtd);
-              document.querySelector('#inputB8').value = valItem;
+              document.querySelector('#inputB12').value = valItem;
               i++;
             });
           });
@@ -288,11 +288,11 @@ inputB2.addEventListener('change', ()=>{
 
 
 
-        var inputB6 = document.querySelector('#inputB6');
-        inputB6.addEventListener('change', ()=>{
-          let codProd = parseInt(document.querySelector('#inputB5').value);
-          let metr = parseInt(document.querySelector('#inputB6').value);
-          let qtd = parseInt(document.querySelector('#inputB7').value);
+        var inputB10 = document.querySelector('#inputB10');
+        inputB10.addEventListener('change', ()=>{
+          let codProd = parseInt(document.querySelector('#inputB7').value);
+          let metr = parseFloat(document.querySelector('#inputB10').value);
+          let qtd = parseInt(document.querySelector('#inputB11').value);
       
           // Configuração de conexão DB.
           const config = {
@@ -349,7 +349,7 @@ inputB2.addEventListener('change', ()=>{
               columns.forEach(column => {
                 let valProd = ("%s\t%s", /*column.metadata.colName,*/ parseFloat(column.value));
                 let valItem = ((valProd * metr) * qtd);
-                document.querySelector('#inputB8').value = valItem;
+                document.querySelector('#inputB12').value = valItem;
                 i++;
               });
             });
@@ -361,11 +361,11 @@ inputB2.addEventListener('change', ()=>{
 
 
 
-          var inputB7 = document.querySelector('#inputB7');
-          inputB7.addEventListener('change', ()=>{
-            let codProd = parseInt(document.querySelector('#inputB5').value);
-            let metr = parseInt(document.querySelector('#inputB6').value);
-            let qtd = parseInt(document.querySelector('#inputB7').value);
+          var inputB11 = document.querySelector('#inputB11');
+          inputB11.addEventListener('change', ()=>{
+            let codProd = parseInt(document.querySelector('#inputB7').value);
+            let metr = parseFloat(document.querySelector('#inputB10').value);
+            let qtd = parseInt(document.querySelector('#inputB11').value);
         
             // Configuração de conexão DB.
             const config = {
@@ -422,7 +422,7 @@ inputB2.addEventListener('change', ()=>{
                 columns.forEach(column => {
                   let valProd = ("%s\t%s", /*column.metadata.colName,*/ parseFloat(column.value));
                   let valItem = ((valProd * metr) * qtd);
-                  document.querySelector('#inputB8').value = valItem;
+                  document.querySelector('#inputB12').value = valItem;
                   i++;
                 });
               });
@@ -433,11 +433,11 @@ inputB2.addEventListener('change', ()=>{
 
 
 
-            var inputB9 = document.querySelector('#inputB9');
-            inputB9.addEventListener('change', ()=>{
-              let codProd = parseInt(document.querySelector('#inputB9').value);
-              let metr = parseInt(document.querySelector('#inputB10').value);
-              let qtd = parseInt(document.querySelector('#inputB11').value);
+            var inputB13 = document.querySelector('#inputB13');
+            inputB13.addEventListener('change', ()=>{
+              let codProd = parseInt(document.querySelector('#inputB13').value);
+              let metr = parseFloat(document.querySelector('#inputB16').value);
+              let qtd = parseInt(document.querySelector('#inputB17').value);
           
               // Configuração de conexão DB.
               const config = {
@@ -494,7 +494,7 @@ inputB2.addEventListener('change', ()=>{
                   columns.forEach(column => {
                     let valProd = ("%s\t%s", /*column.metadata.colName,*/ parseFloat(column.value));
                     let valItem = ((valProd * metr) * qtd);
-                    document.querySelector('#inputB12').value = valItem;
+                    document.querySelector('#inputB18').value = valItem;
                     i++;
                   });
                 });
@@ -505,11 +505,11 @@ inputB2.addEventListener('change', ()=>{
 
 
 
-              var inputB10 = document.querySelector('#inputB10');
-              inputB10.addEventListener('change', ()=>{
-                let codProd = parseInt(document.querySelector('#inputB9').value);
-                let metr = parseInt(document.querySelector('#inputB10').value);
-                let qtd = parseInt(document.querySelector('#inputB11').value);
+              var inputB16 = document.querySelector('#inputB16');
+              inputB16.addEventListener('change', ()=>{
+                let codProd = parseInt(document.querySelector('#inputB13').value);
+                let metr = parseFloat(document.querySelector('#inputB16').value);
+                let qtd = parseInt(document.querySelector('#inputB17').value);
             
                 // Configuração de conexão DB.
                 const config = {
@@ -566,7 +566,7 @@ inputB2.addEventListener('change', ()=>{
                     columns.forEach(column => {
                       let valProd = ("%s\t%s", /*column.metadata.colName,*/ parseFloat(column.value));
                       let valItem = ((valProd * metr) * qtd);
-                      document.querySelector('#inputB12').value = valItem;
+                      document.querySelector('#inputB18').value = valItem;
                       i++;
                     });
                   });
@@ -577,11 +577,11 @@ inputB2.addEventListener('change', ()=>{
 
 
 
-                var inputB11 = document.querySelector('#inputB11');
-                inputB11.addEventListener('change', ()=>{
-                  let codProd = parseInt(document.querySelector('#inputB9').value);
-                  let metr = parseInt(document.querySelector('#inputB10').value);
-                  let qtd = parseInt(document.querySelector('#inputB11').value);
+                var inputB17 = document.querySelector('#inputB17');
+                inputB17.addEventListener('change', ()=>{
+                  let codProd = parseInt(document.querySelector('#inputB13').value);
+                  let metr = parseFloat(document.querySelector('#inputB16').value);
+                  let qtd = parseInt(document.querySelector('#inputB17').value);
               
                   // Configuração de conexão DB.
                   const config = {
@@ -638,7 +638,7 @@ inputB2.addEventListener('change', ()=>{
                       columns.forEach(column => {
                         let valProd = ("%s\t%s", /*column.metadata.colName,*/ parseFloat(column.value));
                         let valItem = ((valProd * metr) * qtd);
-                        document.querySelector('#inputB12').value = valItem;
+                        document.querySelector('#inputB18').value = valItem;
                         i++;
                       });
                     });
@@ -648,11 +648,11 @@ inputB2.addEventListener('change', ()=>{
 
 
 
-                  var inputB13 = document.querySelector('#inputB13');
-                  inputB13.addEventListener('change', ()=>{
-                    let codProd = parseInt(document.querySelector('#inputB13').value);
-                    let metr = parseInt(document.querySelector('#inputB14').value);
-                    let qtd = parseInt(document.querySelector('#inputB15').value);
+                  var inputB19 = document.querySelector('#inputB19');
+                  inputB19.addEventListener('change', ()=>{
+                    let codProd = parseInt(document.querySelector('#inputB19').value);
+                    let metr = parseFloat(document.querySelector('#inputB22').value);
+                    let qtd = parseInt(document.querySelector('#inputB23').value);
                 
                     // Configuração de conexão DB.
                     const config = {
@@ -709,7 +709,7 @@ inputB2.addEventListener('change', ()=>{
                         columns.forEach(column => {
                           let valProd = ("%s\t%s", /*column.metadata.colName,*/ parseFloat(column.value));
                           let valItem = ((valProd * metr) * qtd);
-                          document.querySelector('#inputB16').value = valItem;
+                          document.querySelector('#inputB24').value = valItem;
                           i++;
                         });
                       });
@@ -719,11 +719,11 @@ inputB2.addEventListener('change', ()=>{
 
 
 
-                    var inputB14 = document.querySelector('#inputB14');
-                    inputB14.addEventListener('change', ()=>{
-                      let codProd = parseInt(document.querySelector('#inputB13').value);
-                      let metr = parseInt(document.querySelector('#inputB14').value);
-                      let qtd = parseInt(document.querySelector('#inputB15').value);
+                    var inputB22 = document.querySelector('#inputB22');
+                    inputB22.addEventListener('change', ()=>{
+                      let codProd = parseInt(document.querySelector('#inputB19').value);
+                      let metr = parseFloat(document.querySelector('#inputB22').value);
+                      let qtd = parseInt(document.querySelector('#inputB23').value);
                   
                       // Configuração de conexão DB.
                       const config = {
@@ -780,7 +780,7 @@ inputB2.addEventListener('change', ()=>{
                           columns.forEach(column => {
                             let valProd = ("%s\t%s", /*column.metadata.colName,*/ parseFloat(column.value));
                             let valItem = ((valProd * metr) * qtd);
-                            document.querySelector('#inputB16').value = valItem;
+                            document.querySelector('#inputB24').value = valItem;
                             i++;
                           });
                         });
@@ -790,11 +790,11 @@ inputB2.addEventListener('change', ()=>{
 
 
 
-                      var inputB15 = document.querySelector('#inputB15');
-                      inputB15.addEventListener('change', ()=>{
-                        let codProd = parseInt(document.querySelector('#inputB13').value);
-                        let metr = parseInt(document.querySelector('#inputB14').value);
-                        let qtd = parseInt(document.querySelector('#inputB15').value);
+                      var inputB23 = document.querySelector('#inputB23');
+                      inputB23.addEventListener('change', ()=>{
+                        let codProd = parseInt(document.querySelector('#inputB19').value);
+                        let metr = parseFloat(document.querySelector('#inputB22').value);
+                        let qtd = parseInt(document.querySelector('#inputB23').value);
                     
                         // Configuração de conexão DB.
                         const config = {
@@ -851,7 +851,7 @@ inputB2.addEventListener('change', ()=>{
                             columns.forEach(column => {
                               let valProd = ("%s\t%s", /*column.metadata.colName,*/ parseFloat(column.value));
                               let valItem = ((valProd * metr) * qtd);
-                              document.querySelector('#inputB16').value = valItem;
+                              document.querySelector('#inputB24').value = valItem;
                               i++;
                             });
                           });
@@ -861,11 +861,11 @@ inputB2.addEventListener('change', ()=>{
 
 
 
-                        var inputB17 = document.querySelector('#inputB17');
-                        inputB17.addEventListener('change', ()=>{
-                          let codProd = parseInt(document.querySelector('#inputB17').value);
-                          let metr = parseInt(document.querySelector('#inputB18').value);
-                          let qtd = parseInt(document.querySelector('#inputB19').value);
+                        var inputB25 = document.querySelector('#inputB25');
+                        inputB25.addEventListener('change', ()=>{
+                          let codProd = parseInt(document.querySelector('#inputB25').value);
+                          let metr = parseFloat(document.querySelector('#inputB28').value);
+                          let qtd = parseInt(document.querySelector('#inputB29').value);
                       
                           // Configuração de conexão DB.
                           const config = {
@@ -922,7 +922,7 @@ inputB2.addEventListener('change', ()=>{
                               columns.forEach(column => {
                                 let valProd = ("%s\t%s", /*column.metadata.colName,*/ parseFloat(column.value));
                                 let valItem = ((valProd * metr) * qtd);
-                                document.querySelector('#inputB20').value = valItem;
+                                document.querySelector('#inputB30').value = valItem;
                                 i++;
                               });
                             });
@@ -932,11 +932,11 @@ inputB2.addEventListener('change', ()=>{
 
 
 
-                          var inputB18 = document.querySelector('#inputB18');
-                          inputB18.addEventListener('change', ()=>{
-                            let codProd = parseInt(document.querySelector('#inputB17').value);
-                            let metr = parseInt(document.querySelector('#inputB18').value);
-                            let qtd = parseInt(document.querySelector('#inputB19').value);
+                          var inputB28 = document.querySelector('#inputB28');
+                          inputB28.addEventListener('change', ()=>{
+                            let codProd = parseInt(document.querySelector('#inputB25').value);
+                            let metr = parseFloat(document.querySelector('#inputB28').value);
+                            let qtd = parseInt(document.querySelector('#inputB29').value);
                         
                             // Configuração de conexão DB.
                             const config = {
@@ -993,7 +993,7 @@ inputB2.addEventListener('change', ()=>{
                                 columns.forEach(column => {
                                   let valProd = ("%s\t%s", /*column.metadata.colName,*/ parseFloat(column.value));
                                   let valItem = ((valProd * metr) * qtd);
-                                  document.querySelector('#inputB20').value = valItem;
+                                  document.querySelector('#inputB30').value = valItem;
                                   i++;
                                 });
                               });
@@ -1003,11 +1003,11 @@ inputB2.addEventListener('change', ()=>{
 
 
 
-                            var inputB19 = document.querySelector('#inputB19');
-                            inputB19.addEventListener('change', ()=>{
-                              let codProd = parseInt(document.querySelector('#inputB17').value);
-                              let metr = parseInt(document.querySelector('#inputB18').value);
-                              let qtd = parseInt(document.querySelector('#inputB19').value);
+                            var inputB29 = document.querySelector('#inputB29');
+                            inputB29.addEventListener('change', ()=>{
+                              let codProd = parseInt(document.querySelector('#inputB25').value);
+                              let metr = parseFloat(document.querySelector('#inputB28').value);
+                              let qtd = parseInt(document.querySelector('#inputB29').value);
                           
                               // Configuração de conexão DB.
                               const config = {
@@ -1064,7 +1064,7 @@ inputB2.addEventListener('change', ()=>{
                                   columns.forEach(column => {
                                     let valProd = ("%s\t%s", /*column.metadata.colName,*/ parseFloat(column.value));
                                     let valItem = ((valProd * metr) * qtd);
-                                    document.querySelector('#inputB20').value = valItem;
+                                    document.querySelector('#inputB30').value = valItem;
                                     i++;
                                   });
                                 });

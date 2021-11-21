@@ -57,8 +57,9 @@ if (cod > 0) {
     console.log("Lendo dados da tabela...");
 
     const request = new Request(
-      `SELECT DISTINCT CodProduto, Metragem, Quantidade, Preço_do_item
-      FROM dbo.ItemPedido
+      `SELECT DISTINCT i.CodProduto, p.Nome, p.Preço, i.Metragem, i.Quantidade, i.Preço_do_item
+      FROM dbo.ItemPedido as i
+      Inner Join dbo.Produto as p ON p.CodProduto = i.CodProduto
       Where CodPedido = \'${cod}\'`,
       (err, rowCount) => {
         if (err) {

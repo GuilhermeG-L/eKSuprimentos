@@ -25,10 +25,10 @@ let codprodutoantigo1, codprodutoantigo2, codprodutoantigo3, codprodutoantigo4, 
 function prodantigo () {
 
 codprodutoantigo1 = parseInt(document.querySelector('#inputB1').value);
-codprodutoantigo2 = parseInt(document.querySelector('#inputB5').value);
-codprodutoantigo3 = parseInt(document.querySelector('#inputB9').value);
-codprodutoantigo4 = parseInt(document.querySelector('#inputB13').value);
-codprodutoantigo5 = parseInt(document.querySelector('#inputB17').value);
+codprodutoantigo2 = parseInt(document.querySelector('#inputB7').value);
+codprodutoantigo3 = parseInt(document.querySelector('#inputB13').value);
+codprodutoantigo4 = parseInt(document.querySelector('#inputB19').value);
+codprodutoantigo5 = parseInt(document.querySelector('#inputB25').value);
 console.log(codprodutoantigo1, codprodutoantigo2, codprodutoantigo3);
 
 }
@@ -49,9 +49,9 @@ if (cod > 0) {
   var btnConcluir = document.querySelector('.btnConcluir');
   btnConcluir.addEventListener('click', ()=>{
     let codproduto = parseInt(document.querySelector('#inputB1').value);
-    let metragem = parseFloat(document.querySelector('#inputB2').value);
-    let quantidade = parseInt(document.querySelector('#inputB3').value);
-    let preçoitem = parseFloat(document.querySelector('#inputB4').value);
+    let metragem = parseFloat(document.querySelector('#inputB4').value);
+    let quantidade = parseInt(document.querySelector('#inputB5').value);
+    let preçoitem = parseFloat(document.querySelector('#inputB6').value);
   
 
 
@@ -125,10 +125,10 @@ if (cod > 0) {
   
     var btnConcluir = document.querySelector('.btnConcluir');
     btnConcluir.addEventListener('click', ()=>{
-      let codproduto = parseInt(document.querySelector('#inputB5').value);
-      let metragem = parseFloat(document.querySelector('#inputB6').value);
-      let quantidade = parseInt(document.querySelector('#inputB7').value);
-      let preçoitem = parseFloat(document.querySelector('#inputB8').value);
+      let codproduto = parseInt(document.querySelector('#inputB7').value);
+      let metragem = parseFloat(document.querySelector('#inputB10').value);
+      let quantidade = parseInt(document.querySelector('#inputB11').value);
+      let preçoitem = parseFloat(document.querySelector('#inputB12').value);
     
       // Configuração de conexão DB.
       const config = {
@@ -195,10 +195,10 @@ if (cod > 0) {
 
       var btnConcluir = document.querySelector('.btnConcluir');
       btnConcluir.addEventListener('click', ()=>{
-        let codproduto = parseInt(document.querySelector('#inputB9').value);
-        let metragem = parseFloat(document.querySelector('#inputB10').value);
-        let quantidade = parseInt(document.querySelector('#inputB11').value);
-        let preçoitem = parseFloat(document.querySelector('#inputB12').value);
+        let codproduto = parseInt(document.querySelector('#inputB13').value);
+        let metragem = parseFloat(document.querySelector('#inputB16').value);
+        let quantidade = parseInt(document.querySelector('#inputB17').value);
+        let preçoitem = parseFloat(document.querySelector('#inputB18').value);
       
         // Configuração de conexão DB.
         const config = {
@@ -264,10 +264,10 @@ if (cod > 0) {
 
         var btnConcluir = document.querySelector('.btnConcluir');
         btnConcluir.addEventListener('click', ()=>{
-          let codproduto = parseInt(document.querySelector('#inputB13').value);
-          let metragem = parseFloat(document.querySelector('#inputB14').value);
-          let quantidade = parseInt(document.querySelector('#inputB15').value);
-          let preçoitem = parseFloat(document.querySelector('#inputB16').value);
+          let codproduto = parseInt(document.querySelector('#inputB19').value);
+          let metragem = parseFloat(document.querySelector('#inputB22').value);
+          let quantidade = parseInt(document.querySelector('#inputB23').value);
+          let preçoitem = parseFloat(document.querySelector('#inputB24').value);
         
           // Configuração de conexão DB.
           const config = {
@@ -333,10 +333,10 @@ if (cod > 0) {
 
           var btnConcluir = document.querySelector('.btnConcluir');
           btnConcluir.addEventListener('click', ()=>{
-            let codproduto = parseInt(document.querySelector('#inputB17').value);
-            let metragem = parseFloat(document.querySelector('#inputB18').value);
-            let quantidade = parseInt(document.querySelector('#inputB19').value);
-            let preçoitem = parseFloat(document.querySelector('#inputB20').value);
+            let codproduto = parseInt(document.querySelector('#inputB25').value);
+            let metragem = parseFloat(document.querySelector('#inputB28').value);
+            let quantidade = parseInt(document.querySelector('#inputB29').value);
+            let preçoitem = parseFloat(document.querySelector('#inputB30').value);
           
             // Configuração de conexão DB.
             const config = {
@@ -430,9 +430,9 @@ else {
     let codcliente = parseInt(document.querySelector('#input2').value);
     let codvendedor = parseInt(document.querySelector('#input3').value);
     let codproduto = parseInt(document.querySelector('#inputB1').value);
-    let metragem = parseFloat(document.querySelector('#inputB2').value);
-    let quantidade = parseInt(document.querySelector('#inputB3').value);
-    let preçoitem = parseFloat(document.querySelector('#inputB4').value);
+    let metragem = parseFloat(document.querySelector('#inputB4').value);
+    let quantidade = parseInt(document.querySelector('#inputB5').value);
+    let preçoitem = parseFloat(document.querySelector('#inputB6').value);
   
     // Configuração de conexão DB.
     const config = {
@@ -499,10 +499,10 @@ else {
       let codNew = parseInt(document.querySelector('#input1').value);
       let codcliente = parseInt(document.querySelector('#input2').value);
       let codvendedor = parseInt(document.querySelector('#input3').value);
-      let codproduto = parseInt(document.querySelector('#inputB5').value);
-      let metragem = parseFloat(document.querySelector('#inputB6').value);
-      let quantidade = parseInt(document.querySelector('#inputB7').value);
-      let preçoitem = parseFloat(document.querySelector('#inputB8').value);
+      let codproduto = parseInt(document.querySelector('#inputB7').value);
+      let metragem = parseFloat(document.querySelector('#inputB10').value);
+      let quantidade = parseInt(document.querySelector('#inputB11').value);
+      let preçoitem = parseFloat(document.querySelector('#inputB12').value);
     
       // Configuração de conexão DB.
       const config = {
@@ -570,10 +570,10 @@ else {
         let codNew = parseInt(document.querySelector('#input1').value);
         let codcliente = parseInt(document.querySelector('#input2').value);
         let codvendedor = parseInt(document.querySelector('#input3').value);
-        let codproduto = parseInt(document.querySelector('#inputB9').value);
-        let metragem = parseFloat(document.querySelector('#inputB10').value);
-        let quantidade = parseInt(document.querySelector('#inputB11').value);
-        let preçoitem = parseFloat(document.querySelector('#inputB12').value);
+        let codproduto = parseInt(document.querySelector('#inputB13').value);
+        let metragem = parseFloat(document.querySelector('#inputB16').value);
+        let quantidade = parseInt(document.querySelector('#inputB17').value);
+        let preçoitem = parseFloat(document.querySelector('#inputB18').value);
       
         // Configuração de conexão DB.
         const config = {
@@ -640,10 +640,10 @@ else {
           let codNew = parseInt(document.querySelector('#input1').value);
           let codcliente = parseInt(document.querySelector('#input2').value);
           let codvendedor = parseInt(document.querySelector('#input3').value);
-          let codproduto = parseInt(document.querySelector('#inputB13').value);
-          let metragem = parseFloat(document.querySelector('#inputB14').value);
-          let quantidade = parseInt(document.querySelector('#inputB15').value);
-          let preçoitem = parseFloat(document.querySelector('#inputB16').value);
+          let codproduto = parseInt(document.querySelector('#inputB19').value);
+          let metragem = parseFloat(document.querySelector('#inputB22').value);
+          let quantidade = parseInt(document.querySelector('#inputB23').value);
+          let preçoitem = parseFloat(document.querySelector('#inputB24').value);
         
           // Configuração de conexão DB.
           const config = {
@@ -710,10 +710,10 @@ else {
             let codNew = parseInt(document.querySelector('#input1').value);
             let codcliente = parseInt(document.querySelector('#input2').value);
             let codvendedor = parseInt(document.querySelector('#input3').value);
-            let codproduto = parseInt(document.querySelector('#inputB17').value);
-            let metragem = parseFloat(document.querySelector('#inputB18').value);
-            let quantidade = parseInt(document.querySelector('#inputB19').value);
-            let preçoitem = parseFloat(document.querySelector('#inputB20').value);
+            let codproduto = parseInt(document.querySelector('#inputB25').value);
+            let metragem = parseFloat(document.querySelector('#inputB28').value);
+            let quantidade = parseInt(document.querySelector('#inputB29').value);
+            let preçoitem = parseFloat(document.querySelector('#inputB30').value);
           
             // Configuração de conexão DB.
             const config = {
