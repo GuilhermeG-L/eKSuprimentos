@@ -57,9 +57,11 @@ if (cod > 0) {
     console.log("Lendo dados da tabela...");
 
     const request = new Request(
-      `SELECT DISTINCT CodPedido, CodCliente, CodVendedor, Data_realização, Data_Entrega
-      FROM dbo.Pedido
-      Where CodPedido = \'${cod}\'`,
+      `SELECT DISTINCT p.CodPedido, p.CodCliente, c.Nome, p.CodVendedor, v.Nome, p.Data_realização, p.Data_Entrega
+      FROM dbo.Pedido as p
+      Inner Join dbo.Cliente as c ON p.CodCliente = c.CodCliente
+      Inner Join dbo.Vendedor as v ON p.CodVendedor = v.CodVendedor
+      Where p.CodPedido = \'${cod}\'`,
       (err, rowCount) => {
         if (err) {
           console.error(err.message);

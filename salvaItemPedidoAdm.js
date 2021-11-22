@@ -430,7 +430,7 @@ else {
     function f1() {
     let codNew = parseInt(document.querySelector('#input1').value);
     let codcliente = parseInt(document.querySelector('#input2').value);
-    let codvendedor = parseInt(document.querySelector('#input3').value);
+    let codvendedor = parseInt(document.querySelector('#input4').value);
     let codproduto = parseInt(document.querySelector('#inputB1').value);
     let metragem = parseFloat(document.querySelector('#inputB4').value);
     let quantidade = parseInt(document.querySelector('#inputB5').value);
@@ -503,7 +503,7 @@ else {
       function f2() {
       let codNew = parseInt(document.querySelector('#input1').value);
       let codcliente = parseInt(document.querySelector('#input2').value);
-      let codvendedor = parseInt(document.querySelector('#input3').value);
+      let codvendedor = parseInt(document.querySelector('#input4').value);
       let codproduto = parseInt(document.querySelector('#inputB7').value);
       let metragem = parseFloat(document.querySelector('#inputB10').value);
       let quantidade = parseInt(document.querySelector('#inputB11').value);
@@ -577,7 +577,7 @@ else {
         function f3() {
         let codNew = parseInt(document.querySelector('#input1').value);
         let codcliente = parseInt(document.querySelector('#input2').value);
-        let codvendedor = parseInt(document.querySelector('#input3').value);
+        let codvendedor = parseInt(document.querySelector('#input4').value);
         let codproduto = parseInt(document.querySelector('#inputB13').value);
         let metragem = parseFloat(document.querySelector('#inputB16').value);
         let quantidade = parseInt(document.querySelector('#inputB17').value);
@@ -650,7 +650,7 @@ else {
           function f4() {
           let codNew = parseInt(document.querySelector('#input1').value);
           let codcliente = parseInt(document.querySelector('#input2').value);
-          let codvendedor = parseInt(document.querySelector('#input3').value);
+          let codvendedor = parseInt(document.querySelector('#input4').value);
           let codproduto = parseInt(document.querySelector('#inputB19').value);
           let metragem = parseFloat(document.querySelector('#inputB22').value);
           let quantidade = parseInt(document.querySelector('#inputB23').value);
@@ -723,7 +723,7 @@ else {
             function f5() {
             let codNew = parseInt(document.querySelector('#input1').value);
             let codcliente = parseInt(document.querySelector('#input2').value);
-            let codvendedor = parseInt(document.querySelector('#input3').value);
+            let codvendedor = parseInt(document.querySelector('#input4').value);
             let codproduto = parseInt(document.querySelector('#inputB25').value);
             let metragem = parseFloat(document.querySelector('#inputB28').value);
             let quantidade = parseInt(document.querySelector('#inputB29').value);
