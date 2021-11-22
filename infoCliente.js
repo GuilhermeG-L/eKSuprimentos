@@ -1,7 +1,7 @@
 const { Connection, Request } = require("tedious");
 const ipc = require('electron').ipcRenderer
 
-function pegarCod(parameter) {  
+function pegarNome(parameter) {  
   var loc = location.search.substring(1, location.search.length);   
   var param_value = false;   
   var params = loc.split("&");   
@@ -19,9 +19,26 @@ function pegarCod(parameter) {
   }   
 }
 
-var cod = pegarCod("cod");
-console.log(cod)
-if (cod > 0) {
+function converteNome(nome){
+  var arrNomes = nome.split('%20')
+  console.log(arrNomes)
+  var nomeString = ''
+  arrNomes.forEach(e=>{
+    nomeString+=e
+    if(!(e == arrNomes[arrNomes.length-1])){
+      nomeString += ' '
+    }
+  })
+  return nomeString
+}
+
+var nomeCli = pegarNome("nome")
+console.log(`Tipo da variável 'nome':${typeof nome}`)
+console.log('Info Cliente:'+nomeCli)
+nomeCli = converteNome(nomeCli)
+console.log(nomeCli)
+
+if (nomeCli != undefined) {
 
   // Configuração de conexão DB.
   const config = {
@@ -59,7 +76,7 @@ if (cod > 0) {
     const request = new Request(
       `SELECT DISTINCT CodCliente, Nome, CPF, Telefone, Logradouro, Numero, Complemento, Bairro, Cidade, Estado, CEP
       FROM dbo.Cliente
-      Where CodCliente = \'${cod}\'`,
+      Where Nome = \'${nomeCli}\'`,
       (err, rowCount) => {
         if (err) {
           console.error(err.message);

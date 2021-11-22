@@ -1,7 +1,7 @@
 const { Connection, Request } = require("tedious");
 const ipc = require('electron').ipcRenderer
 
-function pegarCod(parameter) {  
+function pegarNome(parameter) {  
   var loc = location.search.substring(1, location.search.length);   
   var param_value = false;   
   var params = loc.split("&");   
@@ -19,12 +19,30 @@ function pegarCod(parameter) {
   }   
 }
 
-var cod = pegarCod("cod");
+function converteNome(nome){
+  var arrNomes = nome.split('%20')
+  console.log(arrNomes)
+  var nomeString = ''
+  arrNomes.forEach(e=>{
+    nomeString+=e
+    if(!(e == arrNomes[arrNomes.length-1])){
+      nomeString += ' '
+    }
+  })
+  return nomeString
+}
 
-if (cod > 0) {
+var nomeCli = pegarNome("nome")
+console.log(`Tipo da variável 'nome':${typeof nome}`)
+console.log('Info Cliente:'+nomeCli)
+nomeCli = converteNome(nomeCli)
+console.log(nomeCli)
+
+if (nomeCli != undefined) {
   
   var btnCadastrar = document.querySelector('.btnCadastrar');
   btnCadastrar.addEventListener('click', ()=>{
+    let cod = (document.querySelector('#input1').value);
     let nome = (document.querySelector('#input2').value);
     let cpf = (document.querySelector('#input3').value);
     let telefone = (document.querySelector('#input4').value);
@@ -36,7 +54,18 @@ if (cod > 0) {
     let estado = (document.querySelector('#input10').value);
     let cep = (document.querySelector('#input11').value);
 
-    console.log(cod);
+    console.log('Código:', cod);
+    console.log('Nome cliente:', nome);
+    console.log('CPF Cliente:', cpf);
+    console.log('Telefone:', telefone);
+    console.log('Logradouro:', logradouro);
+    console.log('Número:', numero);
+    console.log('Complemento:', complemento);
+    console.log('Bairro:', bairro);
+    console.log('Cidade:', cidade);
+    console.log('Estado:', estado);
+    console.log('CEP:', cep);
+
     // Configuração de conexão DB.
     const config = {
       authentication: {
@@ -73,7 +102,7 @@ if (cod > 0) {
       const request = new Request(
         `UPDATE dbo.Cliente
         SET CodCliente = \'${cod}\', Nome = \'${nome}\', CPF = \'${cpf}\', Telefone = \'${telefone}\', Logradouro = \'${logradouro}\', Numero = \'${numero}\', Complemento = \'${complemento}\', Bairro = \'${bairro}\', Cidade = \'${cidade}\', Estado = \'${estado}\', CEP = \'${cep}\'
-        Where CodCliente = \'${cod}\'`,
+        Where Nome = \'${nomeCli}\'`,
         (err, rowCount) => {
           if (err) {
             ipc.send('erroupdate');
@@ -112,17 +141,17 @@ else {
     let estado = (document.querySelector('#input10').value);
     let cep = (document.querySelector('#input11').value);
   
-    console.log(codNew);
-    console.log(nome);
-    console.log(cpf);
-    console.log(telefone);
-    console.log(logradouro);
-    console.log(numero);
-    console.log(complemento);
-    console.log(bairro);
-    console.log(cidade);
-    console.log(estado);
-    console.log(cep);
+    console.log('Novo Código:', codNew);
+    console.log('Nome cliente:', nome);
+    console.log('CPF Cliente:', cpf);
+    console.log('Telefone:', telefone);
+    console.log('Logradouro:', logradouro);
+    console.log('Número:', numero);
+    console.log('Complemento:', complemento);
+    console.log('Bairro:', bairro);
+    console.log('Cidade:', cidade);
+    console.log('Estado:', estado);
+    console.log('CEP:', cep);
     // Configuração de conexão DB.
     const config = {
       authentication: {
