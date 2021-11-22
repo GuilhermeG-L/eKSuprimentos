@@ -473,12 +473,12 @@ else {
         `Insert Into dbo.ItemPedido values (\'${codNew}\', \'${codcliente}\', \'${codvendedor}\', \'${codproduto}\', \'${quantidade}\', \'${metragem}\', \'${preçoitem}\');`,
         (err, rowCount) => {
           if (err) {
-            ipc.send('erroinsert');
+
             console.error(err.message);
           }
           else {
             console.log(`${rowCount} linha(s) retornadas`);
-            if (rowCount != 1) {ipc.send('erroinsert');}
+            if (rowCount != 1) {}
             else {}
             //window.location = '../Telas Adm/gerenciarPedidosAdm.html';
           }
@@ -546,7 +546,7 @@ else {
           `Insert Into dbo.ItemPedido values (\'${codNew}\', \'${codcliente}\', \'${codvendedor}\', \'${codproduto}\', \'${quantidade}\', \'${metragem}\', \'${preçoitem}\');`,
           (err, rowCount) => {
             if (err) {
-              ipc.send('erroinsert');
+
               console.error(err.message);
             }
             else {
@@ -620,7 +620,7 @@ else {
             `Insert Into dbo.ItemPedido values (\'${codNew}\', \'${codcliente}\', \'${codvendedor}\', \'${codproduto}\', \'${quantidade}\', \'${metragem}\', \'${preçoitem}\');`,
             (err, rowCount) => {
               if (err) {
-                ipc.send('erroinsert');
+
                 console.error(err.message);
               }
               else {
@@ -693,7 +693,7 @@ else {
               `Insert Into dbo.ItemPedido values (\'${codNew}\', \'${codcliente}\', \'${codvendedor}\', \'${codproduto}\', \'${quantidade}\', \'${metragem}\', \'${preçoitem}\');`,
               (err, rowCount) => {
                 if (err) {
-                  ipc.send('erroinsert');
+
                   console.error(err.message);
                 }
                 else {
@@ -766,7 +766,7 @@ else {
                 `Insert Into dbo.ItemPedido values (\'${codNew}\', \'${codcliente}\', \'${codvendedor}\', \'${codproduto}\', \'${quantidade}\', \'${metragem}\', \'${preçoitem}\');`,
                 (err, rowCount) => {
                   if (err) {
-                    ipc.send('erroinsert');
+
                     console.error(err.message);
                   }
                   else {
