@@ -15,7 +15,22 @@
     margin-top: 20px;
 }
 
+.secCodOrdem{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 2.5%;
+}
+
 .secCod{
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.secNome{
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -118,15 +133,25 @@ label{
 
 .lblCodProduto{
     margin-left: 5px;
-    margin-right: 338px;
-}
-
-.lblMetragem{
     margin-right: 80px;
 }
 
+.lblNomeProduto{
+    margin-left: 5px;
+    margin-right: 110px;
+}
+
+.lblPreçoProduto{
+    margin-left: 5px;
+    margin-right: 45px;
+}
+
+.lblMetragem{
+    margin-right: 62.5px;
+}
+
 .lblQtd{
-    margin-right: 65px;
+    margin-right: 62.5px;
 }
 
 .produto{
@@ -148,16 +173,20 @@ label{
     color: #232323;
 }
 
-.metrProduto, .qtdProduto{
+.codProduto{
+    width: 80px;
+}
+
+.preçoProduto{
+    margin-right: 1.3%;
+}
+
+.metrProduto, .qtdProduto, .preçoProduto{
     width: 100px;
 }
 
-.codProduto{
-    width: 460px;
-}
-
-.codProduto, .metrProduto{
-    margin-right: 1.3%;
+.nomeProduto {
+    width: 200px;
 }
 
 /* Preço total */

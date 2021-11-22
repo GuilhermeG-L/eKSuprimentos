@@ -32,32 +32,44 @@
                 <section class = "codigos">
 
                     <!-- Código do Pedido -->
-                    <section class = "secCod">
-                        <label>Código do pedido</label>
+                    <section class = "secCodPedido">
+                        <label>Código</label>
                         <input type = "number" id = "input1" class = "inputAddPedido " placeholder="Digite o código do pedido" readonly>
                     </section>
 
                     <!-- Código do Cliente -->
                     <section class = "secCod">
-                        <label>Código do cliente</label>
-                        <input type = "number" id = "input2" class = "inputAddPedido inputCodCli" placeholder="Digite o código do cliente">
+                        <label>Código</label>
+                        <input type = "number" id = "input2" class = "inputAddPedido inputCodCli" placeholder="" readonly>
+                    </section>
+
+                    <!-- Nome do Cliente -->
+                    <section class = "secNome">
+                        <label>Nome do cliente</label>
+                        <input type = "text" id = "input3" class = "inputAddPedido inputNomeCli" placeholder="Digite o nome do cliente">
                     </section>
 
                     <!-- Código do vendedor -->
                     <section class = "secCod">
-                        <label>Código do vendedor</label>
-                        <input type = "number" id = "input3" class = "inputAddPedido inputCodVend" placeholder="Digite o código do vendedor">
+                        <label>Código</label>
+                        <input type = "number" id = "input4" class = "inputAddPedido inputCodVend" placeholder="" readonly>
+                    </section>
+
+                    <!-- Nome do Vendedor -->
+                    <section class = "secNome">
+                        <label>Nome do vendedor</label>
+                        <input type = "text" id = "input5" class = "inputAddPedido inputNomeVend" placeholder="Digite o nome do vendedor">
                     </section>
                 </section>
                 </section>
                 <section class = "datasMeio">
                     <section class = "secDataRealizacao secDataMeio ">
                         <label>Data realização</label>
-                        <input type = "date" id = "input4" class = "inputDataMeio" min="01-01-1000" max="31-12-9999">
+                        <input type = "date" id = "input6" class = "inputDataMeio" min="01-01-1000" max="31-12-9999">
                     </section>
                     <section class = "secDataEntrega secDataMeio">
                         <label>Data entrega</label>
-                        <input type = "date" id = "input5" class = "inputDataMeio" min="01-01-1000" max="31-12-9999">
+                        <input type = "date" id = "input7" class = "inputDataMeio" min="01-01-1000" max="31-12-9999">
                     </section>
                 </section>
             </div>
@@ -128,11 +140,12 @@
     <script>window.api.loadscript('./infoPedido.js');</script>
     <script>window.api.loadscript('./infoItemPedido.js');</script>
     <script>window.api.loadscript('./extraItemPedido.js');</script>
+    <script>window.api.loadscript('./extraPedido.js');</script>
     <script>window.api.loadscript('./preçoItemPedido.js');</script>
     <script>window.api.loadscript('./preçoTotal.js');</script>
     <script>window.api.loadscript('./calcPreçoTotal.js');</script>
     <script>window.api.loadscript('./salvaPedidoAdm.js');</script>
     <script>window.api.loadscript('./salvaItemPedidoAdm.js');</script>
-    <script>window.api.loadscript('./criaOrdem.js');</script>
+    <script>window.api.loadscript('./criaOrdemAdm.js');</script>
     <script>window.api.loadscript('./restricoesValoresPedido.js')</script>
 </html>
