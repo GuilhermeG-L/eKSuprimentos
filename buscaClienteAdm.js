@@ -52,7 +52,7 @@ btnBuscar.addEventListener('click', ()=>{
         else {
           console.log(`${rowCount} linha(s) retornadas`);
           if (rowCount != 1) {ipc.send('erroselect');}
-          else {nomeCliente = encodeURIComponent(nomeCliente); window.location = '../Telas Adm/editarClienteAdm.html?nome='+nomeCliente;}
+          else {window.location = '../Telas Adm/editarClienteAdm.html?nome='+nomeCliente;}
         }
       }
     );

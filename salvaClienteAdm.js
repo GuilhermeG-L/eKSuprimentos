@@ -19,26 +19,11 @@ function pegarNome(parameter) {
   }   
 }
 
-function converteNome(nome){
-  var arrNomes = nome.split('%20')
-  console.log(arrNomes)
-  var nomeString = ''
-  arrNomes.forEach(e=>{
-    nomeString+=e
-    if(!(e == arrNomes[arrNomes.length-1])){
-      nomeString += ' '
-    }
-  })
-  return nomeString
-}
-
 var nomeCli = pegarNome("nome")
-console.log(`Tipo da variável 'nome':${typeof nome}`)
-console.log('Info Cliente:'+nomeCli)
-nomeCli = converteNome(nomeCli)
+nomeCli = decodeURIComponent(nomeCli)
 console.log(nomeCli)
 
-if (nomeCli != undefined) {
+if (nomeCli != 'undefined') {
   
   var btnCadastrar = document.querySelector('.btnCadastrar');
   btnCadastrar.addEventListener('click', ()=>{
@@ -102,7 +87,7 @@ if (nomeCli != undefined) {
       const request = new Request(
         `UPDATE dbo.Cliente
         SET CodCliente = \'${cod}\', Nome = \'${nome}\', CPF = \'${cpf}\', Telefone = \'${telefone}\', Logradouro = \'${logradouro}\', Numero = \'${numero}\', Complemento = \'${complemento}\', Bairro = \'${bairro}\', Cidade = \'${cidade}\', Estado = \'${estado}\', CEP = \'${cep}\'
-        Where Nome = \'${nomeCli}\'`,
+        Where CodCliente = \'${cod}\'`,
         (err, rowCount) => {
           if (err) {
             ipc.send('erroupdate');

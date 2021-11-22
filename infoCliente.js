@@ -24,7 +24,7 @@ var nomeCli = pegarNome("nome")
 nomeCli = decodeURIComponent(nomeCli)
 console.log(nomeCli)
 
-if (nomeCli != undefined) {
+if (nomeCli != 'undefined') {
 
   // Configuração de conexão DB.
   const config = {
