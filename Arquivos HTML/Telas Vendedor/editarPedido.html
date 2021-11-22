@@ -30,75 +30,99 @@
                 <section class = "codigos">
 
                     <!-- Código do Pedido -->
-                    <section class = "secCod">
-                        <label>Código do pedido</label>
-                        <input type = "number" id = "input1" class = "inputAddPedido " placeholder="Digite o código do pedido" readonly>
+                    <section class = "secCodPedido">
+                        <label>Código</label>
+                        <input type = "number" id = "input1" class = "inputAddPedido " placeholder="Digite o código do pedido" disabled>
                     </section>
 
                     <!-- Código do Cliente -->
                     <section class = "secCod">
-                        <label>Código do cliente</label>
-                        <input type = "number" id = "input2" class = "inputAddPedido inputCodCli" placeholder="Digite o código do cliente">
+                        <label>Código</label>
+                        <input type = "number" id = "input2" class = "inputAddPedido inputCodCli" placeholder="" disabled>
+                    </section>
+
+                    <!-- Nome do Cliente -->
+                    <section class = "secNome">
+                        <label>Nome do cliente</label>
+                        <input type = "text" id = "input3" class = "inputAddPedido inputNomeCli" placeholder="Digite o nome do cliente">
                     </section>
 
                     <!-- Código do vendedor -->
                     <section class = "secCod">
-                        <label>Código do vendedor</label>
-                        <input type = "number" id = "input3" class = "inputAddPedido inputCodVend" placeholder="Digite o código do vendedor">
+                        <label>Código</label>
+                        <input type = "number" id = "input4" class = "inputAddPedido inputCodVend" placeholder="" disabled>
+                    </section>
+
+                    <!-- Nome do Vendedor -->
+                    <section class = "secNome">
+                        <label>Nome do vendedor</label>
+                        <input type = "text" id = "input5" class = "inputAddPedido inputNomeVend" placeholder="Digite o nome do vendedor">
                     </section>
                 </section>
                 </section>
                 <section class = "datasMeio">
                     <section class = "secDataRealizacao secDataMeio ">
                         <label>Data realização</label>
-                        <input type = "date" id = "input4" class = "inputDataMeio" min="01-01-1000" max="31-12-9999">
+                        <input type = "date" id = "input6" class = "inputDataMeio" min="01-01-1000" max="31-12-9999">
                     </section>
                     <section class = "secDataEntrega secDataMeio">
                         <label>Data entrega</label>
-                        <input type = "date" id = "input5" class = "inputDataMeio" min="01-01-1000" max="31-12-9999">
+                        <input type = "date" id = "input7" class = "inputDataMeio" min="01-01-1000" max="31-12-9999">
                     </section>
                 </section>
             </div>
             <div class = "prodPedido">
                 <section class = "introButton">
-                    <h2 class = "divTit">Produto do pedido</h2>
+                    <h2 class = "divTit">Itens do pedido</h2>
                 </section>  
                 <section class = "produtos">
                     <section class = "labels">
-                        <p class = "label lblCodProduto">Código do produto</p>
-                        <p class = "label lblMetragem">Metr</p>
-                        <p class = "label lblQtd">Qtd</p>
+                        <p class = "label lblCodProduto">Código</p>
+                        <p class = "label lblNomeProduto">Nome</p>
+                        <p class = "label lblPreçoProduto">Preço/Unid.</p>
+                        <p class = "label lblMetragem">Metr.</p>
+                        <p class = "label lblQtd">Qtd.</p>
                         <p class = "label lblPreço">Preço</p>
                     </section>
                     <section class = "produto">
                         <input type = "number" id = "inputB1" class = "inputProduto codProduto" placeholder="Digite o código"/>
-                        <input type = "number" id = "inputB2" class = "inputProduto metrProduto">
-                        <input type = "number" id = "inputB3" class = "inputProduto qtdProduto">
-                        <input type = "number" id = "inputB4" class = "inputProduto preçoProduto" readonly> 
+                        <input type = "text" id = "inputB2" class = "inputProduto nomeProduto" disabled> 
+                        <input type = "number" id = "inputB3" class = "inputProduto preçoProduto" disabled> 
+                        <input type = "number" id = "inputB4" class = "inputProduto metrProduto">
+                        <input type = "number" id = "inputB5" class = "inputProduto qtdProduto">
+                        <input type = "number" id = "inputB6" class = "inputProduto preçoProduto" disabled> 
                     </section>
                     <section class = "produto">
-                        <input type = "number" id = "inputB5" class = "inputProduto codProduto" placeholder="Digite o código"/>
-                        <input type = "number" id = "inputB6" class = "inputProduto metrProduto">
-                        <input type = "number" id = "inputB7" class = "inputProduto qtdProduto">
-                        <input type = "number" id = "inputB8" class = "inputProduto preçoProduto" readonly> 
-                    </section>
-                    <section class = "produto">
-                        <input type = "number" id = "inputB9" class = "inputProduto codProduto" placeholder="Digite o código"/>
+                        <input type = "number" id = "inputB7" class = "inputProduto codProduto" placeholder="Digite o código"/>
+                        <input type = "text" id = "inputB8" class = "inputProduto nomeProduto" disabled> 
+                        <input type = "number" id = "inputB9" class = "inputProduto preçoProduto" disabled> 
                         <input type = "number" id = "inputB10" class = "inputProduto metrProduto">
-                        <input type = "number" id = "inputB11" class = "inputProduto qtdProduto"> 
-                        <input type = "number" id = "inputB12" class = "inputProduto preçoProduto" readonly> 
+                        <input type = "number" id = "inputB11" class = "inputProduto qtdProduto">
+                        <input type = "number" id = "inputB12" class = "inputProduto preçoProduto" disabled> 
                     </section>
                     <section class = "produto">
                         <input type = "number" id = "inputB13" class = "inputProduto codProduto" placeholder="Digite o código"/>
-                        <input type = "number" id = "inputB14" class = "inputProduto metrProduto">
-                        <input type = "number" id = "inputB15" class = "inputProduto qtdProduto"> 
-                        <input type = "number" id = "inputB16" class = "inputProduto preçoProduto" readonly> 
+                        <input type = "text" id = "inputB14" class = "inputProduto nomeProduto" disabled> 
+                        <input type = "number" id = "inputB15" class = "inputProduto preçoProduto" disabled> 
+                        <input type = "number" id = "inputB16" class = "inputProduto metrProduto">
+                        <input type = "number" id = "inputB17" class = "inputProduto qtdProduto"> 
+                        <input type = "number" id = "inputB18" class = "inputProduto preçoProduto" disabled> 
                     </section>
                     <section class = "produto">
-                        <input type = "number" id = "inputB17" class = "inputProduto codProduto" placeholder="Digite o código"/>
-                        <input type = "number" id = "inputB18" class = "inputProduto metrProduto">
-                        <input type = "number" id = "inputB19" class = "inputProduto qtdProduto">
-                        <input type = "number" id = "inputB20" class = "inputProduto preçoProduto" readonly> 
+                        <input type = "number" id = "inputB19" class = "inputProduto codProduto" placeholder="Digite o código"/>
+                        <input type = "text" id = "inputB20" class = "inputProduto nomeProduto" disabled> 
+                        <input type = "number" id = "inputB21" class = "inputProduto preçoProduto" disabled> 
+                        <input type = "number" id = "inputB22" class = "inputProduto metrProduto">
+                        <input type = "number" id = "inputB23" class = "inputProduto qtdProduto"> 
+                        <input type = "number" id = "inputB24" class = "inputProduto preçoProduto" disabled> 
+                    </section>
+                    <section class = "produto">
+                        <input type = "number" id = "inputB25" class = "inputProduto codProduto" placeholder="Digite o código"/>
+                        <input type = "text" id = "inputB26" class = "inputProduto nomeProduto" disabled> 
+                        <input type = "number" id = "inputB27" class = "inputProduto preçoProduto" disabled> 
+                        <input type = "number" id = "inputB28" class = "inputProduto metrProduto">
+                        <input type = "number" id = "inputB29" class = "inputProduto qtdProduto">
+                        <input type = "number" id = "inputB30" class = "inputProduto preçoProduto" disabled> 
                     </section>
                 </section>
                 <section class = "total">
@@ -112,6 +136,8 @@
     </div>
     <script>window.api.loadscript('./infoPedido.js');</script>
     <script>window.api.loadscript('./infoItemPedido.js');</script>
+    <script>window.api.loadscript('./extraItemPedido.js');</script>
+    <script>window.api.loadscript('./extraPedido.js');</script>
     <script>window.api.loadscript('./preçoItemPedido.js');</script>
     <script>window.api.loadscript('./preçoTotal.js');</script>
     <script>window.api.loadscript('./calcPreçoTotal.js');</script>

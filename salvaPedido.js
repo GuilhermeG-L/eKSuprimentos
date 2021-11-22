@@ -32,9 +32,9 @@ if (cod > 0) {
   var btnConcluir = document.querySelector('.btnConcluir');
   btnConcluir.addEventListener('click', ()=>{
     let codcliente = parseInt(document.querySelector('#input2').value);
-    let codvendedor = parseInt(document.querySelector('#input3').value);
-    let dataentrega = converterData(document.querySelector('#input5').value);
-    let datarealizacao = converterData(document.querySelector('#input4').value);
+    let codvendedor = parseInt(document.querySelector('#input4').value);
+    let dataentrega = converterData(document.querySelector('#input7').value);
+    let datarealizacao = converterData(document.querySelector('#input6').value);
     let preçototal = parseFloat(document.querySelector('.precoTotal').value);
     
 
@@ -88,6 +88,7 @@ if (cod > 0) {
         (err, rowCount) => {
           if (err) {
             ipc.send('erroupdate');
+            console.error(err.message);
           }
           else {
             console.log(`${rowCount} linha(s) retornadas`);
@@ -113,9 +114,9 @@ else {
   btnConcluir.addEventListener('click', ()=>{
     let codNew = parseInt(document.querySelector('#input1').value);
     let codcliente = parseInt(document.querySelector('#input2').value);
-    let codvendedor = parseInt(document.querySelector('#input3').value);
-    let dataentrega = (document.querySelector('#input5').value);
-    let datarealizacao = (document.querySelector('#input4').value);
+    let codvendedor = parseInt(document.querySelector('#input4').value);
+    let dataentrega = (document.querySelector('#input7').value);
+    let datarealizacao = (document.querySelector('#input6').value);
     let preçototal = parseFloat(document.querySelector('.precoTotal').value);
   
 

@@ -28,72 +28,86 @@
                 <h2 class = "divTit">Informações da ordem</h2>
                 <section class = "codigos">
                     <!-- Código da Ordem -->
-                    <section class = "secCod">
+                    <section class = "secCodOrdem">
                         <label>Código da ordem</label>
                         <input type = "number" id = "input1" class = "inputEditOrdem" disabled>
                     </section>
 
                     <!-- Código do Pedido -->
-                    <section class = "secCod">
+                    <section class = "secCodOrdem">
                         <label>Código do pedido</label>
-                        <input type = "number" id = "input2" class = "inputEditOrdem" placeholder="Digite o código do pedido" disabled>
+                        <input type = "number" id = "input2" class = "inputEditOrdem " placeholder="Digite o código do pedido" disabled>
                     </section>
-                    
+
                     <!-- Código do Cliente -->
                     <section class = "secCod">
-                        <label>Código do cliente</label>
-                        <input type = "number" id = "input3" class = "inputEditOrdem" placeholder="Digite o código do cliente" disabled>
+                        <label>Código</label>
+                        <input type = "number" id = "input3" class = "inputEditOrdem inputCodCli" placeholder="" disabled>
                     </section>
-                    
+
+                    <!-- Nome do Cliente -->
+                    <section class = "secNome">
+                        <label>Nome do cliente</label>
+                        <input type = "text" id = "input4" class = "inputEditOrdem inputNomeCli" placeholder="Digite o nome do cliente" disabled>
+                    </section>
 
                 </section>
+                </section>
                 <section class = "datasMeio">
-
-                    <!-- Data Realização do Pedido -->
                     <section class = "secDataRealizacao secDataMeio ">
                         <label>Data realização</label>
-                        <input type = "date" id = "input4" class = "inputDataMeio" disabled>
+                        <input type = "date" id = "input5" class = "inputDataMeio" min="01-01-1000" max="31-12-9999" disabled>
                     </section>
-
-                    <!-- Data Entrega do Pedido -->
                     <section class = "secDataEntrega secDataMeio">
                         <label>Data entrega</label>
-                        <input type = "date" id = "input5" class = "inputDataMeio" disabled>
+                        <input type = "date" id = "input6" class = "inputDataMeio" min="01-01-1000" max="31-12-9999" disabled>
                     </section>
                 </section>
             </div>
+
+            <!-- Produtos do Pedido -->
             <div class = "prodPedido">
                 <h2 class = "divTit">Produtos da ordem</h2>
                 <section class = "produtos">
                     <section class = "labels">
-                        <p class = "label lblCodProduto">Código do produto</p>
-                        <p class = "label lblMetragem">Metr</p>
+                        <p class = "label lblCodProduto">Código</p>
+                        <p class = "label lblNomeProduto">Nome</p>
+
+                        <p class = "label lblMetragem">Metr.</p>
                         <p class = "label lblQtd">Qtd</p>
+
                     </section>
                     <section class = "produto">
                         <input type = "number" id = "inputB1" class = "inputProduto codProduto" placeholder="Digite o código" disabled/>
-                        <input type = "number" id = "inputB2" class = "inputProduto metrProduto" disabled>
-                        <input type = "number" id = "inputB3" class = "inputProduto qtdProduto" disabled>
+                        <input type = "text" id = "inputB2" class = "inputProduto nomeProduto" disabled> 
+                        <input type = "number" id = "inputB3" class = "inputProduto metrProduto" disabled>
+                        <input type = "number" id = "inputB4" class = "inputProduto qtdProduto" disabled>
                     </section>
                     <section class = "produto">
-                        <input type = "number" id = "inputB4" class = "inputProduto codProduto" placeholder="Digite o código" disabled/>
-                        <input type = "number" id = "inputB5" class = "inputProduto metrProduto" disabled>
-                        <input type = "number" id = "inputB6" class = "inputProduto qtdProduto" disabled>
+                        <input type = "number" id = "inputB5" class = "inputProduto codProduto" placeholder="Digite o código" disabled/>
+                        <input type = "text" id = "inputB6" class = "inputProduto nomeProduto" disabled> 
+                        <input type = "number" id = "inputB7" class = "inputProduto metrProduto" disabled>
+                        <input type = "number" id = "inputB8" class = "inputProduto qtdProduto" disabled>
                     </section>
                     <section class = "produto">
-                        <input type = "number" id = "inputB7" class = "inputProduto codProduto" placeholder="Digite o código" disabled/>
-                        <input type = "number" id = "inputB8" class = "inputProduto metrProduto" disabled>
-                        <input type = "number" id = "inputB9" class = "inputProduto qtdProduto" disabled>
-                    </section>
-                    <section class = "produto">
-                        <input type = "number" id = "inputB10" class = "inputProduto codProduto" placeholder="Digite o código" disabled/>
+                        <input type = "number" id = "inputB9" class = "inputProduto codProduto" placeholder="Digite o código" disabled/>
+                        <input type = "text" id = "inputB10" class = "inputProduto nomeProduto" disabled> 
                         <input type = "number" id = "inputB11" class = "inputProduto metrProduto" disabled>
-                        <input type = "number" id = "inputB12" class = "inputProduto qtdProduto" disabled>
+                        <input type = "number" id = "inputB12" class = "inputProduto qtdProduto" disabled> 
                     </section>
                     <section class = "produto">
                         <input type = "number" id = "inputB13" class = "inputProduto codProduto" placeholder="Digite o código" disabled/>
-                        <input type = "number" id = "inputB14" class = "inputProduto metrProduto" disabled>
-                        <input type = "number" id = "inputB15" class = "inputProduto qtdProduto" disabled>
+                        <input type = "text" id = "inputB14" class = "inputProduto nomeProduto" disabled> 
+                        <input type = "number" id = "inputB15" class = "inputProduto metrProduto" disabled>
+                        <input type = "number" id = "inputB16" class = "inputProduto qtdProduto" disabled> 
+                    </section>
+                    <section class = "produto">
+                        <input type = "number" id = "inputB17" class = "inputProduto codProduto" placeholder="Digite o código" disabled/>
+                        <input type = "text" id = "inputB18" class = "inputProduto nomeProduto" disabled> 
+                        <input type = "number" id = "inputB19" class = "inputProduto metrProduto" disabled>
+                        <input type = "number" id = "inputB20" class = "inputProduto qtdProduto" disabled>
+                    </section>
+                </section>
                     <a href = "../Telas Produtor/gerenciarOrdens.html"><button class = "btnVoltar" style="margin-left: 75%;">Voltar</button></a>
             </div>
         </main>
