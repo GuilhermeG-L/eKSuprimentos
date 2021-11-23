@@ -5,7 +5,7 @@
         <meta charset="UTF-8"/>
         <link rel="stylesheet" href = "../../Arquivos css/addPedido.css"/>
         <link rel = "stylesheet" href = "../../Arquivos css/layout.css"/>
-        <link rel = "stylesheet" href = "../../Arquivos css/btnsMenuLateralAdm.css"/>
+        <link rel = "stylesheet" href = "../../Arquivos css/btnsMenuLateralVend.css"/>
         <link rel="stylesheet" href = "../../Arquivos css/config.css"/>
     </head>
     <div class="container">
@@ -13,10 +13,8 @@
         <aside class="container__sidebar">
             <img src = "../../imgs/Logo sem fundo.png" width="200px"/>
             <section class = "btns">
-                <a href = "../Telas Adm/gerenciarProdutosAdm.html"><button class = "btnFuncionalidade btnFuncionalidadeDesativa" id = "btnGerenciarProdutos"><img src = "../../imgs/icones/iconesGerenciarProduto.png">Gerenciar produtos</button></a>
-                <a href = "../Telas Adm/gerenciarPedidosAdm.html"><button class = "btnFuncionalidade btnFuncionalidadeAtiva" id = "btnGerenciarPedidos"><img src = "../../imgs/icones/icons8-report-64 1.png">Gerenciar pedidos</button></a>
-                <a href = "../Telas Adm/gerenciarClientesAdm.html"><button class = "btnFuncionalidade btnFuncionalidadeDesativa" id = "btnGerenciarCliente"><img src = "../../imgs/icones/icons8-adicionar-administrador-50 1.png">Gerenciar clientes</button></a>
-                <a href = "../Telas Adm/gerenciarOrdensAdm.html"><button class = "btnFuncionalidade btnFuncionalidadeDesativa" id = "btnGerenciarOrdens"><img src = "../../imgs/icones/icons8-report-64 1.png">Gerenciar ordens</button></a>
+                <a href = "../Telas Vendedor/gerenciarPedidos.html"><button class = "btnFuncionalidade btnFuncionalidadeAtiva" id = "btnGerenciarPedidos"><img src = "../../imgs/icones/icons8-report-64 1.png">Gerenciar pedidos</button></a>
+                <a href = "../Telas Vendedor/gerenciarClientes.html"><button class = "btnFuncionalidade btnFuncionalidadeDesativa" id = "btnCadastrarCliente"><img src = "../../imgs/icones/icons8-adicionar-administrador-50 1.png">Gerenciar clientes</button></a>
             </section>
             <a href = "../../index.html" class = "logOut"><button class = "btnLogout"><img src = "../../imgs/icones/icons8-desligar-50 1.png">Logout</button></a>
         </aside>
@@ -76,7 +74,6 @@
             <div class = "prodPedido">
                 <section class = "introButton">
                     <h2 class = "divTit">Itens do pedido</h2>
-
                 </section>  
                 <section class = "produtos">
                     <section class = "labels">
@@ -88,50 +85,50 @@
                         <p class = "label lblPreço">Preço</p>
                     </section>
                     <section class = "produto">
-                        <input type = "number" id = "inputB1" class = "inputProduto codProduto"  disabled/>
+                        <input type = "number" id = "inputB1" class = "inputProduto codProduto" placeholder="Digite o código" min='1'/>
                         <input type = "text" id = "inputB2" class = "inputProduto nomeProduto" disabled> 
                         <input type = "number" id = "inputB3" class = "inputProduto preçoProduto" disabled> 
-                        <input type = "number" id = "inputB4" class = "inputProduto metrProduto" step='0.01' min='0.01'>
-                        <input type = "number" id = "inputB5" class = "inputProduto qtdProduto" min='1'>
+                        <input type = "number" id = "inputB4" class = "inputProduto metrProduto" placeholder="Metragem" step='0.01' min='0.01'>
+                        <input type = "number" id = "inputB5" class = "inputProduto qtdProduto" placeholder="Quantidade" min='1'>
                         <input type = "number" id = "inputB6" class = "inputProduto preçoProduto" disabled> 
                     </section>
                     <section class = "produto">
-                        <input type = "number" id = "inputB7" class = "inputProduto codProduto"  disabled/>
+                        <input type = "number" id = "inputB7" class = "inputProduto codProduto" placeholder="Digite o código" min='1'/>
                         <input type = "text" id = "inputB8" class = "inputProduto nomeProduto" disabled> 
                         <input type = "number" id = "inputB9" class = "inputProduto preçoProduto" disabled> 
-                        <input type = "number" id = "inputB10" class = "inputProduto metrProduto" step='0.01' min='0.01'>
-                        <input type = "number" id = "inputB11" class = "inputProduto qtdProduto" min='1'>
+                        <input type = "number" id = "inputB10" class = "inputProduto metrProduto" placeholder="Metragem" step='0.01' min='0.01'>
+                        <input type = "number" id = "inputB11" class = "inputProduto qtdProduto" placeholder="Quantidade" min='1'>
                         <input type = "number" id = "inputB12" class = "inputProduto preçoProduto" disabled> 
                     </section>
                     <section class = "produto">
-                        <input type = "number" id = "inputB13" class = "inputProduto codProduto"  disabled/>
+                        <input type = "number" id = "inputB13" class = "inputProduto codProduto" placeholder="Digite o código" min='1'/>
                         <input type = "text" id = "inputB14" class = "inputProduto nomeProduto" disabled> 
                         <input type = "number" id = "inputB15" class = "inputProduto preçoProduto" disabled> 
-                        <input type = "number" id = "inputB16" class = "inputProduto metrProduto" step='0.01' min='0.01'>
-                        <input type = "number" id = "inputB17" class = "inputProduto qtdProduto" min='1'> 
+                        <input type = "number" id = "inputB16" class = "inputProduto metrProduto" placeholder="Metragem" step='0.01' min='0.01'>
+                        <input type = "number" id = "inputB17" class = "inputProduto qtdProduto" placeholder="Quantidade" min='1'> 
                         <input type = "number" id = "inputB18" class = "inputProduto preçoProduto" disabled> 
                     </section>
                     <section class = "produto">
-                        <input type = "number" id = "inputB19" class = "inputProduto codProduto"  disabled/>
+                        <input type = "number" id = "inputB19" class = "inputProduto codProduto" placeholder="Digite o código" min='1'/>
                         <input type = "text" id = "inputB20" class = "inputProduto nomeProduto" disabled> 
                         <input type = "number" id = "inputB21" class = "inputProduto preçoProduto" disabled> 
-                        <input type = "number" id = "inputB22" class = "inputProduto metrProduto" step='0.01' min='0.01'>
-                        <input type = "number" id = "inputB23" class = "inputProduto qtdProduto" min='1'> 
+                        <input type = "number" id = "inputB22" class = "inputProduto metrProduto" placeholder="Metragem" step='0.01' min='0.01'>
+                        <input type = "number" id = "inputB23" class = "inputProduto qtdProduto" placeholder="Quantidade" min='1'> 
                         <input type = "number" id = "inputB24" class = "inputProduto preçoProduto" disabled> 
                     </section>
                     <section class = "produto">
-                        <input type = "number" id = "inputB25" class = "inputProduto codProduto"  disabled/>
+                        <input type = "number" id = "inputB25" class = "inputProduto codProduto" placeholder="Digite o código" min='1'/>
                         <input type = "text" id = "inputB26" class = "inputProduto nomeProduto" disabled> 
                         <input type = "number" id = "inputB27" class = "inputProduto preçoProduto" disabled> 
-                        <input type = "number" id = "inputB28" class = "inputProduto metrProduto" step='0.01' min='0.01'>
-                        <input type = "number" id = "inputB29" class = "inputProduto qtdProduto" min='1'>
+                        <input type = "number" id = "inputB28" class = "inputProduto metrProduto" placeholder="Metragem" step='0.01' min='0.01'>
+                        <input type = "number" id = "inputB29" class = "inputProduto qtdProduto" placeholder="Quantidade" min='1'>
                         <input type = "number" id = "inputB30" class = "inputProduto preçoProduto" disabled> 
                     </section>
                 </section>
                 <section class = "total">
                     <p>Total:</p>
-                    <input type = "number" class = "precoTotal" readonly/>
-                    <a href = "../Telas Adm/gerenciarPedidosAdm.html" class = "linkBtnVoltar"><button class = "btnVoltar">Voltar</button></a>
+                    <input type = "number" class = "precoTotal"/>
+                    <a href = "../Telas Vendedor/gerenciarPedidos.html" class = "linkBtnVoltar"><button class = "btnVoltar">Voltar</button></a>
                     <a href = "#" class = "linkBtnConcluir"><button class = "btnConcluir">Concluir</button></a>
                 </section>
             </div>
@@ -146,6 +143,6 @@
     <script>window.api.loadscript('./calcPreçoTotal.js');</script>
     <script>window.api.loadscript('./salvaPedido.js');</script>
     <script>window.api.loadscript('./salvaItemPedido.js');</script>
-    <script>window.api.loadscript('./criaOrdemAdm.js');</script>
+    <script>window.api.loadscript('./criaOrdem.js');</script>
     <script>window.api.loadscript('./restricoesValoresPedido.js')</script>
 </html>
