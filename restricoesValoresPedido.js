@@ -27,7 +27,7 @@ arrInputCodProduto.forEach(codProd=>{
 arrInputMetragem.forEach(metrProd=>{
     metrProd.addEventListener('change', function(){
         var valor = metrProd.value
-        metrProd.value = valor < 0.001 ? 0.001 : metrProd.value
+        metrProd.value = valor < 0.01 ? 0.01 : metrProd.value
     })
 })
 
