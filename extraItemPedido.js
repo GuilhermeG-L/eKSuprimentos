@@ -49,6 +49,7 @@ const ipc = require('electron').ipcRenderer
           }
           else {
             console.log(`${rowCount} linha(s) retornadas`);
+            if (rowCount != 1) {ipc.send('erroselect');}
           }
         }
       );
@@ -121,6 +122,7 @@ const ipc = require('electron').ipcRenderer
               }
               else {
                 console.log(`${rowCount} linha(s) retornadas`);
+                if (rowCount != 1) {ipc.send('erroselect');}
               }
             }
           );
@@ -194,6 +196,7 @@ const ipc = require('electron').ipcRenderer
                     }
                     else {
                       console.log(`${rowCount} linha(s) retornadas`);
+                      if (rowCount != 1) {ipc.send('erroselect');}
                     }
                   }
                 );
@@ -268,6 +271,7 @@ const ipc = require('electron').ipcRenderer
                           }
                           else {
                             console.log(`${rowCount} linha(s) retornadas`);
+                            if (rowCount != 1) {ipc.send('erroselect');}
                           }
                         }
                       );
@@ -341,6 +345,7 @@ const ipc = require('electron').ipcRenderer
                                 }
                                 else {
                                   console.log(`${rowCount} linha(s) retornadas`);
+                                  if (rowCount != 1) {ipc.send('erroselect');}
                                 }
                               }
                             );
