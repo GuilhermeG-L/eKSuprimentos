@@ -1,7 +1,7 @@
 const { Connection, Request } = require("tedious");
 const ipc = require('electron').ipcRenderer
 
-function pegarCod(parameter) {  
+function pegarNome(parameter) {  
   var loc = location.search.substring(1, location.search.length);   
   var param_value = false;   
   var params = loc.split("&");   
@@ -19,12 +19,15 @@ function pegarCod(parameter) {
   }   
 }
 
-var cod = pegarCod("cod");
+var nomeCli = pegarNome("nome")
+nomeCli = decodeURIComponent(nomeCli)
+console.log(nomeCli)
 
-if (cod > 0) {
+if (nomeCli != 'undefined') {
   
   var btnCadastrar = document.querySelector('.btnCadastrar');
   btnCadastrar.addEventListener('click', ()=>{
+    let cod = (document.querySelector('#input1').value);
     let nome = (document.querySelector('#input2').value);
     let cpf = (document.querySelector('#input3').value);
     let telefone = (document.querySelector('#input4').value);
@@ -112,17 +115,7 @@ else {
     let estado = (document.querySelector('#input10').value);
     let cep = (document.querySelector('#input11').value);
   
-    console.log(codNew);
-    console.log(nome);
-    console.log(cpf);
-    console.log(telefone);
-    console.log(logradouro);
-    console.log(numero);
-    console.log(complemento);
-    console.log(bairro);
-    console.log(cidade);
-    console.log(estado);
-    console.log(cep);
+
     // Configuração de conexão DB.
     const config = {
       authentication: {

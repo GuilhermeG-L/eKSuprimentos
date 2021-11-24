@@ -126,17 +126,7 @@ else {
     let estado = (document.querySelector('#input10').value);
     let cep = (document.querySelector('#input11').value);
   
-    console.log('Novo Código:', codNew);
-    console.log('Nome cliente:', nome);
-    console.log('CPF Cliente:', cpf);
-    console.log('Telefone:', telefone);
-    console.log('Logradouro:', logradouro);
-    console.log('Número:', numero);
-    console.log('Complemento:', complemento);
-    console.log('Bairro:', bairro);
-    console.log('Cidade:', cidade);
-    console.log('Estado:', estado);
-    console.log('CEP:', cep);
+
     // Configuração de conexão DB.
     const config = {
       authentication: {

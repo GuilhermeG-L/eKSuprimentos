@@ -3,7 +3,7 @@ const ipc = require('electron').ipcRenderer
 
 var btnBuscar = document.querySelector('.btnBuscar');
 btnBuscar.addEventListener('click', ()=>{
-  let cod = parseInt(document.querySelector('.inputPesquisa').value);
+  let nomeCliente = document.querySelector('.inputPesquisa').value
 
   // Configuração de conexão DB.
   const config = {
@@ -39,9 +39,9 @@ btnBuscar.addEventListener('click', ()=>{
     console.log("Lendo dados da tabela...");
 
     const request = new Request(
-      `SELECT DISTINCT CodCliente
+      `SELECT DISTINCT Nome
       FROM dbo.Cliente
-      Where CodCliente = \'${cod}\'`,
+      Where Nome = \'${nomeCliente}\'`,
       (err, rowCount) => {
 
         if (err) {
@@ -51,7 +51,7 @@ btnBuscar.addEventListener('click', ()=>{
         else {
           console.log(`${rowCount} linha(s) retornadas`);
           if (rowCount != 1) {ipc.send('erroselect');}
-          else {window.location = '../Telas Vendedor/editarCliente.html?cod='+cod;}
+          else {window.location = '../Telas Vendedor/editarCliente.html?nome='+nomeCliente;}
         }
       }
     );

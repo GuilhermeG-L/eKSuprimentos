@@ -38,7 +38,7 @@ else {
     let codNew = parseInt(document.querySelector('#input1').value);
     let codcliente = parseInt(document.querySelector('#input2').value);
     let codvendedor = parseInt(document.querySelector('#input4').value);
-    let codprodutor = Math.floor((Math.random() * 2) + 1);
+    let codprodutor = Math.floor((Math.random() * 3) + 1);
     let status = 'Em fila';
 
 

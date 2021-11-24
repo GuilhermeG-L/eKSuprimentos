@@ -39,7 +39,7 @@ const ipc = require('electron').ipcRenderer
       FROM dbo.Ordem_de_Produção o
       Inner Join dbo.Cliente c ON o.CodCliente = c.CodCliente
       Inner Join dbo.Pedido p ON o.CodPedido = p.CodPedido
-      Order By o.Situação`,
+      Order By p.Data_entrega`,
       (err, rowCount) => {
         if (err) {
           console.error(err.message);

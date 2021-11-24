@@ -21,7 +21,7 @@ function createWindow(){
             preload: path.join(__dirname, "preload.js")
         }
     });
-    //win.setMenuBarVisibility(false);
+    win.setMenuBarVisibility(false);
     win.maximize();
     win.loadURL(url.format({
         pathname: path.join(__dirname, 'index.html'),
